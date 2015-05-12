@@ -1,0 +1,93 @@
+#if TARGET_OS_IPHONE
+@import UIKit;
+#else
+@import AppKit;
+#endif
+
+#import "MAIEnums.h"
+
+#import "MAILayoutManagerDelegate.h"
+#import "MAITextLayoutOrientationProvider.h"
+#import "MAITextStorageDelegate.h"
+#import "MAIApplicationDelegate.h"
+#import "MAICollectionViewDelegate.h"
+#import "MAIGestureRecognizerDelegate.h"
+#import "MAITableViewDataSource.h"
+#import "MAITableViewDelegate.h"
+#import "MAITextFieldDelegate.h"
+#import "MAITextInput.h"
+#import "MAITextViewDelegate.h"
+#import "MAIToolbarDelegate.h"
+
+@class MAILayoutConstraint;
+@class MAILayoutManager;
+@class MAITextTab;
+@class MAIParagraphStyle;
+@class MAIMutableParagraphStyle;
+@class MAIShadow;
+@class MAITextAttachment;
+@class MAITextContainer;
+@class MAIAccessibilityElement;
+@class MAIApplication;
+@class MAIBezierPath;
+@class MAIButton;
+@class MAICollectionView;
+@class MAIColor;
+@class MAIControl;
+@class MAIDatePicker;
+@class MAIDocument;
+@class MAIEvent;
+@class MAIFont;
+@class MAIFontDescriptor;
+@class MAIGestureRecognizer;
+@class MAIImage;
+@class MAIImageView;
+@class MAIMenuItem;
+@class MAINib;
+@class MAIPanGestureRecognizer;
+@class MAIPasteboard;
+@class MAIPrinter;
+@class MAIPrintInfo;
+@class MAIResponder;
+@class MAIRotationGestureRecognizer;
+@class MAIScreen;
+@class MAIScrollView;
+@class MAISegmentedControl;
+@class MAISlider;
+@class MAISplitViewController;
+@class MAIStepper;
+@class MAIStoryboard;
+@class MAIStoryboardSegue;
+@class MAITableView;
+@class MAITextField;
+@class MAITextView;
+@class MAIToolbar;
+@class MAITouch;
+@class MAIView;
+@class MAIViewController;
+@class MAIVisualEffectView;
+@class MAIWindow;
+
+@interface MAITextStorage : NSMutableAttributedString
+-(void)addLayoutManager:(MAILayoutManager *)aLayoutManager;
+-(void)removeLayoutManager:(MAILayoutManager *)aLayoutManager;
+-(void)processEditing;
+-(void)invalidateAttributesInRange:(NSRange)range;
+-(void)ensureAttributesAreFixedInRange:(NSRange)range;
+@property(nonatomic, readwrite, assign) id<MAITextStorageDelegate> delegate;
+@property(nonatomic, readonly, assign) BOOL fixesAttributesLazily;
+#if TARGET_OS_IPHONE
+-(NSTextStorage*) ios;
+#else
+-(NSTextStorage*) mac;
+#endif
+
+@end
+
+#if TARGET_OS_IPHONE
+@interface NSTextStorage (MAIConversion)
+#else
+@interface NSTextStorage (MAIConversion)
+#endif
+-(MAITextStorage*) mai;
+@end
