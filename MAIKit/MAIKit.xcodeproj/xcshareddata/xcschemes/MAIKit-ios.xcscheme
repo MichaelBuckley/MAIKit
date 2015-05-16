@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3043662A1B0195010067C766"
-               BuildableName = "MAIKit-ios.framework"
+               BuildableName = "MAIKit.framework"
                BlueprintName = "MAIKit-ios"
                ReferencedContainer = "container:MAIKit.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3043662A1B0195010067C766"
-            BuildableName = "MAIKit-ios.framework"
+            BuildableName = "MAIKit.framework"
             BlueprintName = "MAIKit-ios"
             ReferencedContainer = "container:MAIKit.xcodeproj">
          </BuildableReference>
@@ -61,7 +61,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3043662A1B0195010067C766"
-            BuildableName = "MAIKit-ios.framework"
+            BuildableName = "MAIKit.framework"
             BlueprintName = "MAIKit-ios"
             ReferencedContainer = "container:MAIKit.xcodeproj">
          </BuildableReference>
