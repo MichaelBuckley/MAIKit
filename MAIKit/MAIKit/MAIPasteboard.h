@@ -71,7 +71,8 @@
 @interface MAIPasteboard : NSObject
 +(MAIPasteboard*)generalPasteboard;
 +(MAIPasteboard*)pasteboardWithUniqueName;
-@property(nonatomic, readonly, assign) NSInteger changeCount;
+@property(nonatomic, readonly) NSString* name;
+@property(nonatomic, readonly) NSInteger changeCount;
 #if TARGET_OS_IPHONE
 -(UIPasteboard*) ios;
 #else

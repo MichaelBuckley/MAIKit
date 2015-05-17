@@ -81,9 +81,9 @@
 -(void)fill;
 -(void)stroke;
 -(void)addClip;
-@property(nonatomic, readonly, assign, getter=isEmpty) BOOL empty;
-@property(nonatomic, readonly, assign) CGRect bounds;
-@property(nonatomic, readonly, assign) CGPoint currentPoint;
+@property(nonatomic, readonly, getter=isEmpty) BOOL empty;
+@property(nonatomic, readonly) CGRect bounds;
+@property(nonatomic, readonly) CGPoint currentPoint;
 #if TARGET_OS_IPHONE
 -(UIBezierPath*) ios;
 #else

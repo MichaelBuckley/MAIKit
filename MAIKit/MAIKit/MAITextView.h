@@ -74,8 +74,12 @@
 -(instancetype)initWithFrame:(CGRect)frame;
 -(BOOL)becomeFirstResponder;
 -(BOOL)resignFirstResponder;
-@property(nonatomic, readwrite, assign, getter=isEditable) BOOL editable;
-@property(nonatomic, readwrite, assign, getter=isSelectable) BOOL selectable;
+@property(nonatomic, readwrite, retain) MAIFont* font;
+@property(nonatomic, readwrite, retain) MAIColor* textColor;
+@property(nonatomic, readwrite, getter=isEditable) BOOL editable;
+@property(nonatomic, readwrite, getter=isSelectable) BOOL selectable;
+@property(nonatomic, readonly) MAILayoutManager* layoutManager;
+@property(nonatomic, readonly, retain) MAITextStorage* textStorage;
 #if TARGET_OS_IPHONE
 -(UITextView*) ios;
 #else

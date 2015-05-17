@@ -71,20 +71,21 @@
 @interface MAIParagraphStyle : NSObject<NSCopying,NSMutableCopying>
 +(MAIParagraphStyle*)defaultParagraphStyle;
 +(MAIWritingDirection)defaultWritingDirectionForLanguage:(NSString *)languageName;
-@property(nonatomic, readonly, assign) CGFloat lineSpacing;
-@property(nonatomic, readonly, assign) CGFloat paragraphSpacing;
-@property(nonatomic, readonly, assign) NSTextAlignment alignment;
-@property(nonatomic, readonly, assign) CGFloat headIndent;
-@property(nonatomic, readonly, assign) CGFloat tailIndent;
-@property(nonatomic, readonly, assign) CGFloat firstLineHeadIndent;
-@property(nonatomic, readonly, assign) CGFloat minimumLineHeight;
-@property(nonatomic, readonly, assign) CGFloat maximumLineHeight;
-@property(nonatomic, readonly, assign) NSLineBreakMode lineBreakMode;
-@property(nonatomic, readonly, assign) MAIWritingDirection baseWritingDirection;
-@property(nonatomic, readonly, assign) CGFloat lineHeightMultiple;
-@property(nonatomic, readonly, assign) CGFloat paragraphSpacingBefore;
-@property(nonatomic, readonly, assign) float hyphenationFactor;
-@property(nonatomic, readonly, assign) CGFloat defaultTabInterval;
+@property(nonatomic, readonly) CGFloat lineSpacing;
+@property(nonatomic, readonly) CGFloat paragraphSpacing;
+@property(nonatomic, readonly) NSTextAlignment alignment;
+@property(nonatomic, readonly) CGFloat headIndent;
+@property(nonatomic, readonly) CGFloat tailIndent;
+@property(nonatomic, readonly) CGFloat firstLineHeadIndent;
+@property(nonatomic, readonly) CGFloat minimumLineHeight;
+@property(nonatomic, readonly) CGFloat maximumLineHeight;
+@property(nonatomic, readonly) NSLineBreakMode lineBreakMode;
+@property(nonatomic, readonly) MAIWritingDirection baseWritingDirection;
+@property(nonatomic, readonly) CGFloat lineHeightMultiple;
+@property(nonatomic, readonly) CGFloat paragraphSpacingBefore;
+@property(nonatomic, readonly) float hyphenationFactor;
+@property(nonatomic, readonly, copy) NSArray* tabStops;
+@property(nonatomic, readonly) CGFloat defaultTabInterval;
 #if TARGET_OS_IPHONE
 -(NSParagraphStyle*) ios;
 #else

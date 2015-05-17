@@ -69,6 +69,7 @@
 @class MAIWindow;
 
 @interface MAITextContainer : NSObject<NSCoding,MAITextLayoutOrientationProvider>
+@property(nonatomic, readwrite, assign) MAILayoutManager* layoutManager;
 #if TARGET_OS_IPHONE
 -(NSTextContainer*) ios;
 #else

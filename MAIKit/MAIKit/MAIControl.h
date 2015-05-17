@@ -72,8 +72,8 @@
 -(instancetype)initWithFrame:(CGRect)frame;
 -(BOOL)becomeFirstResponder;
 -(BOOL)resignFirstResponder;
-@property(nonatomic, readwrite, assign, getter=isEnabled) BOOL enabled;
-@property(nonatomic, readwrite, assign, getter=isHighlighted) BOOL highlighted;
+@property(nonatomic, readwrite, getter=isEnabled) BOOL enabled;
+@property(nonatomic, readwrite, getter=isHighlighted) BOOL highlighted;
 #if TARGET_OS_IPHONE
 -(UIControl*) ios;
 #else

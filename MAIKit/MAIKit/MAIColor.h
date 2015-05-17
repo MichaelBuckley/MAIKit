@@ -92,7 +92,7 @@
 -(void)setFill;
 -(void)setStroke;
 -(MAIColor*)colorWithAlphaComponent:(CGFloat)alpha;
-@property(nonatomic, readonly, assign) CGColorRef CGColor;
+@property(nonatomic, readonly) CGColorRef CGColor;
 #if TARGET_OS_IPHONE
 -(UIColor*) ios;
 #else

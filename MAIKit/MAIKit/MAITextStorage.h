@@ -74,8 +74,9 @@
 -(void)processEditing;
 -(void)invalidateAttributesInRange:(NSRange)range;
 -(void)ensureAttributesAreFixedInRange:(NSRange)range;
+@property(nonatomic, readonly) NSArray* layoutManagers;
 @property(nonatomic, readwrite, assign) id<MAITextStorageDelegate> delegate;
-@property(nonatomic, readonly, assign) BOOL fixesAttributesLazily;
+@property(nonatomic, readonly) BOOL fixesAttributesLazily;
 #if TARGET_OS_IPHONE
 -(NSTextStorage*) ios;
 #else

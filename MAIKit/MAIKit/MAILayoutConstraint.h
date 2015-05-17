@@ -74,12 +74,12 @@
 +(void)activateConstraints:(NSArray *)constraints;
 +(void)deactivateConstraints:(NSArray *)constraints;
 @property(nonatomic, readonly, assign) id firstItem;
-@property(nonatomic, readonly, assign) MAILayoutAttribute firstAttribute;
-@property(nonatomic, readonly, assign) MAILayoutRelation relation;
+@property(nonatomic, readonly) MAILayoutAttribute firstAttribute;
+@property(nonatomic, readonly) MAILayoutRelation relation;
 @property(nonatomic, readonly, assign) id secondItem;
-@property(nonatomic, readonly, assign) MAILayoutAttribute secondAttribute;
-@property(nonatomic, readonly, assign) CGFloat multiplier;
-@property(nonatomic, readwrite, assign, getter=isActive) BOOL active;
+@property(nonatomic, readonly) MAILayoutAttribute secondAttribute;
+@property(nonatomic, readonly) CGFloat multiplier;
+@property(nonatomic, readwrite, getter=isActive) BOOL active;
 #if TARGET_OS_IPHONE
 -(NSLayoutConstraint*) ios;
 #else

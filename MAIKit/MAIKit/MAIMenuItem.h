@@ -69,6 +69,7 @@
 @class MAIWindow;
 
 @interface MAIMenuItem : NSObject
+@property(nonatomic, readwrite, copy) NSString* title;
 #if TARGET_OS_IPHONE
 -(UIMenuItem*) ios;
 #else

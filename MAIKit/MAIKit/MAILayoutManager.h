@@ -114,11 +114,14 @@
 -(CGFloat)fractionOfDistanceThroughGlyphForPoint:(CGPoint)point inTextContainer:(MAITextContainer *)container;
 -(NSUInteger)characterIndexForPoint:(CGPoint)point inTextContainer:(MAITextContainer *)container fractionOfDistanceBetweenInsertionPoints:(CGFloat *)partialFraction;
 -(NSUInteger)getLineFragmentInsertionPointsForCharacterAtIndex:(NSUInteger)charIndex alternatePositions:(BOOL)aFlag inDisplayOrder:(BOOL)dFlag positions:(CGFloat *)positions characterIndexes:(NSUInteger *)charIndexes;
+@property(nonatomic, readwrite, assign) MAITextStorage* textStorage;
+@property(nonatomic, readonly) NSArray* textContainers;
 @property(nonatomic, readwrite, assign) id<MAILayoutManagerDelegate> delegate;
-@property(nonatomic, readonly, assign) BOOL hasNonContiguousLayout;
-@property(nonatomic, readonly, assign) NSUInteger numberOfGlyphs;
-@property(nonatomic, readonly, assign) CGRect extraLineFragmentRect;
-@property(nonatomic, readonly, assign) CGRect extraLineFragmentUsedRect;
+@property(nonatomic, readonly) BOOL hasNonContiguousLayout;
+@property(nonatomic, readonly) NSUInteger numberOfGlyphs;
+@property(nonatomic, readonly) CGRect extraLineFragmentRect;
+@property(nonatomic, readonly) CGRect extraLineFragmentUsedRect;
+@property(nonatomic, readonly) MAITextContainer* extraLineFragmentTextContainer;
 #if TARGET_OS_IPHONE
 -(NSLayoutManager*) ios;
 #else

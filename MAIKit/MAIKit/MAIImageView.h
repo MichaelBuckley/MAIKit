@@ -72,7 +72,8 @@
 -(instancetype)initWithFrame:(CGRect)frame;
 -(BOOL)becomeFirstResponder;
 -(BOOL)resignFirstResponder;
-@property(nonatomic, readwrite, assign, getter=isHighlighted) BOOL highlighted;
+@property(nonatomic, readwrite, retain) MAIImage* image;
+@property(nonatomic, readwrite, getter=isHighlighted) BOOL highlighted;
 #if TARGET_OS_IPHONE
 -(UIImageView*) ios;
 #else

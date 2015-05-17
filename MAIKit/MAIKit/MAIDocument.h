@@ -69,6 +69,8 @@
 @class MAIWindow;
 
 @interface MAIDocument : NSObject<NSFilePresenter>
+@property(nonatomic, readwrite, copy) NSDate* fileModificationDate;
+@property(nonatomic, readwrite, retain) NSUndoManager* undoManager;
 #if TARGET_OS_IPHONE
 -(UIDocument*) ios;
 #else

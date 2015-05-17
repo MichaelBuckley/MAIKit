@@ -74,6 +74,10 @@
 -(void)viewDidLoad;
 -(BOOL)becomeFirstResponder;
 -(BOOL)resignFirstResponder;
+@property(nonatomic, readwrite, retain) MAIView* view;
+@property(nonatomic, readonly, copy) NSString* nibName;
+@property(nonatomic, readonly, retain) NSBundle* nibBundle;
+@property(nonatomic, readwrite, copy) NSString* title;
 #if TARGET_OS_IPHONE
 -(UIViewController*) ios;
 #else

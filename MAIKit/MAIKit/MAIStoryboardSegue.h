@@ -70,6 +70,7 @@
 
 @interface MAIStoryboardSegue : NSObject
 -(void)perform;
+@property(nonatomic, readonly) NSString* identifier;
 #if TARGET_OS_IPHONE
 -(UIStoryboardSegue*) ios;
 #else

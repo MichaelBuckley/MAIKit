@@ -78,7 +78,8 @@
 -(MAIFontDescriptor*)fontDescriptorWithSize:(CGFloat)newPointSize;
 -(MAIFontDescriptor*)fontDescriptorWithFace:(NSString *)newFace;
 -(MAIFontDescriptor*)fontDescriptorWithFamily:(NSString *)newFamily;
-@property(nonatomic, readonly, assign) CGFloat pointSize;
+@property(nonatomic, readonly) NSString* postscriptName;
+@property(nonatomic, readonly) CGFloat pointSize;
 #if TARGET_OS_IPHONE
 -(UIFontDescriptor*) ios;
 #else

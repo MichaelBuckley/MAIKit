@@ -71,8 +71,10 @@
 @interface MAIRotationGestureRecognizer : NSObject
 -(instancetype)initWithTarget:(id)target action:(SEL)action;
 -(CGPoint)locationInView:(MAIView*)view;
-@property(nonatomic, readonly, assign) MAIGestureRecognizerState state;
-@property(nonatomic, readwrite, assign, getter=isEnabled) BOOL enabled;
+@property(nonatomic, readonly) MAIGestureRecognizerState state;
+@property(nonatomic, readwrite, assign) id<MAIGestureRecognizerDelegate> delegate;
+@property(nonatomic, readwrite, getter=isEnabled) BOOL enabled;
+@property(nonatomic, readonly) MAIView* view;
 #if TARGET_OS_IPHONE
 -(UIRotationGestureRecognizer*) ios;
 #else

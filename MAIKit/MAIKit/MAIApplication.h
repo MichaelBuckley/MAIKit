@@ -74,6 +74,8 @@
 -(BOOL)becomeFirstResponder;
 -(BOOL)resignFirstResponder;
 @property(nonatomic, readwrite, assign) id<MAIApplicationDelegate> delegate;
+@property(nonatomic, readonly) MAIWindow* keyWindow;
+@property(nonatomic, readonly) NSArray* windows;
 #if TARGET_OS_IPHONE
 -(UIApplication*) ios;
 #else

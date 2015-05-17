@@ -75,7 +75,7 @@
 -(void)sendEvent:(MAIEvent *)event;
 -(BOOL)becomeFirstResponder;
 -(BOOL)resignFirstResponder;
-@property(nonatomic, readonly, assign, getter=isKeyWindow) BOOL keyWindow;
+@property(nonatomic, readonly, getter=isKeyWindow) BOOL keyWindow;
 #if TARGET_OS_IPHONE
 -(UIWindow*) ios;
 #else

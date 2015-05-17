@@ -69,6 +69,7 @@
 @class MAIWindow;
 
 @interface MAITextAttachment : NSObject<NSCoding>
+@property(nonatomic, readwrite, retain) NSFileWrapper* fileWrapper;
 #if TARGET_OS_IPHONE
 -(NSTextAttachment*) ios;
 #else

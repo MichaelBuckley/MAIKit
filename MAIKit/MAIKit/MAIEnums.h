@@ -47,11 +47,21 @@ MAIWritingDirectionLeftToRight = 0,
 MAIWritingDirectionRightToLeft = 1
 };
 
+typedef NS_OPTIONS(NSUInteger, MAITextStorageEditActions) {
+MAITextStorageEditedAttributes = (1 << 0),
+MAITextStorageEditedCharacters = (1 << 1)
+};
+
 typedef NS_OPTIONS(NSUInteger, MAIRemoteNotificationType) {
 MAIRemoteNotificationTypeNone = 0,
 MAIRemoteNotificationTypeBadge = 1 << 0,
 MAIRemoteNotificationTypeSound = 1 << 1,
 MAIRemoteNotificationTypeAlert = 1 << 2
+};
+
+typedef NS_ENUM(NSInteger, MAIUserInterfaceLayoutDirection) {
+MAIUserInterfaceLayoutDirectionLeftToRight,
+MAIUserInterfaceLayoutDirectionRightToLeft
 };
 
 typedef NS_ENUM(NSInteger, MAIGestureRecognizerState) {

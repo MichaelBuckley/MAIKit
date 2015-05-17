@@ -73,12 +73,14 @@
 +(MAIFont*)systemFontOfSize:(CGFloat)fontSize;
 +(MAIFont*)boldSystemFontOfSize:(CGFloat)fontSize;
 +(MAIFont*)fontWithDescriptor:(MAIFontDescriptor *)descriptor size:(CGFloat)pointSize;
-@property(nonatomic, readonly, assign) CGFloat pointSize;
-@property(nonatomic, readonly, assign) CGFloat ascender;
-@property(nonatomic, readonly, assign) CGFloat descender;
-@property(nonatomic, readonly, assign) CGFloat capHeight;
-@property(nonatomic, readonly, assign) CGFloat xHeight;
-@property(nonatomic, readonly, assign) CGFloat leading;
+@property(nonatomic, readonly, retain) NSString* familyName;
+@property(nonatomic, readonly, retain) NSString* fontName;
+@property(nonatomic, readonly) CGFloat pointSize;
+@property(nonatomic, readonly) CGFloat ascender;
+@property(nonatomic, readonly) CGFloat descender;
+@property(nonatomic, readonly) CGFloat capHeight;
+@property(nonatomic, readonly) CGFloat xHeight;
+@property(nonatomic, readonly) CGFloat leading;
 #if TARGET_OS_IPHONE
 -(UIFont*) ios;
 #else

@@ -69,7 +69,7 @@
 @class MAIWindow;
 
 @interface MAIEvent : NSObject
-@property(nonatomic, readonly, assign) NSTimeInterval timestamp;
+@property(nonatomic, readonly) NSTimeInterval timestamp;
 #if TARGET_OS_IPHONE
 -(UIEvent*) ios;
 #else

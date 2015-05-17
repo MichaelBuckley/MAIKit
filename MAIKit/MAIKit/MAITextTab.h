@@ -70,8 +70,9 @@
 
 @interface MAITextTab : NSObject<NSCopying,NSCoding>
 -(instancetype)initWithTextAlignment:(NSTextAlignment)alignment location:(CGFloat)loc options:(NSDictionary *)options;
-@property(nonatomic, readonly, assign) NSTextAlignment alignment;
-@property(nonatomic, readonly, assign) CGFloat location;
+@property(nonatomic, readonly) NSTextAlignment alignment;
+@property(nonatomic, readonly) CGFloat location;
+@property(nonatomic, readonly) NSDictionary* options;
 #if TARGET_OS_IPHONE
 -(NSTextTab*) ios;
 #else
