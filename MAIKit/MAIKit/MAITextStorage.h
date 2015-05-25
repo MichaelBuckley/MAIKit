@@ -71,6 +71,7 @@
 @interface MAITextStorage : NSMutableAttributedString
 -(void)addLayoutManager:(MAILayoutManager *)aLayoutManager;
 -(void)removeLayoutManager:(MAILayoutManager *)aLayoutManager;
+-(void)edited:(MAITextStorageEditActions)editedMask range:(NSRange)editedRange changeInLength:(NSInteger)delta;
 -(void)processEditing;
 -(void)invalidateAttributesInRange:(NSRange)range;
 -(void)ensureAttributesAreFixedInRange:(NSRange)range;
