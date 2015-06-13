@@ -8,9 +8,12 @@
 
 #import "MAILayoutManagerDelegate.h"
 #import "MAITextLayoutOrientationProvider.h"
+#import "MAITextAttachmentContainer.h"
 #import "MAITextStorageDelegate.h"
 #import "MAIApplicationDelegate.h"
+#import "MAICollectionViewDataSource.h"
 #import "MAICollectionViewDelegate.h"
+#import "MAICollectionViewDelegateFlowLayout.h"
 #import "MAIGestureRecognizerDelegate.h"
 #import "MAITableViewDataSource.h"
 #import "MAITableViewDelegate.h"
@@ -19,11 +22,16 @@
 #import "MAITextViewDelegate.h"
 #import "MAIToolbarDelegate.h"
 
+@class MAIDataAsset;
+@class MAILayoutXAxisAnchor;
+@class MAILayoutYAxisAnchor;
+@class MAILayoutDimension;
 @class MAILayoutManager;
 @class MAITextTab;
 @class MAIParagraphStyle;
 @class MAIMutableParagraphStyle;
 @class MAIShadow;
+@class MAIStringDrawingContext;
 @class MAITextAttachment;
 @class MAITextContainer;
 @class MAITextStorage;
@@ -32,6 +40,13 @@
 @class MAIBezierPath;
 @class MAIButton;
 @class MAICollectionView;
+@class MAICollectionViewFlowLayoutInvalidationContext;
+@class MAICollectionViewFlowLayout;
+@class MAICollectionViewLayoutAttributes;
+@class MAICollectionViewUpdateItem;
+@class MAICollectionViewLayoutInvalidationContext;
+@class MAICollectionViewLayout;
+@class MAICollectionViewTransitionLayout;
 @class MAIColor;
 @class MAIControl;
 @class MAIDatePicker;
@@ -42,6 +57,7 @@
 @class MAIGestureRecognizer;
 @class MAIImage;
 @class MAIImageView;
+@class MAILayoutGuide;
 @class MAIMenuItem;
 @class MAINib;
 @class MAIPanGestureRecognizer;
@@ -55,9 +71,11 @@
 @class MAISegmentedControl;
 @class MAISlider;
 @class MAISplitViewController;
+@class MAIStackView;
 @class MAIStepper;
 @class MAIStoryboard;
 @class MAIStoryboardSegue;
+@class MAITableViewRowAction;
 @class MAITableView;
 @class MAITextField;
 @class MAITextView;
@@ -68,15 +86,16 @@
 @class MAIVisualEffectView;
 @class MAIWindow;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface MAILayoutConstraint : NSObject
-+(NSArray*)constraintsWithVisualFormat:(NSString *)format options:(MAILayoutFormatOptions)opts metrics:(NSDictionary *)metrics views:(NSDictionary *)views;
-+(instancetype)constraintWithItem:(id)view1 attribute:(MAILayoutAttribute)attr1 relatedBy:(MAILayoutRelation)relation toItem:(id)view2 attribute:(MAILayoutAttribute)attr2 multiplier:(CGFloat)multiplier constant:(CGFloat)c;
-+(void)activateConstraints:(NSArray *)constraints;
-+(void)deactivateConstraints:(NSArray *)constraints;
++(instancetype)constraintWithItem:(id)view1 attribute:(MAILayoutAttribute)attr1 relatedBy:(MAILayoutRelation)relation toItem:(nullable id)view2 attribute:(MAILayoutAttribute)attr2 multiplier:(CGFloat)multiplier constant:(CGFloat)c ;
++(void)activateConstraints:(NSArray<MAILayoutConstraint*>*)constraints ;
++(void)deactivateConstraints:(NSArray<MAILayoutConstraint*>*)constraints ;
 @property(nonatomic, readonly, assign) id firstItem;
 @property(nonatomic, readonly) MAILayoutAttribute firstAttribute;
 @property(nonatomic, readonly) MAILayoutRelation relation;
-@property(nonatomic, readonly, assign) id secondItem;
+@property(nonatomic, readonly, nullable, assign) id secondItem;
 @property(nonatomic, readonly) MAILayoutAttribute secondAttribute;
 @property(nonatomic, readonly) CGFloat multiplier;
 @property(nonatomic, readwrite, getter=isActive) BOOL active;
@@ -95,3 +114,5 @@
 #endif
 -(MAILayoutConstraint*) mai;
 @end
+
+NS_ASSUME_NONNULL_END

@@ -6,24 +6,32 @@
 
 #import "MAIEnums.h"
 
-#import "MAILayoutManagerDelegate.h"
-#import "MAITextLayoutOrientationProvider.h"
-#import "MAITextStorageDelegate.h"
-#import "MAIApplicationDelegate.h"
-#import "MAICollectionViewDelegate.h"
-#import "MAIGestureRecognizerDelegate.h"
-#import "MAITableViewDelegate.h"
-#import "MAITextFieldDelegate.h"
-#import "MAITextInput.h"
-#import "MAITextViewDelegate.h"
-#import "MAIToolbarDelegate.h"
+@protocol MAILayoutManagerDelegate;
+@protocol MAITextLayoutOrientationProvider;
+@protocol MAITextAttachmentContainer;
+@protocol MAITextStorageDelegate;
+@protocol MAIApplicationDelegate;
+@protocol MAICollectionViewDataSource;
+@protocol MAICollectionViewDelegate;
+@protocol MAICollectionViewDelegateFlowLayout;
+@protocol MAIGestureRecognizerDelegate;
+@protocol MAITableViewDelegate;
+@protocol MAITextFieldDelegate;
+@protocol MAITextInput;
+@protocol MAITextViewDelegate;
+@protocol MAIToolbarDelegate;
 
+@class MAIDataAsset;
+@class MAILayoutXAxisAnchor;
+@class MAILayoutYAxisAnchor;
+@class MAILayoutDimension;
 @class MAILayoutConstraint;
 @class MAILayoutManager;
 @class MAITextTab;
 @class MAIParagraphStyle;
 @class MAIMutableParagraphStyle;
 @class MAIShadow;
+@class MAIStringDrawingContext;
 @class MAITextAttachment;
 @class MAITextContainer;
 @class MAITextStorage;
@@ -32,6 +40,13 @@
 @class MAIBezierPath;
 @class MAIButton;
 @class MAICollectionView;
+@class MAICollectionViewFlowLayoutInvalidationContext;
+@class MAICollectionViewFlowLayout;
+@class MAICollectionViewLayoutAttributes;
+@class MAICollectionViewUpdateItem;
+@class MAICollectionViewLayoutInvalidationContext;
+@class MAICollectionViewLayout;
+@class MAICollectionViewTransitionLayout;
 @class MAIColor;
 @class MAIControl;
 @class MAIDatePicker;
@@ -42,6 +57,7 @@
 @class MAIGestureRecognizer;
 @class MAIImage;
 @class MAIImageView;
+@class MAILayoutGuide;
 @class MAIMenuItem;
 @class MAINib;
 @class MAIPanGestureRecognizer;
@@ -55,9 +71,11 @@
 @class MAISegmentedControl;
 @class MAISlider;
 @class MAISplitViewController;
+@class MAIStackView;
 @class MAIStepper;
 @class MAIStoryboard;
 @class MAIStoryboardSegue;
+@class MAITableViewRowAction;
 @class MAITableView;
 @class MAITextField;
 @class MAITextView;
@@ -68,7 +86,11 @@
 @class MAIVisualEffectView;
 @class MAIWindow;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @protocol MAITableViewDataSource
 
 
 @end
+
+NS_ASSUME_NONNULL_END

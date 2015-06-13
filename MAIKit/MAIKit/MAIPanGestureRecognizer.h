@@ -8,9 +8,12 @@
 
 #import "MAILayoutManagerDelegate.h"
 #import "MAITextLayoutOrientationProvider.h"
+#import "MAITextAttachmentContainer.h"
 #import "MAITextStorageDelegate.h"
 #import "MAIApplicationDelegate.h"
+#import "MAICollectionViewDataSource.h"
 #import "MAICollectionViewDelegate.h"
+#import "MAICollectionViewDelegateFlowLayout.h"
 #import "MAIGestureRecognizerDelegate.h"
 #import "MAITableViewDataSource.h"
 #import "MAITableViewDelegate.h"
@@ -19,12 +22,17 @@
 #import "MAITextViewDelegate.h"
 #import "MAIToolbarDelegate.h"
 
+@class MAIDataAsset;
+@class MAILayoutXAxisAnchor;
+@class MAILayoutYAxisAnchor;
+@class MAILayoutDimension;
 @class MAILayoutConstraint;
 @class MAILayoutManager;
 @class MAITextTab;
 @class MAIParagraphStyle;
 @class MAIMutableParagraphStyle;
 @class MAIShadow;
+@class MAIStringDrawingContext;
 @class MAITextAttachment;
 @class MAITextContainer;
 @class MAITextStorage;
@@ -33,6 +41,13 @@
 @class MAIBezierPath;
 @class MAIButton;
 @class MAICollectionView;
+@class MAICollectionViewFlowLayoutInvalidationContext;
+@class MAICollectionViewFlowLayout;
+@class MAICollectionViewLayoutAttributes;
+@class MAICollectionViewUpdateItem;
+@class MAICollectionViewLayoutInvalidationContext;
+@class MAICollectionViewLayout;
+@class MAICollectionViewTransitionLayout;
 @class MAIColor;
 @class MAIControl;
 @class MAIDatePicker;
@@ -43,6 +58,7 @@
 @class MAIGestureRecognizer;
 @class MAIImage;
 @class MAIImageView;
+@class MAILayoutGuide;
 @class MAIMenuItem;
 @class MAINib;
 @class MAIPasteboard;
@@ -55,9 +71,11 @@
 @class MAISegmentedControl;
 @class MAISlider;
 @class MAISplitViewController;
+@class MAIStackView;
 @class MAIStepper;
 @class MAIStoryboard;
 @class MAIStoryboardSegue;
+@class MAITableViewRowAction;
 @class MAITableView;
 @class MAITextField;
 @class MAITextView;
@@ -68,13 +86,17 @@
 @class MAIVisualEffectView;
 @class MAIWindow;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface MAIPanGestureRecognizer : NSObject
--(instancetype)initWithTarget:(id)target action:(SEL)action;
--(CGPoint)locationInView:(MAIView*)view;
+-(CGPoint)translationInView:(nullable MAIView*)view ;
+-(void)setTranslation:(CGPoint)translation inView:(nullable MAIView*)view ;
+-(CGPoint)velocityInView:(nullable MAIView*)view ;
+-(CGPoint)locationInView:(nullable MAIView*)view ;
 @property(nonatomic, readonly) MAIGestureRecognizerState state;
-@property(nonatomic, readwrite, assign) id<MAIGestureRecognizerDelegate> delegate;
+@property(nonatomic, readwrite, nullable, weak) id <MAIGestureRecognizerDelegate> delegate;
 @property(nonatomic, readwrite, getter=isEnabled) BOOL enabled;
-@property(nonatomic, readonly) MAIView* view;
+@property(nonatomic, readonly, nullable) MAIView* view;
 #if TARGET_OS_IPHONE
 -(UIPanGestureRecognizer*) ios;
 #else
@@ -90,3 +112,5 @@
 #endif
 -(MAIPanGestureRecognizer*) mai;
 @end
+
+NS_ASSUME_NONNULL_END

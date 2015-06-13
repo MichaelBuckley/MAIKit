@@ -2,6 +2,7 @@
 #pragma clang diagnostic ignored "-Wobjc-protocol-property-synthesis"
 #pragma clang diagnostic ignored "-Wprotocol"
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
+#pragma clang diagnostic ignored "-Wobjc-designated-initializers"
 
 #import "MAISegmentedControl.h"
 
@@ -25,30 +26,6 @@
 #endif
 }
 
-- (instancetype)init
-{
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wincompatible-pointer-types"
-#pragma clang diagnostic ignored "-Wenum-conversion"
-#if TARGET_OS_IPHONE
-    return (id) [(UISegmentedControl*) self init];
-#else
-    return (id) [(NSSegmentedControl*) self init];
-#endif
-#pragma clang diagnostic pop
-}
-
--(instancetype)initWithFrame:(CGRect)frame{
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wincompatible-pointer-types"
-#pragma clang diagnostic ignored "-Wenum-conversion"
-#if TARGET_OS_IPHONE
-    return (id) [(UISegmentedControl*) self initWithFrame:frame];
-#else
-    return (id) [(NSSegmentedControl*) self initWithFrame:frame];
-#endif
-#pragma clang diagnostic pop
-}
 #if TARGET_OS_IPHONE
 -(UISegmentedControl*) ios
 {

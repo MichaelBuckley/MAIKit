@@ -2,6 +2,7 @@
 #pragma clang diagnostic ignored "-Wobjc-protocol-property-synthesis"
 #pragma clang diagnostic ignored "-Wprotocol"
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
+#pragma clang diagnostic ignored "-Wobjc-designated-initializers"
 
 #import "MAIPanGestureRecognizer.h"
 
@@ -25,30 +26,6 @@
 #endif
 }
 
-- (instancetype)init
-{
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wincompatible-pointer-types"
-#pragma clang diagnostic ignored "-Wenum-conversion"
-#if TARGET_OS_IPHONE
-    return (id) [(UIPanGestureRecognizer*) self init];
-#else
-    return (id) [(NSPanGestureRecognizer*) self init];
-#endif
-#pragma clang diagnostic pop
-}
-
--(instancetype)initWithTarget:(id)target action:(SEL)action{
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wincompatible-pointer-types"
-#pragma clang diagnostic ignored "-Wenum-conversion"
-#if TARGET_OS_IPHONE
-    return (id) [(UIPanGestureRecognizer*) self initWithTarget:target action:action];
-#else
-    return (id) [(NSPanGestureRecognizer*) self initWithTarget:target action:action];
-#endif
-#pragma clang diagnostic pop
-}
 #if TARGET_OS_IPHONE
 -(UIPanGestureRecognizer*) ios
 {

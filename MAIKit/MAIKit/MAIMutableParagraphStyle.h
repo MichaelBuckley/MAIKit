@@ -8,9 +8,12 @@
 
 #import "MAILayoutManagerDelegate.h"
 #import "MAITextLayoutOrientationProvider.h"
+#import "MAITextAttachmentContainer.h"
 #import "MAITextStorageDelegate.h"
 #import "MAIApplicationDelegate.h"
+#import "MAICollectionViewDataSource.h"
 #import "MAICollectionViewDelegate.h"
+#import "MAICollectionViewDelegateFlowLayout.h"
 #import "MAIGestureRecognizerDelegate.h"
 #import "MAITableViewDataSource.h"
 #import "MAITableViewDelegate.h"
@@ -19,11 +22,16 @@
 #import "MAITextViewDelegate.h"
 #import "MAIToolbarDelegate.h"
 
+@class MAIDataAsset;
+@class MAILayoutXAxisAnchor;
+@class MAILayoutYAxisAnchor;
+@class MAILayoutDimension;
 @class MAILayoutConstraint;
 @class MAILayoutManager;
 @class MAITextTab;
 @class MAIParagraphStyle;
 @class MAIShadow;
+@class MAIStringDrawingContext;
 @class MAITextAttachment;
 @class MAITextContainer;
 @class MAITextStorage;
@@ -32,6 +40,13 @@
 @class MAIBezierPath;
 @class MAIButton;
 @class MAICollectionView;
+@class MAICollectionViewFlowLayoutInvalidationContext;
+@class MAICollectionViewFlowLayout;
+@class MAICollectionViewLayoutAttributes;
+@class MAICollectionViewUpdateItem;
+@class MAICollectionViewLayoutInvalidationContext;
+@class MAICollectionViewLayout;
+@class MAICollectionViewTransitionLayout;
 @class MAIColor;
 @class MAIControl;
 @class MAIDatePicker;
@@ -42,6 +57,7 @@
 @class MAIGestureRecognizer;
 @class MAIImage;
 @class MAIImageView;
+@class MAILayoutGuide;
 @class MAIMenuItem;
 @class MAINib;
 @class MAIPanGestureRecognizer;
@@ -55,9 +71,11 @@
 @class MAISegmentedControl;
 @class MAISlider;
 @class MAISplitViewController;
+@class MAIStackView;
 @class MAIStepper;
 @class MAIStoryboard;
 @class MAIStoryboardSegue;
+@class MAITableViewRowAction;
 @class MAITableView;
 @class MAITextField;
 @class MAITextView;
@@ -68,9 +86,14 @@
 @class MAIVisualEffectView;
 @class MAIWindow;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface MAIMutableParagraphStyle : NSObject
-+(MAIParagraphStyle*)defaultParagraphStyle;
-+(MAIWritingDirection)defaultWritingDirectionForLanguage:(NSString *)languageName;
+-(void)addTabStop:(MAITextTab*)anObject ;
+-(void)removeTabStop:(MAITextTab*)anObject ;
+-(void)setParagraphStyle:(MAIParagraphStyle*)obj ;
++(MAIParagraphStyle*)defaultParagraphStyle ;
++(MAIWritingDirection)defaultWritingDirectionForLanguage:(nullable NSString*)languageName ;
 @property(nonatomic, readonly) CGFloat lineSpacing;
 @property(nonatomic, readonly) CGFloat paragraphSpacing;
 @property(nonatomic, readonly) NSTextAlignment alignment;
@@ -84,8 +107,9 @@
 @property(nonatomic, readonly) CGFloat lineHeightMultiple;
 @property(nonatomic, readonly) CGFloat paragraphSpacingBefore;
 @property(nonatomic, readonly) float hyphenationFactor;
-@property(nonatomic, readonly, copy) NSArray* tabStops;
+@property(nonatomic, readonly, copy) NSArray<MAITextTab*>* tabStops;
 @property(nonatomic, readonly) CGFloat defaultTabInterval;
+@property(nonatomic, readonly) BOOL allowsDefaultTighteningForTruncation;
 #if TARGET_OS_IPHONE
 -(NSMutableParagraphStyle*) ios;
 #else
@@ -101,3 +125,5 @@
 #endif
 -(MAIMutableParagraphStyle*) mai;
 @end
+
+NS_ASSUME_NONNULL_END

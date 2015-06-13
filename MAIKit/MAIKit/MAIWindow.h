@@ -8,9 +8,12 @@
 
 #import "MAILayoutManagerDelegate.h"
 #import "MAITextLayoutOrientationProvider.h"
+#import "MAITextAttachmentContainer.h"
 #import "MAITextStorageDelegate.h"
 #import "MAIApplicationDelegate.h"
+#import "MAICollectionViewDataSource.h"
 #import "MAICollectionViewDelegate.h"
+#import "MAICollectionViewDelegateFlowLayout.h"
 #import "MAIGestureRecognizerDelegate.h"
 #import "MAITableViewDataSource.h"
 #import "MAITableViewDelegate.h"
@@ -19,12 +22,17 @@
 #import "MAITextViewDelegate.h"
 #import "MAIToolbarDelegate.h"
 
+@class MAIDataAsset;
+@class MAILayoutXAxisAnchor;
+@class MAILayoutYAxisAnchor;
+@class MAILayoutDimension;
 @class MAILayoutConstraint;
 @class MAILayoutManager;
 @class MAITextTab;
 @class MAIParagraphStyle;
 @class MAIMutableParagraphStyle;
 @class MAIShadow;
+@class MAIStringDrawingContext;
 @class MAITextAttachment;
 @class MAITextContainer;
 @class MAITextStorage;
@@ -33,6 +41,13 @@
 @class MAIBezierPath;
 @class MAIButton;
 @class MAICollectionView;
+@class MAICollectionViewFlowLayoutInvalidationContext;
+@class MAICollectionViewFlowLayout;
+@class MAICollectionViewLayoutAttributes;
+@class MAICollectionViewUpdateItem;
+@class MAICollectionViewLayoutInvalidationContext;
+@class MAICollectionViewLayout;
+@class MAICollectionViewTransitionLayout;
 @class MAIColor;
 @class MAIControl;
 @class MAIDatePicker;
@@ -43,6 +58,7 @@
 @class MAIGestureRecognizer;
 @class MAIImage;
 @class MAIImageView;
+@class MAILayoutGuide;
 @class MAIMenuItem;
 @class MAINib;
 @class MAIPanGestureRecognizer;
@@ -56,9 +72,11 @@
 @class MAISegmentedControl;
 @class MAISlider;
 @class MAISplitViewController;
+@class MAIStackView;
 @class MAIStepper;
 @class MAIStoryboard;
 @class MAIStoryboardSegue;
+@class MAITableViewRowAction;
 @class MAITableView;
 @class MAITextField;
 @class MAITextView;
@@ -68,13 +86,16 @@
 @class MAIViewController;
 @class MAIVisualEffectView;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface MAIWindow : NSObject
--(void)becomeKeyWindow;
--(void)resignKeyWindow;
--(void)makeKeyWindow;
--(void)sendEvent:(MAIEvent *)event;
--(BOOL)becomeFirstResponder;
--(BOOL)resignFirstResponder;
+-(void)becomeKeyWindow ;
+-(void)resignKeyWindow ;
+-(void)makeKeyWindow ;
+-(void)sendEvent:(MAIEvent*)event ;
+-(instancetype)initWithCoder:(NSCoder*)aDecoder NS_DESIGNATED_INITIALIZER;
+-(BOOL)becomeFirstResponder ;
+-(BOOL)resignFirstResponder ;
 @property(nonatomic, readonly, getter=isKeyWindow) BOOL keyWindow;
 #if TARGET_OS_IPHONE
 -(UIWindow*) ios;
@@ -91,3 +112,5 @@
 #endif
 -(MAIWindow*) mai;
 @end
+
+NS_ASSUME_NONNULL_END

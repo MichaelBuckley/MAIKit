@@ -2,6 +2,7 @@
 #pragma clang diagnostic ignored "-Wobjc-protocol-property-synthesis"
 #pragma clang diagnostic ignored "-Wprotocol"
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
+#pragma clang diagnostic ignored "-Wobjc-designated-initializers"
 
 #import "MAIResponder.h"
 
@@ -24,20 +25,6 @@
     return (MAIResponder*) [NSResponder alloc];
 #endif
 }
-
-- (instancetype)init
-{
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wincompatible-pointer-types"
-#pragma clang diagnostic ignored "-Wenum-conversion"
-#if TARGET_OS_IPHONE
-    return (id) [(UIResponder*) self init];
-#else
-    return (id) [(NSResponder*) self init];
-#endif
-#pragma clang diagnostic pop
-}
-
 
 #if TARGET_OS_IPHONE
 -(UIResponder*) ios

@@ -8,9 +8,12 @@
 
 #import "MAILayoutManagerDelegate.h"
 #import "MAITextLayoutOrientationProvider.h"
+#import "MAITextAttachmentContainer.h"
 #import "MAITextStorageDelegate.h"
 #import "MAIApplicationDelegate.h"
+#import "MAICollectionViewDataSource.h"
 #import "MAICollectionViewDelegate.h"
+#import "MAICollectionViewDelegateFlowLayout.h"
 #import "MAIGestureRecognizerDelegate.h"
 #import "MAITableViewDataSource.h"
 #import "MAITableViewDelegate.h"
@@ -19,12 +22,17 @@
 #import "MAITextViewDelegate.h"
 #import "MAIToolbarDelegate.h"
 
+@class MAIDataAsset;
+@class MAILayoutXAxisAnchor;
+@class MAILayoutYAxisAnchor;
+@class MAILayoutDimension;
 @class MAILayoutConstraint;
 @class MAILayoutManager;
 @class MAITextTab;
 @class MAIParagraphStyle;
 @class MAIMutableParagraphStyle;
 @class MAIShadow;
+@class MAIStringDrawingContext;
 @class MAITextAttachment;
 @class MAITextContainer;
 @class MAITextStorage;
@@ -33,6 +41,13 @@
 @class MAIBezierPath;
 @class MAIButton;
 @class MAICollectionView;
+@class MAICollectionViewFlowLayoutInvalidationContext;
+@class MAICollectionViewFlowLayout;
+@class MAICollectionViewLayoutAttributes;
+@class MAICollectionViewUpdateItem;
+@class MAICollectionViewLayoutInvalidationContext;
+@class MAICollectionViewLayout;
+@class MAICollectionViewTransitionLayout;
 @class MAIColor;
 @class MAIControl;
 @class MAIDatePicker;
@@ -43,6 +58,7 @@
 @class MAIGestureRecognizer;
 @class MAIImage;
 @class MAIImageView;
+@class MAILayoutGuide;
 @class MAIMenuItem;
 @class MAINib;
 @class MAIPanGestureRecognizer;
@@ -56,9 +72,11 @@
 @class MAISegmentedControl;
 @class MAISlider;
 @class MAISplitViewController;
+@class MAIStackView;
 @class MAIStepper;
 @class MAIStoryboard;
 @class MAIStoryboardSegue;
+@class MAITableViewRowAction;
 @class MAITableView;
 @class MAITextField;
 @class MAITextView;
@@ -68,16 +86,18 @@
 @class MAIVisualEffectView;
 @class MAIWindow;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface MAIViewController : NSObject<NSCoding>
--(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;
--(void)loadView;
--(void)viewDidLoad;
--(BOOL)becomeFirstResponder;
--(BOOL)resignFirstResponder;
-@property(nonatomic, readwrite, retain) MAIView* view;
-@property(nonatomic, readonly, copy) NSString* nibName;
-@property(nonatomic, readonly, retain) NSBundle* nibBundle;
-@property(nonatomic, readwrite, copy) NSString* title;
+-(instancetype)initWithNibName:(nullable NSString*)nibNameOrNil bundle:(nullable NSBundle*)nibBundleOrNil NS_DESIGNATED_INITIALIZER;
+-(instancetype)initWithCoder:(NSCoder*)aDecoder NS_DESIGNATED_INITIALIZER;
+-(void)loadView ;
+-(void)viewDidLoad ;
+-(BOOL)becomeFirstResponder ;
+-(BOOL)resignFirstResponder ;
+@property(nonatomic, readonly, nullable, copy) NSString* nibName;
+@property(nonatomic, readonly, nullable, strong) NSBundle* nibBundle;
+@property(nonatomic, readwrite, nullable, copy) NSString* title;
 #if TARGET_OS_IPHONE
 -(UIViewController*) ios;
 #else
@@ -93,3 +113,5 @@
 #endif
 -(MAIViewController*) mai;
 @end
+
+NS_ASSUME_NONNULL_END

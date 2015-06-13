@@ -8,9 +8,12 @@
 
 #import "MAILayoutManagerDelegate.h"
 #import "MAITextLayoutOrientationProvider.h"
+#import "MAITextAttachmentContainer.h"
 #import "MAITextStorageDelegate.h"
 #import "MAIApplicationDelegate.h"
+#import "MAICollectionViewDataSource.h"
 #import "MAICollectionViewDelegate.h"
+#import "MAICollectionViewDelegateFlowLayout.h"
 #import "MAIGestureRecognizerDelegate.h"
 #import "MAITableViewDataSource.h"
 #import "MAITableViewDelegate.h"
@@ -19,12 +22,17 @@
 #import "MAITextViewDelegate.h"
 #import "MAIToolbarDelegate.h"
 
+@class MAIDataAsset;
+@class MAILayoutXAxisAnchor;
+@class MAILayoutYAxisAnchor;
+@class MAILayoutDimension;
 @class MAILayoutConstraint;
 @class MAILayoutManager;
 @class MAITextTab;
 @class MAIParagraphStyle;
 @class MAIMutableParagraphStyle;
 @class MAIShadow;
+@class MAIStringDrawingContext;
 @class MAITextContainer;
 @class MAITextStorage;
 @class MAIAccessibilityElement;
@@ -32,6 +40,13 @@
 @class MAIBezierPath;
 @class MAIButton;
 @class MAICollectionView;
+@class MAICollectionViewFlowLayoutInvalidationContext;
+@class MAICollectionViewFlowLayout;
+@class MAICollectionViewLayoutAttributes;
+@class MAICollectionViewUpdateItem;
+@class MAICollectionViewLayoutInvalidationContext;
+@class MAICollectionViewLayout;
+@class MAICollectionViewTransitionLayout;
 @class MAIColor;
 @class MAIControl;
 @class MAIDatePicker;
@@ -42,6 +57,7 @@
 @class MAIGestureRecognizer;
 @class MAIImage;
 @class MAIImageView;
+@class MAILayoutGuide;
 @class MAIMenuItem;
 @class MAINib;
 @class MAIPanGestureRecognizer;
@@ -55,9 +71,11 @@
 @class MAISegmentedControl;
 @class MAISlider;
 @class MAISplitViewController;
+@class MAIStackView;
 @class MAIStepper;
 @class MAIStoryboard;
 @class MAIStoryboardSegue;
+@class MAITableViewRowAction;
 @class MAITableView;
 @class MAITextField;
 @class MAITextView;
@@ -68,8 +86,14 @@
 @class MAIVisualEffectView;
 @class MAIWindow;
 
-@interface MAITextAttachment : NSObject<NSCoding>
-@property(nonatomic, readwrite, retain) NSFileWrapper* fileWrapper;
+NS_ASSUME_NONNULL_BEGIN
+
+@interface MAITextAttachment : NSObject<MAITextAttachmentContainer,NSCoding>
+-(instancetype)initWithData:(nullable NSData*)contentData ofType:(nullable NSString*)uti NS_DESIGNATED_INITIALIZER;
+@property(nonatomic, readwrite, nullable, copy) NSData* contents;
+@property(nonatomic, readwrite, nullable, copy) NSString* fileType;
+@property(nonatomic, readwrite, nullable, strong) MAIImage* image;
+@property(nonatomic, readwrite, nullable, strong) NSFileWrapper* fileWrapper;
 #if TARGET_OS_IPHONE
 -(NSTextAttachment*) ios;
 #else
@@ -85,3 +109,5 @@
 #endif
 -(MAITextAttachment*) mai;
 @end
+
+NS_ASSUME_NONNULL_END

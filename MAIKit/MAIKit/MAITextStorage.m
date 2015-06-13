@@ -2,6 +2,7 @@
 #pragma clang diagnostic ignored "-Wobjc-protocol-property-synthesis"
 #pragma clang diagnostic ignored "-Wprotocol"
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
+#pragma clang diagnostic ignored "-Wobjc-designated-initializers"
 
 #import "MAITextStorage.h"
 
@@ -24,20 +25,6 @@
     return (MAITextStorage*) [NSTextStorage alloc];
 #endif
 }
-
-- (instancetype)init
-{
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wincompatible-pointer-types"
-#pragma clang diagnostic ignored "-Wenum-conversion"
-#if TARGET_OS_IPHONE
-    return (id) [(NSTextStorage*) self init];
-#else
-    return (id) [(NSTextStorage*) self init];
-#endif
-#pragma clang diagnostic pop
-}
-
 
 #if TARGET_OS_IPHONE
 -(NSTextStorage*) ios

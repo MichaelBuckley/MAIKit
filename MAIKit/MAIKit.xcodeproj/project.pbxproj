@@ -231,6 +231,72 @@
 		304366B11B01955B0067C766 /* MAIVisualEffectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 304365B41B0194620067C766 /* MAIVisualEffectView.m */; };
 		304366B21B01955B0067C766 /* MAIWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 304365B61B0194620067C766 /* MAIWindow.m */; };
 		304366B31B0196E10067C766 /* MAIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 304365311B0193E40067C766 /* MAIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		30BBE0481B2B12B300E93294 /* MAICollectionViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE0271B2B12B300E93294 /* MAICollectionViewDataSource.h */; };
+		30BBE0491B2B12B300E93294 /* MAICollectionViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE0271B2B12B300E93294 /* MAICollectionViewDataSource.h */; };
+		30BBE04A1B2B12B300E93294 /* MAICollectionViewDelegateFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE0281B2B12B300E93294 /* MAICollectionViewDelegateFlowLayout.h */; };
+		30BBE04B1B2B12B300E93294 /* MAICollectionViewDelegateFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE0281B2B12B300E93294 /* MAICollectionViewDelegateFlowLayout.h */; };
+		30BBE04C1B2B12B300E93294 /* MAICollectionViewFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE0291B2B12B300E93294 /* MAICollectionViewFlowLayout.h */; };
+		30BBE04D1B2B12B300E93294 /* MAICollectionViewFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE0291B2B12B300E93294 /* MAICollectionViewFlowLayout.h */; };
+		30BBE04E1B2B12B300E93294 /* MAICollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BBE02A1B2B12B300E93294 /* MAICollectionViewFlowLayout.m */; };
+		30BBE04F1B2B12B300E93294 /* MAICollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BBE02A1B2B12B300E93294 /* MAICollectionViewFlowLayout.m */; };
+		30BBE0501B2B12B300E93294 /* MAICollectionViewFlowLayoutInvalidationContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE02B1B2B12B300E93294 /* MAICollectionViewFlowLayoutInvalidationContext.h */; };
+		30BBE0511B2B12B300E93294 /* MAICollectionViewFlowLayoutInvalidationContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE02B1B2B12B300E93294 /* MAICollectionViewFlowLayoutInvalidationContext.h */; };
+		30BBE0521B2B12B300E93294 /* MAICollectionViewFlowLayoutInvalidationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BBE02C1B2B12B300E93294 /* MAICollectionViewFlowLayoutInvalidationContext.m */; };
+		30BBE0531B2B12B300E93294 /* MAICollectionViewFlowLayoutInvalidationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BBE02C1B2B12B300E93294 /* MAICollectionViewFlowLayoutInvalidationContext.m */; };
+		30BBE0541B2B12B300E93294 /* MAICollectionViewLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE02D1B2B12B300E93294 /* MAICollectionViewLayout.h */; };
+		30BBE0551B2B12B300E93294 /* MAICollectionViewLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE02D1B2B12B300E93294 /* MAICollectionViewLayout.h */; };
+		30BBE0561B2B12B300E93294 /* MAICollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BBE02E1B2B12B300E93294 /* MAICollectionViewLayout.m */; };
+		30BBE0571B2B12B300E93294 /* MAICollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BBE02E1B2B12B300E93294 /* MAICollectionViewLayout.m */; };
+		30BBE0581B2B12B300E93294 /* MAICollectionViewLayoutAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE02F1B2B12B300E93294 /* MAICollectionViewLayoutAttributes.h */; };
+		30BBE0591B2B12B300E93294 /* MAICollectionViewLayoutAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE02F1B2B12B300E93294 /* MAICollectionViewLayoutAttributes.h */; };
+		30BBE05A1B2B12B300E93294 /* MAICollectionViewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BBE0301B2B12B300E93294 /* MAICollectionViewLayoutAttributes.m */; };
+		30BBE05B1B2B12B300E93294 /* MAICollectionViewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BBE0301B2B12B300E93294 /* MAICollectionViewLayoutAttributes.m */; };
+		30BBE05C1B2B12B300E93294 /* MAICollectionViewLayoutInvalidationContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE0311B2B12B300E93294 /* MAICollectionViewLayoutInvalidationContext.h */; };
+		30BBE05D1B2B12B300E93294 /* MAICollectionViewLayoutInvalidationContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE0311B2B12B300E93294 /* MAICollectionViewLayoutInvalidationContext.h */; };
+		30BBE05E1B2B12B300E93294 /* MAICollectionViewLayoutInvalidationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BBE0321B2B12B300E93294 /* MAICollectionViewLayoutInvalidationContext.m */; };
+		30BBE05F1B2B12B300E93294 /* MAICollectionViewLayoutInvalidationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BBE0321B2B12B300E93294 /* MAICollectionViewLayoutInvalidationContext.m */; };
+		30BBE0601B2B12B300E93294 /* MAICollectionViewTransitionLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE0331B2B12B300E93294 /* MAICollectionViewTransitionLayout.h */; };
+		30BBE0611B2B12B300E93294 /* MAICollectionViewTransitionLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE0331B2B12B300E93294 /* MAICollectionViewTransitionLayout.h */; };
+		30BBE0621B2B12B300E93294 /* MAICollectionViewTransitionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BBE0341B2B12B300E93294 /* MAICollectionViewTransitionLayout.m */; };
+		30BBE0631B2B12B300E93294 /* MAICollectionViewTransitionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BBE0341B2B12B300E93294 /* MAICollectionViewTransitionLayout.m */; };
+		30BBE0641B2B12B300E93294 /* MAICollectionViewUpdateItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE0351B2B12B300E93294 /* MAICollectionViewUpdateItem.h */; };
+		30BBE0651B2B12B300E93294 /* MAICollectionViewUpdateItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE0351B2B12B300E93294 /* MAICollectionViewUpdateItem.h */; };
+		30BBE0661B2B12B300E93294 /* MAICollectionViewUpdateItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BBE0361B2B12B300E93294 /* MAICollectionViewUpdateItem.m */; };
+		30BBE0671B2B12B300E93294 /* MAICollectionViewUpdateItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BBE0361B2B12B300E93294 /* MAICollectionViewUpdateItem.m */; };
+		30BBE0681B2B12B300E93294 /* MAIDataAsset.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE0371B2B12B300E93294 /* MAIDataAsset.h */; };
+		30BBE0691B2B12B300E93294 /* MAIDataAsset.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE0371B2B12B300E93294 /* MAIDataAsset.h */; };
+		30BBE06A1B2B12B300E93294 /* MAIDataAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BBE0381B2B12B300E93294 /* MAIDataAsset.m */; };
+		30BBE06B1B2B12B300E93294 /* MAIDataAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BBE0381B2B12B300E93294 /* MAIDataAsset.m */; };
+		30BBE06C1B2B12B300E93294 /* MAILayoutDimension.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE0391B2B12B300E93294 /* MAILayoutDimension.h */; };
+		30BBE06D1B2B12B300E93294 /* MAILayoutDimension.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE0391B2B12B300E93294 /* MAILayoutDimension.h */; };
+		30BBE06E1B2B12B300E93294 /* MAILayoutDimension.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BBE03A1B2B12B300E93294 /* MAILayoutDimension.m */; };
+		30BBE06F1B2B12B300E93294 /* MAILayoutDimension.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BBE03A1B2B12B300E93294 /* MAILayoutDimension.m */; };
+		30BBE0701B2B12B300E93294 /* MAILayoutGuide.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE03B1B2B12B300E93294 /* MAILayoutGuide.h */; };
+		30BBE0711B2B12B300E93294 /* MAILayoutGuide.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE03B1B2B12B300E93294 /* MAILayoutGuide.h */; };
+		30BBE0721B2B12B300E93294 /* MAILayoutGuide.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BBE03C1B2B12B300E93294 /* MAILayoutGuide.m */; };
+		30BBE0731B2B12B300E93294 /* MAILayoutGuide.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BBE03C1B2B12B300E93294 /* MAILayoutGuide.m */; };
+		30BBE0741B2B12B300E93294 /* MAILayoutXAxisAnchor.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE03D1B2B12B300E93294 /* MAILayoutXAxisAnchor.h */; };
+		30BBE0751B2B12B300E93294 /* MAILayoutXAxisAnchor.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE03D1B2B12B300E93294 /* MAILayoutXAxisAnchor.h */; };
+		30BBE0761B2B12B300E93294 /* MAILayoutXAxisAnchor.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BBE03E1B2B12B300E93294 /* MAILayoutXAxisAnchor.m */; };
+		30BBE0771B2B12B300E93294 /* MAILayoutXAxisAnchor.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BBE03E1B2B12B300E93294 /* MAILayoutXAxisAnchor.m */; };
+		30BBE0781B2B12B300E93294 /* MAILayoutYAxisAnchor.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE03F1B2B12B300E93294 /* MAILayoutYAxisAnchor.h */; };
+		30BBE0791B2B12B300E93294 /* MAILayoutYAxisAnchor.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE03F1B2B12B300E93294 /* MAILayoutYAxisAnchor.h */; };
+		30BBE07A1B2B12B300E93294 /* MAILayoutYAxisAnchor.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BBE0401B2B12B300E93294 /* MAILayoutYAxisAnchor.m */; };
+		30BBE07B1B2B12B300E93294 /* MAILayoutYAxisAnchor.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BBE0401B2B12B300E93294 /* MAILayoutYAxisAnchor.m */; };
+		30BBE07C1B2B12B300E93294 /* MAIStackView.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE0411B2B12B300E93294 /* MAIStackView.h */; };
+		30BBE07D1B2B12B300E93294 /* MAIStackView.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE0411B2B12B300E93294 /* MAIStackView.h */; };
+		30BBE07E1B2B12B300E93294 /* MAIStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BBE0421B2B12B300E93294 /* MAIStackView.m */; };
+		30BBE07F1B2B12B300E93294 /* MAIStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BBE0421B2B12B300E93294 /* MAIStackView.m */; };
+		30BBE0801B2B12B300E93294 /* MAIStringDrawingContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE0431B2B12B300E93294 /* MAIStringDrawingContext.h */; };
+		30BBE0811B2B12B300E93294 /* MAIStringDrawingContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE0431B2B12B300E93294 /* MAIStringDrawingContext.h */; };
+		30BBE0821B2B12B300E93294 /* MAIStringDrawingContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BBE0441B2B12B300E93294 /* MAIStringDrawingContext.m */; };
+		30BBE0831B2B12B300E93294 /* MAIStringDrawingContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BBE0441B2B12B300E93294 /* MAIStringDrawingContext.m */; };
+		30BBE0841B2B12B300E93294 /* MAITableViewRowAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE0451B2B12B300E93294 /* MAITableViewRowAction.h */; };
+		30BBE0851B2B12B300E93294 /* MAITableViewRowAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE0451B2B12B300E93294 /* MAITableViewRowAction.h */; };
+		30BBE0861B2B12B300E93294 /* MAITableViewRowAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BBE0461B2B12B300E93294 /* MAITableViewRowAction.m */; };
+		30BBE0871B2B12B300E93294 /* MAITableViewRowAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BBE0461B2B12B300E93294 /* MAITableViewRowAction.m */; };
+		30BBE0881B2B12B300E93294 /* MAITextAttachmentContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE0471B2B12B300E93294 /* MAITextAttachmentContainer.h */; };
+		30BBE0891B2B12B300E93294 /* MAITextAttachmentContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 30BBE0471B2B12B300E93294 /* MAITextAttachmentContainer.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -349,6 +415,39 @@
 		304365B51B0194620067C766 /* MAIWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIWindow.h; sourceTree = "<group>"; };
 		304365B61B0194620067C766 /* MAIWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIWindow.m; sourceTree = "<group>"; };
 		3043662B1B0195010067C766 /* MAIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MAIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		30BBE0271B2B12B300E93294 /* MAICollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAICollectionViewDataSource.h; sourceTree = "<group>"; };
+		30BBE0281B2B12B300E93294 /* MAICollectionViewDelegateFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAICollectionViewDelegateFlowLayout.h; sourceTree = "<group>"; };
+		30BBE0291B2B12B300E93294 /* MAICollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAICollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		30BBE02A1B2B12B300E93294 /* MAICollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAICollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		30BBE02B1B2B12B300E93294 /* MAICollectionViewFlowLayoutInvalidationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAICollectionViewFlowLayoutInvalidationContext.h; sourceTree = "<group>"; };
+		30BBE02C1B2B12B300E93294 /* MAICollectionViewFlowLayoutInvalidationContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAICollectionViewFlowLayoutInvalidationContext.m; sourceTree = "<group>"; };
+		30BBE02D1B2B12B300E93294 /* MAICollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAICollectionViewLayout.h; sourceTree = "<group>"; };
+		30BBE02E1B2B12B300E93294 /* MAICollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAICollectionViewLayout.m; sourceTree = "<group>"; };
+		30BBE02F1B2B12B300E93294 /* MAICollectionViewLayoutAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAICollectionViewLayoutAttributes.h; sourceTree = "<group>"; };
+		30BBE0301B2B12B300E93294 /* MAICollectionViewLayoutAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAICollectionViewLayoutAttributes.m; sourceTree = "<group>"; };
+		30BBE0311B2B12B300E93294 /* MAICollectionViewLayoutInvalidationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAICollectionViewLayoutInvalidationContext.h; sourceTree = "<group>"; };
+		30BBE0321B2B12B300E93294 /* MAICollectionViewLayoutInvalidationContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAICollectionViewLayoutInvalidationContext.m; sourceTree = "<group>"; };
+		30BBE0331B2B12B300E93294 /* MAICollectionViewTransitionLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAICollectionViewTransitionLayout.h; sourceTree = "<group>"; };
+		30BBE0341B2B12B300E93294 /* MAICollectionViewTransitionLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAICollectionViewTransitionLayout.m; sourceTree = "<group>"; };
+		30BBE0351B2B12B300E93294 /* MAICollectionViewUpdateItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAICollectionViewUpdateItem.h; sourceTree = "<group>"; };
+		30BBE0361B2B12B300E93294 /* MAICollectionViewUpdateItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAICollectionViewUpdateItem.m; sourceTree = "<group>"; };
+		30BBE0371B2B12B300E93294 /* MAIDataAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIDataAsset.h; sourceTree = "<group>"; };
+		30BBE0381B2B12B300E93294 /* MAIDataAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIDataAsset.m; sourceTree = "<group>"; };
+		30BBE0391B2B12B300E93294 /* MAILayoutDimension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAILayoutDimension.h; sourceTree = "<group>"; };
+		30BBE03A1B2B12B300E93294 /* MAILayoutDimension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAILayoutDimension.m; sourceTree = "<group>"; };
+		30BBE03B1B2B12B300E93294 /* MAILayoutGuide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAILayoutGuide.h; sourceTree = "<group>"; };
+		30BBE03C1B2B12B300E93294 /* MAILayoutGuide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAILayoutGuide.m; sourceTree = "<group>"; };
+		30BBE03D1B2B12B300E93294 /* MAILayoutXAxisAnchor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAILayoutXAxisAnchor.h; sourceTree = "<group>"; };
+		30BBE03E1B2B12B300E93294 /* MAILayoutXAxisAnchor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAILayoutXAxisAnchor.m; sourceTree = "<group>"; };
+		30BBE03F1B2B12B300E93294 /* MAILayoutYAxisAnchor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAILayoutYAxisAnchor.h; sourceTree = "<group>"; };
+		30BBE0401B2B12B300E93294 /* MAILayoutYAxisAnchor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAILayoutYAxisAnchor.m; sourceTree = "<group>"; };
+		30BBE0411B2B12B300E93294 /* MAIStackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIStackView.h; sourceTree = "<group>"; };
+		30BBE0421B2B12B300E93294 /* MAIStackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIStackView.m; sourceTree = "<group>"; };
+		30BBE0431B2B12B300E93294 /* MAIStringDrawingContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIStringDrawingContext.h; sourceTree = "<group>"; };
+		30BBE0441B2B12B300E93294 /* MAIStringDrawingContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIStringDrawingContext.m; sourceTree = "<group>"; };
+		30BBE0451B2B12B300E93294 /* MAITableViewRowAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAITableViewRowAction.h; sourceTree = "<group>"; };
+		30BBE0461B2B12B300E93294 /* MAITableViewRowAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAITableViewRowAction.m; sourceTree = "<group>"; };
+		30BBE0471B2B12B300E93294 /* MAITextAttachmentContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAITextAttachmentContainer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -400,11 +499,29 @@
 				304365501B0194610067C766 /* MAIButton.m */,
 				304365511B0194610067C766 /* MAICollectionView.h */,
 				304365521B0194610067C766 /* MAICollectionView.m */,
+				30BBE0271B2B12B300E93294 /* MAICollectionViewDataSource.h */,
 				304365531B0194610067C766 /* MAICollectionViewDelegate.h */,
+				30BBE0281B2B12B300E93294 /* MAICollectionViewDelegateFlowLayout.h */,
+				30BBE0291B2B12B300E93294 /* MAICollectionViewFlowLayout.h */,
+				30BBE02A1B2B12B300E93294 /* MAICollectionViewFlowLayout.m */,
+				30BBE02B1B2B12B300E93294 /* MAICollectionViewFlowLayoutInvalidationContext.h */,
+				30BBE02C1B2B12B300E93294 /* MAICollectionViewFlowLayoutInvalidationContext.m */,
+				30BBE02D1B2B12B300E93294 /* MAICollectionViewLayout.h */,
+				30BBE02E1B2B12B300E93294 /* MAICollectionViewLayout.m */,
+				30BBE02F1B2B12B300E93294 /* MAICollectionViewLayoutAttributes.h */,
+				30BBE0301B2B12B300E93294 /* MAICollectionViewLayoutAttributes.m */,
+				30BBE0311B2B12B300E93294 /* MAICollectionViewLayoutInvalidationContext.h */,
+				30BBE0321B2B12B300E93294 /* MAICollectionViewLayoutInvalidationContext.m */,
+				30BBE0331B2B12B300E93294 /* MAICollectionViewTransitionLayout.h */,
+				30BBE0341B2B12B300E93294 /* MAICollectionViewTransitionLayout.m */,
+				30BBE0351B2B12B300E93294 /* MAICollectionViewUpdateItem.h */,
+				30BBE0361B2B12B300E93294 /* MAICollectionViewUpdateItem.m */,
 				304365541B0194610067C766 /* MAIColor.h */,
 				304365551B0194610067C766 /* MAIColor.m */,
 				304365561B0194610067C766 /* MAIControl.h */,
 				304365571B0194610067C766 /* MAIControl.m */,
+				30BBE0371B2B12B300E93294 /* MAIDataAsset.h */,
+				30BBE0381B2B12B300E93294 /* MAIDataAsset.m */,
 				304365581B0194610067C766 /* MAIDatePicker.h */,
 				304365591B0194610067C766 /* MAIDatePicker.m */,
 				3043655A1B0194610067C766 /* MAIDocument.h */,
@@ -423,11 +540,20 @@
 				304365671B0194610067C766 /* MAIImage.m */,
 				304365681B0194610067C766 /* MAIImageView.h */,
 				304365691B0194610067C766 /* MAIImageView.m */,
+				304365311B0193E40067C766 /* MAIKit.h */,
 				3043656A1B0194610067C766 /* MAILayoutConstraint.h */,
 				3043656B1B0194610067C766 /* MAILayoutConstraint.m */,
+				30BBE0391B2B12B300E93294 /* MAILayoutDimension.h */,
+				30BBE03A1B2B12B300E93294 /* MAILayoutDimension.m */,
+				30BBE03B1B2B12B300E93294 /* MAILayoutGuide.h */,
+				30BBE03C1B2B12B300E93294 /* MAILayoutGuide.m */,
 				3043656C1B0194610067C766 /* MAILayoutManager.h */,
 				3043656D1B0194610067C766 /* MAILayoutManager.m */,
 				3043656E1B0194610067C766 /* MAILayoutManagerDelegate.h */,
+				30BBE03D1B2B12B300E93294 /* MAILayoutXAxisAnchor.h */,
+				30BBE03E1B2B12B300E93294 /* MAILayoutXAxisAnchor.m */,
+				30BBE03F1B2B12B300E93294 /* MAILayoutYAxisAnchor.h */,
+				30BBE0401B2B12B300E93294 /* MAILayoutYAxisAnchor.m */,
 				3043656F1B0194610067C766 /* MAIMenuItem.h */,
 				304365701B0194610067C766 /* MAIMenuItem.m */,
 				304365711B0194610067C766 /* MAIMutableParagraphStyle.h */,
@@ -460,18 +586,25 @@
 				3043658C1B0194610067C766 /* MAISlider.m */,
 				3043658D1B0194610067C766 /* MAISplitViewController.h */,
 				3043658E1B0194610067C766 /* MAISplitViewController.m */,
+				30BBE0411B2B12B300E93294 /* MAIStackView.h */,
+				30BBE0421B2B12B300E93294 /* MAIStackView.m */,
 				3043658F1B0194610067C766 /* MAIStepper.h */,
 				304365901B0194610067C766 /* MAIStepper.m */,
 				304365911B0194610067C766 /* MAIStoryboard.h */,
 				304365921B0194610067C766 /* MAIStoryboard.m */,
 				304365931B0194610067C766 /* MAIStoryboardSegue.h */,
 				304365941B0194610067C766 /* MAIStoryboardSegue.m */,
+				30BBE0431B2B12B300E93294 /* MAIStringDrawingContext.h */,
+				30BBE0441B2B12B300E93294 /* MAIStringDrawingContext.m */,
 				304365951B0194620067C766 /* MAITableView.h */,
 				304365961B0194620067C766 /* MAITableView.m */,
 				304365971B0194620067C766 /* MAITableViewDataSource.h */,
 				304365981B0194620067C766 /* MAITableViewDelegate.h */,
+				30BBE0451B2B12B300E93294 /* MAITableViewRowAction.h */,
+				30BBE0461B2B12B300E93294 /* MAITableViewRowAction.m */,
 				304365991B0194620067C766 /* MAITextAttachment.h */,
 				3043659A1B0194620067C766 /* MAITextAttachment.m */,
+				30BBE0471B2B12B300E93294 /* MAITextAttachmentContainer.h */,
 				3043659B1B0194620067C766 /* MAITextContainer.h */,
 				3043659C1B0194620067C766 /* MAITextContainer.m */,
 				3043659D1B0194620067C766 /* MAITextField.h */,
@@ -500,7 +633,6 @@
 				304365B41B0194620067C766 /* MAIVisualEffectView.m */,
 				304365B51B0194620067C766 /* MAIWindow.h */,
 				304365B61B0194620067C766 /* MAIWindow.m */,
-				304365311B0193E40067C766 /* MAIKit.h */,
 				3043652F1B0193E40067C766 /* Supporting Files */,
 			);
 			path = MAIKit;
@@ -521,7 +653,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30BBE0601B2B12B300E93294 /* MAICollectionViewTransitionLayout.h in Headers */,
 				304365E21B0194620067C766 /* MAINib.h in Headers */,
+				30BBE0881B2B12B300E93294 /* MAITextAttachmentContainer.h in Headers */,
 				304365C51B0194620067C766 /* MAIControl.h in Headers */,
 				304365CB1B0194620067C766 /* MAIEnums.h in Headers */,
 				304366131B0194620067C766 /* MAITextStorageDelegate.h in Headers */,
@@ -530,31 +664,43 @@
 				304366221B0194620067C766 /* MAIVisualEffectView.h in Headers */,
 				3043661B1B0194620067C766 /* MAIToolbarDelegate.h in Headers */,
 				3043660F1B0194620067C766 /* MAITextInput.h in Headers */,
+				30BBE0781B2B12B300E93294 /* MAILayoutYAxisAnchor.h in Headers */,
 				3043660C1B0194620067C766 /* MAITextField.h in Headers */,
 				304365EC1B0194620067C766 /* MAIPrintInfo.h in Headers */,
 				304365FC1B0194620067C766 /* MAISplitViewController.h in Headers */,
 				304365C01B0194620067C766 /* MAICollectionView.h in Headers */,
 				304365BB1B0194620067C766 /* MAIApplicationDelegate.h in Headers */,
 				304366201B0194620067C766 /* MAIViewController.h in Headers */,
+				30BBE0701B2B12B300E93294 /* MAILayoutGuide.h in Headers */,
+				30BBE0681B2B12B300E93294 /* MAIDataAsset.h in Headers */,
+				30BBE04A1B2B12B300E93294 /* MAICollectionViewDelegateFlowLayout.h in Headers */,
 				304365DB1B0194620067C766 /* MAILayoutManager.h in Headers */,
 				304365C21B0194620067C766 /* MAICollectionViewDelegate.h in Headers */,
 				304365E81B0194620067C766 /* MAIPasteboard.h in Headers */,
 				304365E41B0194620067C766 /* MAIPanGestureRecognizer.h in Headers */,
 				304365D41B0194620067C766 /* MAIGestureRecognizerDelegate.h in Headers */,
 				304365B71B0194620067C766 /* MAIAccessibilityElement.h in Headers */,
+				30BBE0841B2B12B300E93294 /* MAITableViewRowAction.h in Headers */,
+				30BBE04C1B2B12B300E93294 /* MAICollectionViewFlowLayout.h in Headers */,
 				3043660A1B0194620067C766 /* MAITextContainer.h in Headers */,
+				30BBE06C1B2B12B300E93294 /* MAILayoutDimension.h in Headers */,
 				304365F41B0194620067C766 /* MAIScrollView.h in Headers */,
 				304366001B0194620067C766 /* MAIStoryboard.h in Headers */,
 				304365EE1B0194620067C766 /* MAIResponder.h in Headers */,
 				304365D51B0194620067C766 /* MAIImage.h in Headers */,
+				30BBE0481B2B12B300E93294 /* MAICollectionViewDataSource.h in Headers */,
 				304366081B0194620067C766 /* MAITextAttachment.h in Headers */,
+				30BBE0741B2B12B300E93294 /* MAILayoutXAxisAnchor.h in Headers */,
 				304366161B0194620067C766 /* MAITextView.h in Headers */,
 				304365F01B0194620067C766 /* MAIRotationGestureRecognizer.h in Headers */,
+				30BBE07C1B2B12B300E93294 /* MAIStackView.h in Headers */,
 				304365D01B0194620067C766 /* MAIFontDescriptor.h in Headers */,
+				30BBE0581B2B12B300E93294 /* MAICollectionViewLayoutAttributes.h in Headers */,
 				304365BE1B0194620067C766 /* MAIButton.h in Headers */,
 				304365F61B0194620067C766 /* MAISegmentedControl.h in Headers */,
 				304365C31B0194620067C766 /* MAIColor.h in Headers */,
 				304365CE1B0194620067C766 /* MAIFont.h in Headers */,
+				30BBE0641B2B12B300E93294 /* MAICollectionViewUpdateItem.h in Headers */,
 				3043660E1B0194620067C766 /* MAITextFieldDelegate.h in Headers */,
 				304365F21B0194620067C766 /* MAIScreen.h in Headers */,
 				304365F81B0194620067C766 /* MAIShadow.h in Headers */,
@@ -565,10 +711,12 @@
 				304365EA1B0194620067C766 /* MAIPrinter.h in Headers */,
 				304366111B0194620067C766 /* MAITextStorage.h in Headers */,
 				304365B91B0194620067C766 /* MAIApplication.h in Headers */,
+				30BBE0541B2B12B300E93294 /* MAICollectionViewLayout.h in Headers */,
 				304366021B0194620067C766 /* MAIStoryboardSegue.h in Headers */,
 				304365E01B0194620067C766 /* MAIMutableParagraphStyle.h in Headers */,
 				304365C91B0194620067C766 /* MAIDocument.h in Headers */,
 				304365C71B0194620067C766 /* MAIDatePicker.h in Headers */,
+				30BBE0801B2B12B300E93294 /* MAIStringDrawingContext.h in Headers */,
 				304366041B0194620067C766 /* MAITableView.h in Headers */,
 				304365321B0193E40067C766 /* MAIKit.h in Headers */,
 				304366191B0194620067C766 /* MAIToolbar.h in Headers */,
@@ -582,6 +730,8 @@
 				304366101B0194620067C766 /* MAITextLayoutOrientationProvider.h in Headers */,
 				304365D21B0194620067C766 /* MAIGestureRecognizer.h in Headers */,
 				304366141B0194620067C766 /* MAITextTab.h in Headers */,
+				30BBE05C1B2B12B300E93294 /* MAICollectionViewLayoutInvalidationContext.h in Headers */,
+				30BBE0501B2B12B300E93294 /* MAICollectionViewFlowLayoutInvalidationContext.h in Headers */,
 				304365CC1B0194620067C766 /* MAIEvent.h in Headers */,
 				304365DD1B0194620067C766 /* MAILayoutManagerDelegate.h in Headers */,
 			);
@@ -591,7 +741,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30BBE0611B2B12B300E93294 /* MAICollectionViewTransitionLayout.h in Headers */,
 				304366441B01953B0067C766 /* MAIAccessibilityElement.h in Headers */,
+				30BBE0891B2B12B300E93294 /* MAITextAttachmentContainer.h in Headers */,
 				304366451B01953B0067C766 /* MAIApplication.h in Headers */,
 				304366461B01953B0067C766 /* MAIApplicationDelegate.h in Headers */,
 				304366471B01953B0067C766 /* MAIBezierPath.h in Headers */,
@@ -600,31 +752,43 @@
 				3043664A1B01953B0067C766 /* MAICollectionViewDelegate.h in Headers */,
 				3043664B1B01953B0067C766 /* MAIColor.h in Headers */,
 				3043664C1B01953B0067C766 /* MAIControl.h in Headers */,
+				30BBE0791B2B12B300E93294 /* MAILayoutYAxisAnchor.h in Headers */,
 				3043664D1B01953B0067C766 /* MAIDatePicker.h in Headers */,
 				3043664E1B01953B0067C766 /* MAIDocument.h in Headers */,
 				3043664F1B01953B0067C766 /* MAIEnums.h in Headers */,
 				304366501B01953B0067C766 /* MAIEvent.h in Headers */,
 				304366511B01953B0067C766 /* MAIFont.h in Headers */,
 				304366521B01953B0067C766 /* MAIFontDescriptor.h in Headers */,
+				30BBE0711B2B12B300E93294 /* MAILayoutGuide.h in Headers */,
+				30BBE0691B2B12B300E93294 /* MAIDataAsset.h in Headers */,
+				30BBE04B1B2B12B300E93294 /* MAICollectionViewDelegateFlowLayout.h in Headers */,
 				304366531B01953B0067C766 /* MAIGestureRecognizer.h in Headers */,
 				304366541B01953B0067C766 /* MAIGestureRecognizerDelegate.h in Headers */,
 				304366551B01953B0067C766 /* MAIImage.h in Headers */,
 				304366561B01953B0067C766 /* MAIImageView.h in Headers */,
 				304366571B01953B0067C766 /* MAILayoutConstraint.h in Headers */,
 				304366581B01953B0067C766 /* MAILayoutManager.h in Headers */,
+				30BBE0851B2B12B300E93294 /* MAITableViewRowAction.h in Headers */,
+				30BBE04D1B2B12B300E93294 /* MAICollectionViewFlowLayout.h in Headers */,
 				304366591B01953B0067C766 /* MAILayoutManagerDelegate.h in Headers */,
+				30BBE06D1B2B12B300E93294 /* MAILayoutDimension.h in Headers */,
 				3043665A1B01953B0067C766 /* MAIMenuItem.h in Headers */,
 				3043665B1B01953B0067C766 /* MAIMutableParagraphStyle.h in Headers */,
 				3043665C1B01953B0067C766 /* MAINib.h in Headers */,
 				3043665D1B01953B0067C766 /* MAIPanGestureRecognizer.h in Headers */,
+				30BBE0491B2B12B300E93294 /* MAICollectionViewDataSource.h in Headers */,
 				3043665E1B01953B0067C766 /* MAIParagraphStyle.h in Headers */,
+				30BBE0751B2B12B300E93294 /* MAILayoutXAxisAnchor.h in Headers */,
 				3043665F1B01953B0067C766 /* MAIPasteboard.h in Headers */,
 				304366601B01953B0067C766 /* MAIPrinter.h in Headers */,
+				30BBE07D1B2B12B300E93294 /* MAIStackView.h in Headers */,
 				304366611B01953B0067C766 /* MAIPrintInfo.h in Headers */,
+				30BBE0591B2B12B300E93294 /* MAICollectionViewLayoutAttributes.h in Headers */,
 				304366621B01953B0067C766 /* MAIResponder.h in Headers */,
 				304366631B01953B0067C766 /* MAIRotationGestureRecognizer.h in Headers */,
 				304366641B01953B0067C766 /* MAIScreen.h in Headers */,
 				304366651B01953C0067C766 /* MAIScrollView.h in Headers */,
+				30BBE0651B2B12B300E93294 /* MAICollectionViewUpdateItem.h in Headers */,
 				304366661B01953C0067C766 /* MAISegmentedControl.h in Headers */,
 				304366671B01953C0067C766 /* MAIShadow.h in Headers */,
 				304366681B01953C0067C766 /* MAISlider.h in Headers */,
@@ -635,10 +799,12 @@
 				3043666D1B01953C0067C766 /* MAITableView.h in Headers */,
 				3043666E1B01953C0067C766 /* MAITableViewDataSource.h in Headers */,
 				3043666F1B01953C0067C766 /* MAITableViewDelegate.h in Headers */,
+				30BBE0551B2B12B300E93294 /* MAICollectionViewLayout.h in Headers */,
 				304366701B01953C0067C766 /* MAITextAttachment.h in Headers */,
 				304366711B01953C0067C766 /* MAITextContainer.h in Headers */,
 				304366721B01953C0067C766 /* MAITextField.h in Headers */,
 				304366731B01953C0067C766 /* MAITextFieldDelegate.h in Headers */,
+				30BBE0811B2B12B300E93294 /* MAIStringDrawingContext.h in Headers */,
 				304366741B01953C0067C766 /* MAITextInput.h in Headers */,
 				304366751B01953C0067C766 /* MAITextLayoutOrientationProvider.h in Headers */,
 				304366761B01953C0067C766 /* MAITextStorage.h in Headers */,
@@ -652,6 +818,8 @@
 				3043667E1B01953D0067C766 /* MAIView.h in Headers */,
 				3043667F1B01953D0067C766 /* MAIViewController.h in Headers */,
 				304366801B01953D0067C766 /* MAIVisualEffectView.h in Headers */,
+				30BBE05D1B2B12B300E93294 /* MAICollectionViewLayoutInvalidationContext.h in Headers */,
+				30BBE0511B2B12B300E93294 /* MAICollectionViewFlowLayoutInvalidationContext.h in Headers */,
 				304366811B01953D0067C766 /* MAIWindow.h in Headers */,
 				304366B31B0196E10067C766 /* MAIKit.h in Headers */,
 			);
@@ -702,7 +870,7 @@
 		304365231B0193E40067C766 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Buckleyisms;
 				TargetAttributes = {
 					3043652B1B0193E40067C766 = {
@@ -755,15 +923,23 @@
 			files = (
 				304365FB1B0194620067C766 /* MAISlider.m in Sources */,
 				304365CD1B0194620067C766 /* MAIEvent.m in Sources */,
+				30BBE0561B2B12B300E93294 /* MAICollectionViewLayout.m in Sources */,
 				304365F11B0194620067C766 /* MAIRotationGestureRecognizer.m in Sources */,
 				304366231B0194620067C766 /* MAIVisualEffectView.m in Sources */,
 				304365BA1B0194620067C766 /* MAIApplication.m in Sources */,
+				30BBE0861B2B12B300E93294 /* MAITableViewRowAction.m in Sources */,
 				304366171B0194620067C766 /* MAITextView.m in Sources */,
 				304365EB1B0194620067C766 /* MAIPrinter.m in Sources */,
 				304365CF1B0194620067C766 /* MAIFont.m in Sources */,
 				304366011B0194620067C766 /* MAIStoryboard.m in Sources */,
+				30BBE07E1B2B12B300E93294 /* MAIStackView.m in Sources */,
 				304365F31B0194620067C766 /* MAIScreen.m in Sources */,
+				30BBE05E1B2B12B300E93294 /* MAICollectionViewLayoutInvalidationContext.m in Sources */,
+				30BBE05A1B2B12B300E93294 /* MAICollectionViewLayoutAttributes.m in Sources */,
+				30BBE0621B2B12B300E93294 /* MAICollectionViewTransitionLayout.m in Sources */,
+				30BBE06E1B2B12B300E93294 /* MAILayoutDimension.m in Sources */,
 				304366031B0194620067C766 /* MAIStoryboardSegue.m in Sources */,
+				30BBE0761B2B12B300E93294 /* MAILayoutXAxisAnchor.m in Sources */,
 				3043660D1B0194620067C766 /* MAITextField.m in Sources */,
 				304366151B0194620067C766 /* MAITextTab.m in Sources */,
 				304365D11B0194620067C766 /* MAIFontDescriptor.m in Sources */,
@@ -774,23 +950,30 @@
 				304365BF1B0194620067C766 /* MAIButton.m in Sources */,
 				304365CA1B0194620067C766 /* MAIDocument.m in Sources */,
 				304365C11B0194620067C766 /* MAICollectionView.m in Sources */,
+				30BBE0721B2B12B300E93294 /* MAILayoutGuide.m in Sources */,
 				304365E91B0194620067C766 /* MAIPasteboard.m in Sources */,
 				3043660B1B0194620067C766 /* MAITextContainer.m in Sources */,
 				304365FD1B0194620067C766 /* MAISplitViewController.m in Sources */,
 				304365C41B0194620067C766 /* MAIColor.m in Sources */,
 				304365D31B0194620067C766 /* MAIGestureRecognizer.m in Sources */,
+				30BBE06A1B2B12B300E93294 /* MAIDataAsset.m in Sources */,
 				304366051B0194620067C766 /* MAITableView.m in Sources */,
 				304365DA1B0194620067C766 /* MAILayoutConstraint.m in Sources */,
 				304365FF1B0194620067C766 /* MAIStepper.m in Sources */,
 				304365C81B0194620067C766 /* MAIDatePicker.m in Sources */,
+				30BBE04E1B2B12B300E93294 /* MAICollectionViewFlowLayout.m in Sources */,
 				304365EF1B0194620067C766 /* MAIResponder.m in Sources */,
 				304365E11B0194620067C766 /* MAIMutableParagraphStyle.m in Sources */,
 				304365D61B0194620067C766 /* MAIImage.m in Sources */,
 				304365E71B0194620067C766 /* MAIParagraphStyle.m in Sources */,
 				304365D81B0194620067C766 /* MAIImageView.m in Sources */,
 				3043661A1B0194620067C766 /* MAIToolbar.m in Sources */,
+				30BBE07A1B2B12B300E93294 /* MAILayoutYAxisAnchor.m in Sources */,
 				304366121B0194620067C766 /* MAITextStorage.m in Sources */,
+				30BBE0521B2B12B300E93294 /* MAICollectionViewFlowLayoutInvalidationContext.m in Sources */,
+				30BBE0661B2B12B300E93294 /* MAICollectionViewUpdateItem.m in Sources */,
 				304365E31B0194620067C766 /* MAINib.m in Sources */,
+				30BBE0821B2B12B300E93294 /* MAIStringDrawingContext.m in Sources */,
 				304365E51B0194620067C766 /* MAIPanGestureRecognizer.m in Sources */,
 				304365ED1B0194620067C766 /* MAIPrintInfo.m in Sources */,
 				304365DC1B0194620067C766 /* MAILayoutManager.m in Sources */,
@@ -811,15 +994,23 @@
 			files = (
 				304366821B01955A0067C766 /* MAIAccessibilityElement.m in Sources */,
 				304366831B01955A0067C766 /* MAIApplication.m in Sources */,
+				30BBE0571B2B12B300E93294 /* MAICollectionViewLayout.m in Sources */,
 				304366841B01955A0067C766 /* MAIBezierPath.m in Sources */,
 				304366851B01955A0067C766 /* MAIButton.m in Sources */,
 				304366861B01955A0067C766 /* MAICollectionView.m in Sources */,
+				30BBE0871B2B12B300E93294 /* MAITableViewRowAction.m in Sources */,
 				304366871B01955A0067C766 /* MAIColor.m in Sources */,
 				304366881B01955A0067C766 /* MAIControl.m in Sources */,
 				304366891B01955A0067C766 /* MAIDatePicker.m in Sources */,
 				3043668A1B01955A0067C766 /* MAIDocument.m in Sources */,
+				30BBE07F1B2B12B300E93294 /* MAIStackView.m in Sources */,
 				3043668B1B01955A0067C766 /* MAIEvent.m in Sources */,
+				30BBE05F1B2B12B300E93294 /* MAICollectionViewLayoutInvalidationContext.m in Sources */,
+				30BBE05B1B2B12B300E93294 /* MAICollectionViewLayoutAttributes.m in Sources */,
+				30BBE0631B2B12B300E93294 /* MAICollectionViewTransitionLayout.m in Sources */,
+				30BBE06F1B2B12B300E93294 /* MAILayoutDimension.m in Sources */,
 				3043668C1B01955A0067C766 /* MAIFont.m in Sources */,
+				30BBE0771B2B12B300E93294 /* MAILayoutXAxisAnchor.m in Sources */,
 				3043668D1B01955A0067C766 /* MAIFontDescriptor.m in Sources */,
 				3043668E1B01955A0067C766 /* MAIGestureRecognizer.m in Sources */,
 				3043668F1B01955A0067C766 /* MAIImage.m in Sources */,
@@ -830,23 +1021,30 @@
 				304366941B01955A0067C766 /* MAIMutableParagraphStyle.m in Sources */,
 				304366951B01955A0067C766 /* MAINib.m in Sources */,
 				304366961B01955A0067C766 /* MAIPanGestureRecognizer.m in Sources */,
+				30BBE0731B2B12B300E93294 /* MAILayoutGuide.m in Sources */,
 				304366971B01955A0067C766 /* MAIParagraphStyle.m in Sources */,
 				304366981B01955A0067C766 /* MAIPasteboard.m in Sources */,
 				304366991B01955A0067C766 /* MAIPrinter.m in Sources */,
 				3043669A1B01955A0067C766 /* MAIPrintInfo.m in Sources */,
 				3043669B1B01955A0067C766 /* MAIResponder.m in Sources */,
+				30BBE06B1B2B12B300E93294 /* MAIDataAsset.m in Sources */,
 				3043669C1B01955A0067C766 /* MAIRotationGestureRecognizer.m in Sources */,
 				3043669D1B01955A0067C766 /* MAIScreen.m in Sources */,
 				3043669E1B01955A0067C766 /* MAIScrollView.m in Sources */,
 				3043669F1B01955A0067C766 /* MAISegmentedControl.m in Sources */,
+				30BBE04F1B2B12B300E93294 /* MAICollectionViewFlowLayout.m in Sources */,
 				304366A01B01955A0067C766 /* MAIShadow.m in Sources */,
 				304366A11B01955B0067C766 /* MAISlider.m in Sources */,
 				304366A21B01955B0067C766 /* MAISplitViewController.m in Sources */,
 				304366A31B01955B0067C766 /* MAIStepper.m in Sources */,
 				304366A41B01955B0067C766 /* MAIStoryboard.m in Sources */,
 				304366A51B01955B0067C766 /* MAIStoryboardSegue.m in Sources */,
+				30BBE07B1B2B12B300E93294 /* MAILayoutYAxisAnchor.m in Sources */,
 				304366A61B01955B0067C766 /* MAITableView.m in Sources */,
+				30BBE0531B2B12B300E93294 /* MAICollectionViewFlowLayoutInvalidationContext.m in Sources */,
+				30BBE0671B2B12B300E93294 /* MAICollectionViewUpdateItem.m in Sources */,
 				304366A71B01955B0067C766 /* MAITextAttachment.m in Sources */,
+				30BBE0831B2B12B300E93294 /* MAIStringDrawingContext.m in Sources */,
 				304366A81B01955B0067C766 /* MAITextContainer.m in Sources */,
 				304366A91B01955B0067C766 /* MAITextField.m in Sources */,
 				304366AA1B01955B0067C766 /* MAITextStorage.m in Sources */,
@@ -885,6 +1083,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -959,6 +1158,7 @@
 				INFOPLIST_FILE = MAIKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.buckleyisms.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MAIKit;
 				SKIP_INSTALL = YES;
 			};
@@ -976,6 +1176,7 @@
 				INFOPLIST_FILE = MAIKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.buckleyisms.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MAIKit;
 				SKIP_INSTALL = YES;
 			};
@@ -999,6 +1200,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.buckleyisms.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MAIKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1019,6 +1221,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.buckleyisms.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MAIKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1046,6 +1249,7 @@
 				304365441B0193E40067C766 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3043663E1B0195020067C766 /* Build configuration list for PBXNativeTarget "MAIKit-ios" */ = {
 			isa = XCConfigurationList;
@@ -1054,6 +1258,7 @@
 				304366401B0195020067C766 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
