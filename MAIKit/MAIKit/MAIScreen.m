@@ -25,6 +25,17 @@
     return (MAIScreen*) [NSScreen alloc];
 #endif
 }
++(MAIScreen*)mainScreen{
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincompatible-pointer-types"
+#pragma clang diagnostic ignored "-Wenum-conversion"
+#if TARGET_OS_IPHONE
+    return (id) [UIScreen mainScreen];
+#else
+    return (id) [NSScreen mainScreen];
+#endif
+#pragma clang diagnostic pop
+}
 
 #if TARGET_OS_IPHONE
 -(UIScreen*) ios

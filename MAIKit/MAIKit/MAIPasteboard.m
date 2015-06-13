@@ -25,6 +25,28 @@
     return (MAIPasteboard*) [NSPasteboard alloc];
 #endif
 }
++(MAIPasteboard*)generalPasteboard{
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincompatible-pointer-types"
+#pragma clang diagnostic ignored "-Wenum-conversion"
+#if TARGET_OS_IPHONE
+    return (id) [UIPasteboard generalPasteboard];
+#else
+    return (id) [NSPasteboard generalPasteboard];
+#endif
+#pragma clang diagnostic pop
+}
++(MAIPasteboard*)pasteboardWithUniqueName{
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincompatible-pointer-types"
+#pragma clang diagnostic ignored "-Wenum-conversion"
+#if TARGET_OS_IPHONE
+    return (id) [UIPasteboard pasteboardWithUniqueName];
+#else
+    return (id) [NSPasteboard pasteboardWithUniqueName];
+#endif
+#pragma clang diagnostic pop
+}
 
 #if TARGET_OS_IPHONE
 -(UIPasteboard*) ios

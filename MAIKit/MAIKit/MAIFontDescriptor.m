@@ -25,6 +25,17 @@
     return (MAIFontDescriptor*) [NSFontDescriptor alloc];
 #endif
 }
++(MAIFontDescriptor*)fontDescriptorWithName:(NSString*)fontName size:(CGFloat)size{
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincompatible-pointer-types"
+#pragma clang diagnostic ignored "-Wenum-conversion"
+#if TARGET_OS_IPHONE
+    return (id) [UIFontDescriptor fontDescriptorWithName:fontName size:size];
+#else
+    return (id) [NSFontDescriptor fontDescriptorWithName:fontName size:size];
+#endif
+#pragma clang diagnostic pop
+}
 
 #if TARGET_OS_IPHONE
 -(UIFontDescriptor*) ios

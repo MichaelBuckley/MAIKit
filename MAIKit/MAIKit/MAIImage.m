@@ -25,6 +25,17 @@
     return (MAIImage*) [NSImage alloc];
 #endif
 }
++(nullable MAIImage*)imageNamed:(NSString*)name{
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincompatible-pointer-types"
+#pragma clang diagnostic ignored "-Wenum-conversion"
+#if TARGET_OS_IPHONE
+    return (id) [UIImage imageNamed:name];
+#else
+    return (id) [NSImage imageNamed:name];
+#endif
+#pragma clang diagnostic pop
+}
 
 #if TARGET_OS_IPHONE
 -(UIImage*) ios

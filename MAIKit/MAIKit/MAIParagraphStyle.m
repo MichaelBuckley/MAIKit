@@ -25,6 +25,17 @@
     return (MAIParagraphStyle*) [NSParagraphStyle alloc];
 #endif
 }
++(MAIParagraphStyle*)defaultParagraphStyle{
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincompatible-pointer-types"
+#pragma clang diagnostic ignored "-Wenum-conversion"
+#if TARGET_OS_IPHONE
+    return (id) [NSParagraphStyle defaultParagraphStyle];
+#else
+    return (id) [NSParagraphStyle defaultParagraphStyle];
+#endif
+#pragma clang diagnostic pop
+}
 
 #if TARGET_OS_IPHONE
 -(NSParagraphStyle*) ios
