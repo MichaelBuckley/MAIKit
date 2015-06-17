@@ -93,6 +93,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(CGRect)attachmentBoundsForTextContainer:(nullable MAITextContainer*)textContainer proposedLineFragment:(CGRect)lineFrag glyphPosition:(CGPoint)position characterIndex:(NSUInteger)charIndex;
 
 
+
 @end
 
 NS_ASSUME_NONNULL_END

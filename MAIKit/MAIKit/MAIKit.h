@@ -1,3 +1,5 @@
+@import Foundation;
+
 FOUNDATION_EXPORT double MAIKitVersionNumber;
 
 FOUNDATION_EXPORT const unsigned char MAIKitVersionString[];

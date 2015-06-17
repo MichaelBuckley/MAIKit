@@ -95,6 +95,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(BOOL)gestureRecognizer:(MAIGestureRecognizer*)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(MAIGestureRecognizer*)otherGestureRecognizer;
 
 
+
 @end
 
 NS_ASSUME_NONNULL_END

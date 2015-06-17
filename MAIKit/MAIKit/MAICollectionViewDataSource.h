@@ -89,8 +89,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol MAICollectionViewDataSource
--(NSInteger)collectionView:(MAICollectionView*)collectionView numberOfItemsInSection:(NSInteger)section;
 -(NSInteger)numberOfSectionsInCollectionView:(MAICollectionView*)collectionView;
+
+
+@required
+
+-(NSInteger)collectionView:(MAICollectionView*)collectionView numberOfItemsInSection:(NSInteger)section;
+
 
 
 @end

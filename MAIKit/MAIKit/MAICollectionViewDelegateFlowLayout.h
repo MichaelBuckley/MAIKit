@@ -98,6 +98,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(CGSize)collectionView:(MAICollectionView*)collectionView layout:(MAICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section;
 
 
+
 @end
 
 NS_ASSUME_NONNULL_END

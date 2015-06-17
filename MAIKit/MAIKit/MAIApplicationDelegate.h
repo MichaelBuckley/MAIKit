@@ -96,6 +96,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)application:(MAIApplication*)application didUpdateUserActivity:(NSUserActivity*)userActivity;
 
 
+
 @end
 
 NS_ASSUME_NONNULL_END
