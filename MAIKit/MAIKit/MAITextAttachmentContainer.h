@@ -89,6 +89,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol MAITextAttachmentContainer
+@optional
 -(nullable MAIImage*)imageForBounds:(CGRect)imageBounds textContainer:(nullable MAITextContainer*)textContainer characterIndex:(NSUInteger)charIndex;
 -(CGRect)attachmentBoundsForTextContainer:(nullable MAITextContainer*)textContainer proposedLineFragment:(CGRect)lineFrag glyphPosition:(CGPoint)position characterIndex:(NSUInteger)charIndex;
 

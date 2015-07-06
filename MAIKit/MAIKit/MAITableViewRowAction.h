@@ -88,21 +88,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAITableViewRowAction : NSObject<NSCopying>
-#if TARGET_OS_IPHONE
--(UITableViewRowAction*) ios;
-#else
--(NSTableViewRowAction*) mac;
-#endif
+@protocol MAITableViewRowActionProtocol
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface UITableViewRowAction (MAIConversion)
+@interface MAITableViewRowAction : UITableViewRowAction<MAITableViewRowActionProtocol>
 #else
-@interface NSTableViewRowAction (MAIConversion)
+@interface MAITableViewRowAction : NSTableViewRowAction<MAITableViewRowActionProtocol>
 #endif
--(MAITableViewRowAction*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

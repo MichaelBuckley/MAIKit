@@ -88,21 +88,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAILayoutYAxisAnchor : NSLayoutAnchor
-#if TARGET_OS_IPHONE
--(NSLayoutYAxisAnchor*) ios;
-#else
--(NSLayoutYAxisAnchor*) mac;
-#endif
+@protocol MAILayoutYAxisAnchorProtocol
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface NSLayoutYAxisAnchor (MAIConversion)
+@interface MAILayoutYAxisAnchor : NSLayoutYAxisAnchor<MAILayoutYAxisAnchorProtocol>
 #else
-@interface NSLayoutYAxisAnchor (MAIConversion)
+@interface MAILayoutYAxisAnchor : NSLayoutYAxisAnchor<MAILayoutYAxisAnchorProtocol>
 #endif
--(MAILayoutYAxisAnchor*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

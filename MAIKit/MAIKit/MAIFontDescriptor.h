@@ -88,28 +88,22 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAIFontDescriptor : NSObject<NSCopying,NSSecureCoding>
--(nullable id)objectForKey:(NSString*)anAttribute ;
-+(MAIFontDescriptor*)fontDescriptorWithName:(NSString*)fontName size:(CGFloat)size ;
--(MAIFontDescriptor*)fontDescriptorByAddingAttributes:(NSDictionary<NSString*, id>*)attributes ;
--(MAIFontDescriptor*)fontDescriptorWithSize:(CGFloat)newPointSize ;
--(MAIFontDescriptor*)fontDescriptorWithFace:(NSString*)newFace ;
--(MAIFontDescriptor*)fontDescriptorWithFamily:(NSString*)newFamily ;
-@property(nonatomic, readonly) CGFloat pointSize;
-#if TARGET_OS_IPHONE
--(UIFontDescriptor*) ios;
-#else
--(NSFontDescriptor*) mac;
-#endif
+@protocol MAIFontDescriptorProtocol
+-(nullable id)objectForKey:(NSString*)anAttribute;
++(MAIFontDescriptor*)fontDescriptorWithName:(NSString*)fontName size:(CGFloat)size;
+-(MAIFontDescriptor*)fontDescriptorByAddingAttributes:(NSDictionary<NSString*, id>*)attributes;
+-(MAIFontDescriptor*)fontDescriptorWithSize:(CGFloat)newPointSize;
+-(MAIFontDescriptor*)fontDescriptorWithFace:(NSString*)newFace;
+-(MAIFontDescriptor*)fontDescriptorWithFamily:(NSString*)newFamily;
+@property(readonly, getter=pointSize) CGFloat pointSize;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface UIFontDescriptor (MAIConversion)
+@interface MAIFontDescriptor : UIFontDescriptor<MAIFontDescriptorProtocol>
 #else
-@interface NSFontDescriptor (MAIConversion)
+@interface MAIFontDescriptor : NSFontDescriptor<MAIFontDescriptorProtocol>
 #endif
--(MAIFontDescriptor*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

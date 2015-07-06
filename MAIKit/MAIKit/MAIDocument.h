@@ -88,22 +88,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAIDocument : NSObject<NSFilePresenter>
-@property(nonatomic, readwrite, nullable, copy) NSDate* fileModificationDate;
-#if TARGET_OS_IPHONE
--(UIDocument*) ios;
-#else
--(NSDocument*) mac;
-#endif
+@protocol MAIDocumentProtocol
+-(void)updateUserActivityState:(NSUserActivity*)userActivity;
+-(void)restoreUserActivityState:(NSUserActivity*)userActivity;
+@property(nullable, setter=setFileModificationDate:, getter=fileModificationDate) NSDate* fileModificationDate;
+@property(nullable, setter=setUserActivity:, getter=userActivity) NSUserActivity* userActivity;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface UIDocument (MAIConversion)
+@interface MAIDocument : UIDocument<MAIDocumentProtocol>
 #else
-@interface NSDocument (MAIConversion)
+@interface MAIDocument : NSDocument<MAIDocumentProtocol>
 #endif
--(MAIDocument*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

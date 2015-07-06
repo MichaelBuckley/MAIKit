@@ -88,33 +88,30 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAIBezierPath : NSObject<NSCopying,NSCoding>
--(void)moveToPoint:(CGPoint)point ;
--(void)closePath ;
--(void)removeAllPoints ;
--(BOOL)containsPoint:(CGPoint)point ;
--(void)setLineDash:(nullable const CGFloat*)pattern count:(NSInteger)count phase:(CGFloat)phase ;
--(void)getLineDash:(nullable CGFloat*)pattern count:(nullable NSInteger*)count phase:(nullable CGFloat*)phase ;
--(void)fill ;
--(void)stroke ;
--(void)addClip ;
-@property(nonatomic, readonly, getter=isEmpty) BOOL empty;
-@property(nonatomic, readonly) CGRect bounds;
-@property(nonatomic, readonly) CGPoint currentPoint;
-#if TARGET_OS_IPHONE
--(UIBezierPath*) ios;
-#else
--(NSBezierPath*) mac;
-#endif
+@protocol MAIBezierPathProtocol
+-(void)moveToPoint:(CGPoint)point;
+-(void)closePath;
+-(void)removeAllPoints;
+-(BOOL)containsPoint:(CGPoint)point;
+-(void)setLineDash:(nullable const CGFloat*)pattern count:(NSInteger)count phase:(CGFloat)phase;
+-(void)getLineDash:(nullable CGFloat*)pattern count:(nullable NSInteger*)count phase:(nullable CGFloat*)phase;
+-(void)fill;
+-(void)stroke;
+-(void)addClip;
+@property(readonly, getter=isEmpty) BOOL empty;
+@property(readonly, getter=bounds) CGRect bounds;
+@property(readonly, getter=currentPoint) CGPoint currentPoint;
+@property(setter=setLineWidth:, getter=lineWidth) CGFloat lineWidth;
+@property(setter=setMiterLimit:, getter=miterLimit) CGFloat miterLimit;
+@property(setter=setFlatness:, getter=flatness) CGFloat flatness;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface UIBezierPath (MAIConversion)
+@interface MAIBezierPath : UIBezierPath<MAIBezierPathProtocol>
 #else
-@interface NSBezierPath (MAIConversion)
+@interface MAIBezierPath : NSBezierPath<MAIBezierPathProtocol>
 #endif
--(MAIBezierPath*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

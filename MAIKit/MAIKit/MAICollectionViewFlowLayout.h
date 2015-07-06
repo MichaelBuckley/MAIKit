@@ -88,26 +88,48 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAICollectionViewFlowLayout : NSObject
--(void)invalidateLayout ;
--(void)invalidateLayoutWithContext:(MAICollectionViewLayoutInvalidationContext*)context ;
--(void)registerClass:(nullable Class)viewClass forDecorationViewOfKind:(NSString*)elementKind ;
--(void)registerNib:(nullable MAINib*)nib forDecorationViewOfKind:(NSString*)elementKind ;
-@property(nonatomic, readonly, nullable) MAICollectionView* collectionView;
-#if TARGET_OS_IPHONE
--(UICollectionViewFlowLayout*) ios;
-#else
--(NSCollectionViewFlowLayout*) mac;
-#endif
+@protocol MAICollectionViewFlowLayoutProtocol
+-(void)invalidateLayout;
+-(void)invalidateLayoutWithContext:(MAICollectionViewLayoutInvalidationContext*)context;
+-(void)registerClass:(nullable Class)viewClass forDecorationViewOfKind:(NSString*)elementKind;
+-(void)registerNib:(nullable MAINib*)nib forDecorationViewOfKind:(NSString*)elementKind;
++(Class)layoutAttributesClass;
++(Class)invalidationContextClass;
+-(void)prepareLayout;
+-(nullable MAICollectionViewLayoutAttributes*)layoutAttributesForItemAtIndexPath:(NSIndexPath*)indexPath;
+-(nullable MAICollectionViewLayoutAttributes*)layoutAttributesForSupplementaryViewOfKind:(NSString*)elementKind atIndexPath:(NSIndexPath*)indexPath;
+-(nullable MAICollectionViewLayoutAttributes*)layoutAttributesForDecorationViewOfKind:(NSString*)elementKind atIndexPath:(NSIndexPath*)indexPath;
+-(BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds;
+-(MAICollectionViewLayoutInvalidationContext*)invalidationContextForBoundsChange:(CGRect)newBounds;
+-(BOOL)shouldInvalidateLayoutForPreferredLayoutAttributes:(MAICollectionViewLayoutAttributes*)preferredAttributes withOriginalAttributes:(MAICollectionViewLayoutAttributes*)originalAttributes;
+-(MAICollectionViewLayoutInvalidationContext*)invalidationContextForPreferredLayoutAttributes:(MAICollectionViewLayoutAttributes*)preferredAttributes withOriginalAttributes:(MAICollectionViewLayoutAttributes*)originalAttributes;
+-(CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity;
+-(CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset;
+-(void)prepareForCollectionViewUpdates:(NSArray<MAICollectionViewUpdateItem*>*)updateItems;
+-(void)finalizeCollectionViewUpdates;
+-(void)prepareForAnimatedBoundsChange:(CGRect)oldBounds;
+-(void)finalizeAnimatedBoundsChange;
+-(void)prepareForTransitionToLayout:(MAICollectionViewLayout*)newLayout;
+-(void)prepareForTransitionFromLayout:(MAICollectionViewLayout*)oldLayout;
+-(void)finalizeLayoutTransition;
+-(nullable MAICollectionViewLayoutAttributes*)initialLayoutAttributesForAppearingItemAtIndexPath:(NSIndexPath*)itemIndexPath;
+-(nullable MAICollectionViewLayoutAttributes*)finalLayoutAttributesForDisappearingItemAtIndexPath:(NSIndexPath*)itemIndexPath;
+-(nullable MAICollectionViewLayoutAttributes*)initialLayoutAttributesForAppearingSupplementaryElementOfKind:(NSString*)elementKind atIndexPath:(NSIndexPath*)elementIndexPath;
+-(nullable MAICollectionViewLayoutAttributes*)finalLayoutAttributesForDisappearingSupplementaryElementOfKind:(NSString*)elementKind atIndexPath:(NSIndexPath*)elementIndexPath;
+-(nullable MAICollectionViewLayoutAttributes*)initialLayoutAttributesForAppearingDecorationElementOfKind:(NSString*)elementKind atIndexPath:(NSIndexPath*)decorationIndexPath;
+-(nullable MAICollectionViewLayoutAttributes*)finalLayoutAttributesForDisappearingDecorationElementOfKind:(NSString*)elementKind atIndexPath:(NSIndexPath*)decorationIndexPath;
+@property(setter=setMinimumLineSpacing:, getter=minimumLineSpacing) CGFloat minimumLineSpacing;
+@property(setter=setMinimumInteritemSpacing:, getter=minimumInteritemSpacing) CGFloat minimumInteritemSpacing;
+@property(setter=setScrollDirection:, getter=scrollDirection) MAICollectionViewScrollDirection scrollDirection;
+@property(readonly, nullable, getter=collectionView) MAICollectionView* collectionView;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface UICollectionViewFlowLayout (MAIConversion)
+@interface MAICollectionViewFlowLayout : UICollectionViewFlowLayout<MAICollectionViewFlowLayoutProtocol>
 #else
-@interface NSCollectionViewFlowLayout (MAIConversion)
+@interface MAICollectionViewFlowLayout : NSCollectionViewFlowLayout<MAICollectionViewFlowLayoutProtocol>
 #endif
--(MAICollectionViewFlowLayout*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -88,33 +88,30 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAIFont : NSObject<NSCopying>
-+(nullable MAIFont*)fontWithName:(NSString*)fontName size:(CGFloat)fontSize ;
-+(MAIFont*)systemFontOfSize:(CGFloat)fontSize ;
-+(MAIFont*)boldSystemFontOfSize:(CGFloat)fontSize ;
-+(MAIFont*)systemFontOfSize:(CGFloat)fontSize weight:(CGFloat)weight ;
-+(MAIFont*)fontWithDescriptor:(MAIFontDescriptor*)descriptor size:(CGFloat)pointSize ;
-@property(nonatomic, readonly, strong) NSString* fontName;
-@property(nonatomic, readonly) CGFloat pointSize;
-@property(nonatomic, readonly) CGFloat ascender;
-@property(nonatomic, readonly) CGFloat descender;
-@property(nonatomic, readonly) CGFloat capHeight;
-@property(nonatomic, readonly) CGFloat xHeight;
-@property(nonatomic, readonly) CGFloat leading;
-#if TARGET_OS_IPHONE
--(UIFont*) ios;
-#else
--(NSFont*) mac;
-#endif
+@protocol MAIFontProtocol
++(nullable MAIFont*)fontWithName:(NSString*)fontName size:(CGFloat)fontSize;
++(MAIFont*)systemFontOfSize:(CGFloat)fontSize;
++(MAIFont*)boldSystemFontOfSize:(CGFloat)fontSize;
++(MAIFont*)systemFontOfSize:(CGFloat)fontSize weight:(CGFloat)weight;
++(MAIFont*)fontWithDescriptor:(MAIFontDescriptor*)descriptor size:(CGFloat)pointSize;
++(CGFloat)labelFontSize;
++(CGFloat)smallSystemFontSize;
++(CGFloat)systemFontSize;
+@property(readonly, getter=fontName) NSString* fontName;
+@property(readonly, getter=pointSize) CGFloat pointSize;
+@property(readonly, getter=ascender) CGFloat ascender;
+@property(readonly, getter=descender) CGFloat descender;
+@property(readonly, getter=capHeight) CGFloat capHeight;
+@property(readonly, getter=xHeight) CGFloat xHeight;
+@property(readonly, getter=leading) CGFloat leading;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface UIFont (MAIConversion)
+@interface MAIFont : UIFont<MAIFontProtocol>
 #else
-@interface NSFont (MAIConversion)
+@interface MAIFont : NSFont<MAIFontProtocol>
 #endif
--(MAIFont*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

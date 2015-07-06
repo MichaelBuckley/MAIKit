@@ -88,23 +88,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAIStoryboardSegue : NSObject
--(void)perform ;
-@property(nonatomic, readonly, nullable, copy) NSString* identifier;
-#if TARGET_OS_IPHONE
--(UIStoryboardSegue*) ios;
-#else
--(NSStoryboardSegue*) mac;
-#endif
+@protocol MAIStoryboardSegueProtocol
+-(void)perform;
+@property(readonly, nullable, getter=identifier) NSString* identifier;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface UIStoryboardSegue (MAIConversion)
+@interface MAIStoryboardSegue : UIStoryboardSegue<MAIStoryboardSegueProtocol>
 #else
-@interface NSStoryboardSegue (MAIConversion)
+@interface MAIStoryboardSegue : NSStoryboardSegue<MAIStoryboardSegueProtocol>
 #endif
--(MAIStoryboardSegue*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

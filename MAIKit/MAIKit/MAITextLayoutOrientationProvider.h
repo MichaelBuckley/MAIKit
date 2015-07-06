@@ -89,8 +89,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol MAITextLayoutOrientationProvider
+@optional
 
-@property(nonatomic, readonly) MAITextLayoutOrientation layoutOrientation;
+@property(readonly, getter=layoutOrientation) MAITextLayoutOrientation layoutOrientation;
 
 
 @end

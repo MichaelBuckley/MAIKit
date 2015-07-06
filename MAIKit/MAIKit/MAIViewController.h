@@ -88,30 +88,34 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAIViewController : NSObject<NSCoding>
--(instancetype)initWithNibName:(nullable NSString*)nibNameOrNil bundle:(nullable NSBundle*)nibBundleOrNil NS_DESIGNATED_INITIALIZER;
--(instancetype)initWithCoder:(NSCoder*)aDecoder NS_DESIGNATED_INITIALIZER;
--(void)loadView ;
--(void)viewDidLoad ;
--(BOOL)becomeFirstResponder ;
--(BOOL)resignFirstResponder ;
-@property(nonatomic, readonly, nullable, copy) NSString* nibName;
-@property(nonatomic, readonly, nullable, strong) NSBundle* nibBundle;
-@property(nonatomic, readwrite, nullable, copy) NSString* title;
-#if TARGET_OS_IPHONE
--(UIViewController*) ios;
-#else
--(NSViewController*) mac;
-#endif
+@protocol MAIViewControllerProtocol
+-(instancetype)initWithNibName:(nullable NSString*)nibNameOrNil bundle:(nullable NSBundle*)nibBundleOrNil;
+-(instancetype)initWithCoder:(NSCoder*)aDecoder;
+-(void)loadView;
+-(void)viewDidLoad;
+-(void)encodeRestorableStateWithCoder:(NSCoder*)coder;
+-(void)updateViewConstraints;
+-(BOOL)becomeFirstResponder;
+-(BOOL)resignFirstResponder;
+-(void)updateUserActivityState:(NSUserActivity*)activity;
+-(void)restoreUserActivityState:(NSUserActivity*)activity;
+@property(readonly, nullable, getter=nibName) NSString* nibName;
+@property(readonly, nullable, getter=nibBundle) NSBundle* nibBundle;
+@property(readonly, nullable, getter=storyboard) MAIStoryboard* storyboard;
+@property(nullable, setter=setTitle:, getter=title) NSString* title;
+@property(readonly, nullable, getter=parentViewController) MAIViewController* parentViewController;
+@property(readonly, nullable, getter=presentingViewController) MAIViewController* presentingViewController;
+@property(readonly, nullable, getter=extensionContext) NSExtensionContext* extensionContext;
+@property(readonly, nullable, getter=undoManager) NSUndoManager* undoManager;
+@property(nullable, setter=setUserActivity:, getter=userActivity) NSUserActivity* userActivity;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface UIViewController (MAIConversion)
+@interface MAIViewController : UIViewController<MAIViewControllerProtocol>
 #else
-@interface NSViewController (MAIConversion)
+@interface MAIViewController : NSViewController<MAIViewControllerProtocol>
 #endif
--(MAIViewController*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

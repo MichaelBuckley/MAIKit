@@ -88,21 +88,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAITouch : NSObject
-#if TARGET_OS_IPHONE
--(UITouch*) ios;
-#else
--(NSTouch*) mac;
-#endif
+@protocol MAITouchProtocol
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface UITouch (MAIConversion)
+@interface MAITouch : UITouch<MAITouchProtocol>
 #else
-@interface NSTouch (MAIConversion)
+@interface MAITouch : NSTouch<MAITouchProtocol>
 #endif
--(MAITouch*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

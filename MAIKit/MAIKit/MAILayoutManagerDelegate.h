@@ -89,6 +89,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol MAILayoutManagerDelegate
+@optional
 -(NSUInteger)layoutManager:(MAILayoutManager*)layoutManager shouldGenerateGlyphs:(const CGGlyph*)glyphs properties:(const MAIGlyphProperty*)props characterIndexes:(const NSUInteger*)charIndexes font:(MAIFont*)aFont forGlyphRange:(NSRange)glyphRange;
 -(CGFloat)layoutManager:(MAILayoutManager*)layoutManager lineSpacingAfterGlyphAtIndex:(NSUInteger)glyphIndex withProposedLineFragmentRect:(CGRect)rect;
 -(CGFloat)layoutManager:(MAILayoutManager*)layoutManager paragraphSpacingBeforeGlyphAtIndex:(NSUInteger)glyphIndex withProposedLineFragmentRect:(CGRect)rect;
@@ -99,7 +100,6 @@ NS_ASSUME_NONNULL_BEGIN
 -(CGRect)layoutManager:(MAILayoutManager*)layoutManager boundingBoxForControlGlyphAtIndex:(NSUInteger)glyphIndex forTextContainer:(MAITextContainer*)textContainer proposedLineFragment:(CGRect)proposedRect glyphPosition:(CGPoint)glyphPosition characterIndex:(NSUInteger)charIndex;
 -(void)layoutManagerDidInvalidateLayout:(MAILayoutManager*)sender;
 -(void)layoutManager:(MAILayoutManager*)layoutManager didCompleteLayoutForTextContainer:(nullable MAITextContainer*)textContainer atEnd:(BOOL)layoutFinishedFlag;
--(void)layoutManager:(MAILayoutManager*)layoutManager textContainer:(MAITextContainer*)textContainer didChangeGeometryFromSize:(CGSize)oldSize;
 
 
 

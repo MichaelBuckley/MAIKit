@@ -88,22 +88,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAICollectionViewUpdateItem : NSObject
-@property(nonatomic, readonly) MAICollectionUpdateAction updateAction;
-#if TARGET_OS_IPHONE
--(UICollectionViewUpdateItem*) ios;
-#else
--(NSCollectionViewUpdateItem*) mac;
-#endif
+@protocol MAICollectionViewUpdateItemProtocol
+@property(readonly, getter=updateAction) MAICollectionUpdateAction updateAction;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface UICollectionViewUpdateItem (MAIConversion)
+@interface MAICollectionViewUpdateItem : UICollectionViewUpdateItem<MAICollectionViewUpdateItemProtocol>
 #else
-@interface NSCollectionViewUpdateItem (MAIConversion)
+@interface MAICollectionViewUpdateItem : NSCollectionViewUpdateItem<MAICollectionViewUpdateItemProtocol>
 #endif
--(MAICollectionViewUpdateItem*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

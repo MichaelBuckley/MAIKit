@@ -89,6 +89,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol MAITextStorageDelegate
+@optional
 -(void)textStorage:(MAITextStorage*)textStorage willProcessEditing:(MAITextStorageEditActions)editedMask range:(NSRange)editedRange changeInLength:(NSInteger)delta;
 -(void)textStorage:(MAITextStorage*)textStorage didProcessEditing:(MAITextStorageEditActions)editedMask range:(NSRange)editedRange changeInLength:(NSInteger)delta;
 

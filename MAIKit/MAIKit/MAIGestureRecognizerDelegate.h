@@ -89,6 +89,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol MAIGestureRecognizerDelegate
+@optional
 -(BOOL)gestureRecognizerShouldBegin:(MAIGestureRecognizer*)gestureRecognizer;
 -(BOOL)gestureRecognizer:(MAIGestureRecognizer*)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(MAIGestureRecognizer*)otherGestureRecognizer;
 -(BOOL)gestureRecognizer:(MAIGestureRecognizer*)gestureRecognizer shouldRequireFailureOfGestureRecognizer:(MAIGestureRecognizer*)otherGestureRecognizer;

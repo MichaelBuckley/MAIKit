@@ -88,46 +88,41 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAIColor : NSObject<NSSecureCoding,NSCopying>
-+(MAIColor*)colorWithWhite:(CGFloat)white alpha:(CGFloat)alpha ;
-+(MAIColor*)colorWithHue:(CGFloat)hue saturation:(CGFloat)saturation brightness:(CGFloat)brightness alpha:(CGFloat)alpha ;
-+(MAIColor*)colorWithRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha ;
-+(MAIColor*)colorWithCGColor:(CGColorRef)cgColor ;
-+(MAIColor*)colorWithPatternImage:(MAIImage*)image ;
-+(MAIColor*)blackColor ;
-+(MAIColor*)darkGrayColor ;
-+(MAIColor*)lightGrayColor ;
-+(MAIColor*)whiteColor ;
-+(MAIColor*)grayColor ;
-+(MAIColor*)redColor ;
-+(MAIColor*)greenColor ;
-+(MAIColor*)blueColor ;
-+(MAIColor*)cyanColor ;
-+(MAIColor*)yellowColor ;
-+(MAIColor*)magentaColor ;
-+(MAIColor*)orangeColor ;
-+(MAIColor*)purpleColor ;
-+(MAIColor*)brownColor ;
-+(MAIColor*)clearColor ;
--(void)set ;
--(void)setFill ;
--(void)setStroke ;
--(MAIColor*)colorWithAlphaComponent:(CGFloat)alpha ;
-@property(nonatomic, readonly) CGColorRef CGColor;
-#if TARGET_OS_IPHONE
--(UIColor*) ios;
-#else
--(NSColor*) mac;
-#endif
+@protocol MAIColorProtocol
++(MAIColor*)colorWithWhite:(CGFloat)white alpha:(CGFloat)alpha;
++(MAIColor*)colorWithHue:(CGFloat)hue saturation:(CGFloat)saturation brightness:(CGFloat)brightness alpha:(CGFloat)alpha;
++(MAIColor*)colorWithRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha;
++(MAIColor*)colorWithCGColor:(CGColorRef)cgColor;
++(MAIColor*)colorWithPatternImage:(MAIImage*)image;
++(MAIColor*)colorWithCIColor:(CIColor*)ciColor;
++(MAIColor*)blackColor;
++(MAIColor*)darkGrayColor;
++(MAIColor*)lightGrayColor;
++(MAIColor*)whiteColor;
++(MAIColor*)grayColor;
++(MAIColor*)redColor;
++(MAIColor*)greenColor;
++(MAIColor*)blueColor;
++(MAIColor*)cyanColor;
++(MAIColor*)yellowColor;
++(MAIColor*)magentaColor;
++(MAIColor*)orangeColor;
++(MAIColor*)purpleColor;
++(MAIColor*)brownColor;
++(MAIColor*)clearColor;
+-(void)set;
+-(void)setFill;
+-(void)setStroke;
+-(MAIColor*)colorWithAlphaComponent:(CGFloat)alpha;
+@property(readonly, getter=CGColor) CGColorRef CGColor;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface UIColor (MAIConversion)
+@interface MAIColor : UIColor<MAIColorProtocol>
 #else
-@interface NSColor (MAIConversion)
+@interface MAIColor : NSColor<MAIColorProtocol>
 #endif
--(MAIColor*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

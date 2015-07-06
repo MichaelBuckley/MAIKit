@@ -88,31 +88,28 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAILayoutConstraint : NSObject
-+(instancetype)constraintWithItem:(id)view1 attribute:(MAILayoutAttribute)attr1 relatedBy:(MAILayoutRelation)relation toItem:(nullable id)view2 attribute:(MAILayoutAttribute)attr2 multiplier:(CGFloat)multiplier constant:(CGFloat)c ;
-+(void)activateConstraints:(NSArray<MAILayoutConstraint*>*)constraints ;
-+(void)deactivateConstraints:(NSArray<MAILayoutConstraint*>*)constraints ;
-@property(nonatomic, readonly, assign) id firstItem;
-@property(nonatomic, readonly) MAILayoutAttribute firstAttribute;
-@property(nonatomic, readonly) MAILayoutRelation relation;
-@property(nonatomic, readonly, nullable, assign) id secondItem;
-@property(nonatomic, readonly) MAILayoutAttribute secondAttribute;
-@property(nonatomic, readonly) CGFloat multiplier;
-@property(nonatomic, readwrite, getter=isActive) BOOL active;
-#if TARGET_OS_IPHONE
--(NSLayoutConstraint*) ios;
-#else
--(NSLayoutConstraint*) mac;
-#endif
+@protocol MAILayoutConstraintProtocol
++(instancetype)constraintWithItem:(id)view1 attribute:(MAILayoutAttribute)attr1 relatedBy:(MAILayoutRelation)relation toItem:(nullable id)view2 attribute:(MAILayoutAttribute)attr2 multiplier:(CGFloat)multiplier constant:(CGFloat)c;
++(void)activateConstraints:(NSArray<MAILayoutConstraint*>*)constraints;
++(void)deactivateConstraints:(NSArray<MAILayoutConstraint*>*)constraints;
+@property(setter=setShouldBeArchived:, getter=shouldBeArchived) BOOL shouldBeArchived;
+@property(readonly, getter=firstItem) id firstItem;
+@property(readonly, getter=firstAttribute) MAILayoutAttribute firstAttribute;
+@property(readonly, getter=relation) MAILayoutRelation relation;
+@property(readonly, nullable, getter=secondItem) id secondItem;
+@property(readonly, getter=secondAttribute) MAILayoutAttribute secondAttribute;
+@property(readonly, getter=multiplier) CGFloat multiplier;
+@property(setter=setConstant:, getter=constant) CGFloat constant;
+@property(setter=setActive:, getter=isActive) BOOL active;
+@property(nullable, setter=setIdentifier:, getter=identifier) NSString* identifier;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface NSLayoutConstraint (MAIConversion)
+@interface MAILayoutConstraint : NSLayoutConstraint<MAILayoutConstraintProtocol>
 #else
-@interface NSLayoutConstraint (MAIConversion)
+@interface MAILayoutConstraint : NSLayoutConstraint<MAILayoutConstraintProtocol>
 #endif
--(MAILayoutConstraint*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

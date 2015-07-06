@@ -88,23 +88,20 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAICollectionViewFlowLayoutInvalidationContext : NSObject
-@property(nonatomic, readonly) BOOL invalidateEverything;
-@property(nonatomic, readonly) BOOL invalidateDataSourceCounts;
-#if TARGET_OS_IPHONE
--(UICollectionViewFlowLayoutInvalidationContext*) ios;
-#else
--(NSCollectionViewFlowLayoutInvalidationContext*) mac;
-#endif
+@protocol MAICollectionViewFlowLayoutInvalidationContextProtocol
+@property(setter=setInvalidateFlowLayoutDelegateMetrics:, getter=invalidateFlowLayoutDelegateMetrics) BOOL invalidateFlowLayoutDelegateMetrics;
+@property(setter=setInvalidateFlowLayoutAttributes:, getter=invalidateFlowLayoutAttributes) BOOL invalidateFlowLayoutAttributes;
+@property(readonly, getter=invalidateEverything) BOOL invalidateEverything;
+@property(readonly, getter=invalidateDataSourceCounts) BOOL invalidateDataSourceCounts;
+@property(setter=setContentOffsetAdjustment:, getter=contentOffsetAdjustment) CGPoint contentOffsetAdjustment;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface UICollectionViewFlowLayoutInvalidationContext (MAIConversion)
+@interface MAICollectionViewFlowLayoutInvalidationContext : UICollectionViewFlowLayoutInvalidationContext<MAICollectionViewFlowLayoutInvalidationContextProtocol>
 #else
-@interface NSCollectionViewFlowLayoutInvalidationContext (MAIConversion)
+@interface MAICollectionViewFlowLayoutInvalidationContext : NSCollectionViewFlowLayoutInvalidationContext<MAICollectionViewFlowLayoutInvalidationContextProtocol>
 #endif
--(MAICollectionViewFlowLayoutInvalidationContext*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

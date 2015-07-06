@@ -88,42 +88,36 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAIMutableParagraphStyle : NSObject
--(void)addTabStop:(MAITextTab*)anObject ;
--(void)removeTabStop:(MAITextTab*)anObject ;
--(void)setParagraphStyle:(MAIParagraphStyle*)obj ;
-+(MAIParagraphStyle*)defaultParagraphStyle ;
-+(MAIWritingDirection)defaultWritingDirectionForLanguage:(nullable NSString*)languageName ;
-@property(nonatomic, readonly) CGFloat lineSpacing;
-@property(nonatomic, readonly) CGFloat paragraphSpacing;
-@property(nonatomic, readonly) NSTextAlignment alignment;
-@property(nonatomic, readonly) CGFloat firstLineHeadIndent;
-@property(nonatomic, readonly) CGFloat headIndent;
-@property(nonatomic, readonly) CGFloat tailIndent;
-@property(nonatomic, readonly) NSLineBreakMode lineBreakMode;
-@property(nonatomic, readonly) CGFloat minimumLineHeight;
-@property(nonatomic, readonly) CGFloat maximumLineHeight;
-@property(nonatomic, readonly) MAIWritingDirection baseWritingDirection;
-@property(nonatomic, readonly) CGFloat lineHeightMultiple;
-@property(nonatomic, readonly) CGFloat paragraphSpacingBefore;
-@property(nonatomic, readonly) float hyphenationFactor;
-@property(nonatomic, readonly, copy) NSArray<MAITextTab*>* tabStops;
-@property(nonatomic, readonly) CGFloat defaultTabInterval;
-@property(nonatomic, readonly) BOOL allowsDefaultTighteningForTruncation;
-#if TARGET_OS_IPHONE
--(NSMutableParagraphStyle*) ios;
-#else
--(NSMutableParagraphStyle*) mac;
-#endif
+@protocol MAIMutableParagraphStyleProtocol
+-(void)addTabStop:(MAITextTab*)anObject;
+-(void)removeTabStop:(MAITextTab*)anObject;
+-(void)setParagraphStyle:(MAIParagraphStyle*)obj;
++(MAIParagraphStyle*)defaultParagraphStyle;
++(MAIWritingDirection)defaultWritingDirectionForLanguage:(nullable NSString*)languageName;
+@property(readonly, getter=lineSpacing) CGFloat lineSpacing;
+@property(readonly, getter=paragraphSpacing) CGFloat paragraphSpacing;
+@property(readonly, getter=alignment) NSTextAlignment alignment;
+@property(readonly, getter=firstLineHeadIndent) CGFloat firstLineHeadIndent;
+@property(readonly, getter=headIndent) CGFloat headIndent;
+@property(readonly, getter=tailIndent) CGFloat tailIndent;
+@property(readonly, getter=lineBreakMode) NSLineBreakMode lineBreakMode;
+@property(readonly, getter=minimumLineHeight) CGFloat minimumLineHeight;
+@property(readonly, getter=maximumLineHeight) CGFloat maximumLineHeight;
+@property(readonly, getter=baseWritingDirection) MAIWritingDirection baseWritingDirection;
+@property(readonly, getter=lineHeightMultiple) CGFloat lineHeightMultiple;
+@property(readonly, getter=paragraphSpacingBefore) CGFloat paragraphSpacingBefore;
+@property(readonly, getter=hyphenationFactor) float hyphenationFactor;
+@property(readonly, getter=tabStops) NSArray<MAITextTab*>* tabStops;
+@property(readonly, getter=defaultTabInterval) CGFloat defaultTabInterval;
+@property(readonly, getter=allowsDefaultTighteningForTruncation) BOOL allowsDefaultTighteningForTruncation;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface NSMutableParagraphStyle (MAIConversion)
+@interface MAIMutableParagraphStyle : NSMutableParagraphStyle<MAIMutableParagraphStyleProtocol>
 #else
-@interface NSMutableParagraphStyle (MAIConversion)
+@interface MAIMutableParagraphStyle : NSMutableParagraphStyle<MAIMutableParagraphStyleProtocol>
 #endif
--(MAIMutableParagraphStyle*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

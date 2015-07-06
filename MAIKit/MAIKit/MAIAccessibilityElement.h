@@ -88,21 +88,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAIAccessibilityElement : NSObject
-#if TARGET_OS_IPHONE
--(UIAccessibilityElement*) ios;
-#else
--(NSAccessibilityElement*) mac;
-#endif
+@protocol MAIAccessibilityElementProtocol
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface UIAccessibilityElement (MAIConversion)
+@interface MAIAccessibilityElement : UIAccessibilityElement<MAIAccessibilityElementProtocol>
 #else
-@interface NSAccessibilityElement (MAIConversion)
+@interface MAIAccessibilityElement : NSAccessibilityElement<MAIAccessibilityElementProtocol>
 #endif
--(MAIAccessibilityElement*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

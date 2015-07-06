@@ -88,26 +88,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAIGestureRecognizer : NSObject
--(CGPoint)locationInView:(nullable MAIView*)view ;
-@property(nonatomic, readonly) MAIGestureRecognizerState state;
-@property(nonatomic, readwrite, nullable, weak) id <MAIGestureRecognizerDelegate> delegate;
-@property(nonatomic, readwrite, getter=isEnabled) BOOL enabled;
-@property(nonatomic, readonly, nullable) MAIView* view;
-#if TARGET_OS_IPHONE
--(UIGestureRecognizer*) ios;
-#else
--(NSGestureRecognizer*) mac;
-#endif
+@protocol MAIGestureRecognizerProtocol
+-(CGPoint)locationInView:(nullable MAIView*)view;
+@property(nullable, setter=setDelegate:, getter=delegate) id <MAIGestureRecognizerDelegate> delegate;
+@property(setter=setEnabled:, getter=isEnabled) BOOL enabled;
+@property(readonly, nullable, getter=view) MAIView* view;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface UIGestureRecognizer (MAIConversion)
+@interface MAIGestureRecognizer : UIGestureRecognizer<MAIGestureRecognizerProtocol>
 #else
-@interface NSGestureRecognizer (MAIConversion)
+@interface MAIGestureRecognizer : NSGestureRecognizer<MAIGestureRecognizerProtocol>
 #endif
--(MAIGestureRecognizer*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

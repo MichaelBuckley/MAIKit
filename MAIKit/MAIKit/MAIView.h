@@ -88,25 +88,43 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAIView : NSObject
--(instancetype)initWithFrame:(CGRect)frame NS_DESIGNATED_INITIALIZER;
--(instancetype)initWithCoder:(NSCoder*)aDecoder NS_DESIGNATED_INITIALIZER;
--(BOOL)becomeFirstResponder ;
--(BOOL)resignFirstResponder ;
-#if TARGET_OS_IPHONE
--(UIView*) ios;
-#else
--(NSView*) mac;
-#endif
+@protocol MAIViewProtocol
+-(instancetype)initWithFrame:(CGRect)frame;
+-(instancetype)initWithCoder:(NSCoder*)aDecoder;
+-(CGPoint)convertPoint:(CGPoint)point toView:(nullable MAIView*)view;
+-(CGPoint)convertPoint:(CGPoint)point fromView:(nullable MAIView*)view;
+-(CGRect)convertRect:(CGRect)rect toView:(nullable MAIView*)view;
+-(CGRect)convertRect:(CGRect)rect fromView:(nullable MAIView*)view;
+-(void)removeFromSuperview;
+-(void)addSubview:(MAIView*)view;
+-(void)didAddSubview:(MAIView*)subview;
+-(void)willRemoveSubview:(MAIView*)subview;
+-(nullable MAIView*)viewWithTag:(NSInteger)tag;
+-(void)drawRect:(CGRect)rect;
+-(void)setNeedsDisplayInRect:(CGRect)rect;
+-(void)addGestureRecognizer:(MAIGestureRecognizer*)gestureRecognizer;
+-(void)removeGestureRecognizer:(MAIGestureRecognizer*)gestureRecognizer;
+-(void)encodeRestorableStateWithCoder:(NSCoder*)coder;
+-(BOOL)becomeFirstResponder;
+-(BOOL)resignFirstResponder;
+-(void)updateUserActivityState:(NSUserActivity*)activity;
+-(void)restoreUserActivityState:(NSUserActivity*)activity;
+@property(setter=setFrame:, getter=frame) CGRect frame;
+@property(setter=setBounds:, getter=bounds) CGRect bounds;
+@property(setter=setAutoresizesSubviews:, getter=autoresizesSubviews) BOOL autoresizesSubviews;
+@property(readonly, nullable, getter=superview) MAIView* superview;
+@property(readonly, nullable, getter=window) MAIWindow* window;
+@property(setter=setHidden:, getter=isHidden) BOOL hidden;
+@property(readonly, nullable, getter=undoManager) NSUndoManager* undoManager;
+@property(nullable, setter=setUserActivity:, getter=userActivity) NSUserActivity* userActivity;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface UIView (MAIConversion)
+@interface MAIView : UIView<MAIViewProtocol>
 #else
-@interface NSView (MAIConversion)
+@interface MAIView : NSView<MAIViewProtocol>
 #endif
--(MAIView*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -88,25 +88,22 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAICollectionViewLayoutAttributes : NSObject<NSCopying>
-+(instancetype)layoutAttributesForSupplementaryViewOfKind:(NSString*)elementKind withIndexPath:(NSIndexPath*)indexPath ;
-+(instancetype)layoutAttributesForDecorationViewOfKind:(NSString*)decorationViewKind withIndexPath:(NSIndexPath*)indexPath ;
-@property(nonatomic, readwrite, getter=isHidden) BOOL hidden;
-@property(nonatomic, readonly, nullable) NSString* representedElementKind;
-#if TARGET_OS_IPHONE
--(UICollectionViewLayoutAttributes*) ios;
-#else
--(NSCollectionViewLayoutAttributes*) mac;
-#endif
+@protocol MAICollectionViewLayoutAttributesProtocol
++(instancetype)layoutAttributesForSupplementaryViewOfKind:(NSString*)elementKind withIndexPath:(NSIndexPath*)indexPath;
++(instancetype)layoutAttributesForDecorationViewOfKind:(NSString*)decorationViewKind withIndexPath:(NSIndexPath*)indexPath;
+@property(setter=setFrame:, getter=frame) CGRect frame;
+@property(setter=setAlpha:, getter=alpha) CGFloat alpha;
+@property(setter=setZIndex:, getter=zIndex) NSInteger zIndex;
+@property(setter=setHidden:, getter=isHidden) BOOL hidden;
+@property(readonly, nullable, getter=representedElementKind) NSString* representedElementKind;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface UICollectionViewLayoutAttributes (MAIConversion)
+@interface MAICollectionViewLayoutAttributes : UICollectionViewLayoutAttributes<MAICollectionViewLayoutAttributesProtocol>
 #else
-@interface NSCollectionViewLayoutAttributes (MAIConversion)
+@interface MAICollectionViewLayoutAttributes : NSCollectionViewLayoutAttributes<MAICollectionViewLayoutAttributesProtocol>
 #endif
--(MAICollectionViewLayoutAttributes*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

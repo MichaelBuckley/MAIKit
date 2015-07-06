@@ -88,22 +88,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAIToolbar : NSObject
-@property(nonatomic, readwrite, nullable, assign) id<MAIToolbarDelegate> delegate;
-#if TARGET_OS_IPHONE
--(UIToolbar*) ios;
-#else
--(NSToolbar*) mac;
-#endif
+@protocol MAIToolbarProtocol
+@property(nullable, setter=setDelegate:, getter=delegate) id<MAIToolbarDelegate> delegate;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface UIToolbar (MAIConversion)
+@interface MAIToolbar : UIToolbar<MAIToolbarProtocol>
 #else
-@interface NSToolbar (MAIConversion)
+@interface MAIToolbar : NSToolbar<MAIToolbarProtocol>
 #endif
--(MAIToolbar*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

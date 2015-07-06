@@ -89,6 +89,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol MAIApplicationDelegate
+@optional
 -(void)application:(MAIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken;
 -(void)application:(MAIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error;
 -(BOOL)application:(MAIApplication*)application willContinueUserActivityWithType:(NSString*)userActivityType;

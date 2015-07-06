@@ -88,22 +88,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAIEvent : NSObject
-@property(nonatomic, readonly) NSTimeInterval timestamp;
-#if TARGET_OS_IPHONE
--(UIEvent*) ios;
-#else
--(NSEvent*) mac;
-#endif
+@protocol MAIEventProtocol
+@property(readonly, getter=timestamp) NSTimeInterval timestamp;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface UIEvent (MAIConversion)
+@interface MAIEvent : UIEvent<MAIEventProtocol>
 #else
-@interface NSEvent (MAIConversion)
+@interface MAIEvent : NSEvent<MAIEventProtocol>
 #endif
--(MAIEvent*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

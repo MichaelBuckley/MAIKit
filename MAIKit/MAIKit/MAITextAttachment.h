@@ -88,26 +88,21 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAITextAttachment : NSObject<MAITextAttachmentContainer,NSCoding>
--(instancetype)initWithData:(nullable NSData*)contentData ofType:(nullable NSString*)uti NS_DESIGNATED_INITIALIZER;
-@property(nonatomic, readwrite, nullable, copy) NSData* contents;
-@property(nonatomic, readwrite, nullable, copy) NSString* fileType;
-@property(nonatomic, readwrite, nullable, strong) MAIImage* image;
-@property(nonatomic, readwrite, nullable, strong) NSFileWrapper* fileWrapper;
-#if TARGET_OS_IPHONE
--(NSTextAttachment*) ios;
-#else
--(NSTextAttachment*) mac;
-#endif
+@protocol MAITextAttachmentProtocol
+-(instancetype)initWithData:(nullable NSData*)contentData ofType:(nullable NSString*)uti;
+@property(nullable, setter=setContents:, getter=contents) NSData* contents;
+@property(nullable, setter=setFileType:, getter=fileType) NSString* fileType;
+@property(nullable, setter=setImage:, getter=image) MAIImage* image;
+@property(setter=setBounds:, getter=bounds) CGRect bounds;
+@property(nullable, setter=setFileWrapper:, getter=fileWrapper) NSFileWrapper* fileWrapper;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface NSTextAttachment (MAIConversion)
+@interface MAITextAttachment : NSTextAttachment<MAITextAttachmentProtocol>
 #else
-@interface NSTextAttachment (MAIConversion)
+@interface MAITextAttachment : NSTextAttachment<MAITextAttachmentProtocol>
 #endif
--(MAITextAttachment*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

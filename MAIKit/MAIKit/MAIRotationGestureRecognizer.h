@@ -88,26 +88,20 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAIRotationGestureRecognizer : NSObject
--(CGPoint)locationInView:(nullable MAIView*)view ;
-@property(nonatomic, readonly) MAIGestureRecognizerState state;
-@property(nonatomic, readwrite, nullable, weak) id <MAIGestureRecognizerDelegate> delegate;
-@property(nonatomic, readwrite, getter=isEnabled) BOOL enabled;
-@property(nonatomic, readonly, nullable) MAIView* view;
-#if TARGET_OS_IPHONE
--(UIRotationGestureRecognizer*) ios;
-#else
--(NSRotationGestureRecognizer*) mac;
-#endif
+@protocol MAIRotationGestureRecognizerProtocol
+-(CGPoint)locationInView:(nullable MAIView*)view;
+@property(setter=setRotation:, getter=rotation) CGFloat rotation;
+@property(nullable, setter=setDelegate:, getter=delegate) id <MAIGestureRecognizerDelegate> delegate;
+@property(setter=setEnabled:, getter=isEnabled) BOOL enabled;
+@property(readonly, nullable, getter=view) MAIView* view;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface UIRotationGestureRecognizer (MAIConversion)
+@interface MAIRotationGestureRecognizer : UIRotationGestureRecognizer<MAIRotationGestureRecognizerProtocol>
 #else
-@interface NSRotationGestureRecognizer (MAIConversion)
+@interface MAIRotationGestureRecognizer : NSRotationGestureRecognizer<MAIRotationGestureRecognizerProtocol>
 #endif
--(MAIRotationGestureRecognizer*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -88,21 +88,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAIStoryboard : NSObject
-#if TARGET_OS_IPHONE
--(UIStoryboard*) ios;
-#else
--(NSStoryboard*) mac;
-#endif
+@protocol MAIStoryboardProtocol
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface UIStoryboard (MAIConversion)
+@interface MAIStoryboard : UIStoryboard<MAIStoryboardProtocol>
 #else
-@interface NSStoryboard (MAIConversion)
+@interface MAIStoryboard : NSStoryboard<MAIStoryboardProtocol>
 #endif
--(MAIStoryboard*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

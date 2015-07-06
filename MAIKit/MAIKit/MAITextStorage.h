@@ -88,33 +88,27 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAITextStorage : NSMutableAttributedString
--(void)addLayoutManager:(MAILayoutManager*)aLayoutManager ;
--(void)removeLayoutManager:(MAILayoutManager*)aLayoutManager ;
--(void)edited:(MAITextStorageEditActions)editedMask range:(NSRange)editedRange changeInLength:(NSInteger)delta ;
--(void)processEditing ;
--(void)invalidateAttributesInRange:(NSRange)range ;
--(void)ensureAttributesAreFixedInRange:(NSRange)range ;
-@property(nonatomic, readonly, copy) NSArray<MAILayoutManager*>* layoutManagers;
-@property(nonatomic, readonly) MAITextStorageEditActions editedMask;
-@property(nonatomic, readonly) NSRange editedRange;
-@property(nonatomic, readonly) NSInteger changeInLength;
-@property(nonatomic, readwrite, nullable, assign) id <MAITextStorageDelegate> delegate;
-@property(nonatomic, readonly) BOOL fixesAttributesLazily;
-#if TARGET_OS_IPHONE
--(NSTextStorage*) ios;
-#else
--(NSTextStorage*) mac;
-#endif
+@protocol MAITextStorageProtocol
+-(void)addLayoutManager:(MAILayoutManager*)aLayoutManager;
+-(void)removeLayoutManager:(MAILayoutManager*)aLayoutManager;
+-(void)edited:(MAITextStorageEditActions)editedMask range:(NSRange)editedRange changeInLength:(NSInteger)delta;
+-(void)processEditing;
+-(void)invalidateAttributesInRange:(NSRange)range;
+-(void)ensureAttributesAreFixedInRange:(NSRange)range;
+@property(readonly, getter=layoutManagers) NSArray<MAILayoutManager*>* layoutManagers;
+@property(readonly, getter=editedMask) MAITextStorageEditActions editedMask;
+@property(readonly, getter=editedRange) NSRange editedRange;
+@property(readonly, getter=changeInLength) NSInteger changeInLength;
+@property(nullable, setter=setDelegate:, getter=delegate) id <MAITextStorageDelegate> delegate;
+@property(readonly, getter=fixesAttributesLazily) BOOL fixesAttributesLazily;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface NSTextStorage (MAIConversion)
+@interface MAITextStorage : NSTextStorage<MAITextStorageProtocol>
 #else
-@interface NSTextStorage (MAIConversion)
+@interface MAITextStorage : NSTextStorage<MAITextStorageProtocol>
 #endif
--(MAITextStorage*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

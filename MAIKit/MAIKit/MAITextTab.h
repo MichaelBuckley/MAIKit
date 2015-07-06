@@ -88,26 +88,20 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAITextTab : NSObject<NSCopying,NSCoding>
-+(NSCharacterSet*)columnTerminatorsForLocale:(nullable NSLocale*)aLocale ;
--(instancetype)initWithTextAlignment:(NSTextAlignment)alignment location:(CGFloat)loc options:(NSDictionary<NSString*, id>*)options NS_DESIGNATED_INITIALIZER;
-@property(nonatomic, readonly) NSTextAlignment alignment;
-@property(nonatomic, readonly) CGFloat location;
-@property(nonatomic, readonly) NSDictionary<NSString*, id>* options;
-#if TARGET_OS_IPHONE
--(NSTextTab*) ios;
-#else
--(NSTextTab*) mac;
-#endif
+@protocol MAITextTabProtocol
++(NSCharacterSet*)columnTerminatorsForLocale:(nullable NSLocale*)aLocale;
+-(instancetype)initWithTextAlignment:(NSTextAlignment)alignment location:(CGFloat)loc options:(NSDictionary<NSString*, id>*)options;
+@property(readonly, getter=alignment) NSTextAlignment alignment;
+@property(readonly, getter=location) CGFloat location;
+@property(readonly, getter=options) NSDictionary<NSString*, id>* options;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface NSTextTab (MAIConversion)
+@interface MAITextTab : NSTextTab<MAITextTabProtocol>
 #else
-@interface NSTextTab (MAIConversion)
+@interface MAITextTab : NSTextTab<MAITextTabProtocol>
 #endif
--(MAITextTab*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

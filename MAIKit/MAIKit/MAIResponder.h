@@ -88,23 +88,21 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAIResponder : NSObject
--(BOOL)becomeFirstResponder ;
--(BOOL)resignFirstResponder ;
-#if TARGET_OS_IPHONE
--(UIResponder*) ios;
-#else
--(NSResponder*) mac;
-#endif
+@protocol MAIResponderProtocol
+-(BOOL)becomeFirstResponder;
+-(BOOL)resignFirstResponder;
+-(void)updateUserActivityState:(NSUserActivity*)activity;
+-(void)restoreUserActivityState:(NSUserActivity*)activity;
+@property(readonly, nullable, getter=undoManager) NSUndoManager* undoManager;
+@property(nullable, setter=setUserActivity:, getter=userActivity) NSUserActivity* userActivity;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface UIResponder (MAIConversion)
+@interface MAIResponder : UIResponder<MAIResponderProtocol>
 #else
-@interface NSResponder (MAIConversion)
+@interface MAIResponder : NSResponder<MAIResponderProtocol>
 #endif
--(MAIResponder*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

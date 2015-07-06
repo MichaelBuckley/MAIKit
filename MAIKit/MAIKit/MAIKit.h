@@ -1,4 +1,8 @@
-@import Foundation;
+#if TARGET_OS_IPHONE
+@import UIKit;
+#else
+@import Cocoa;
+#endif
 
 FOUNDATION_EXPORT double MAIKitVersionNumber;
 

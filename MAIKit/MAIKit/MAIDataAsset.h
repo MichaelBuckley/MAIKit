@@ -88,27 +88,21 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAIDataAsset : NSObject<NSCopying>
+@protocol MAIDataAssetProtocol
 -(instancetype)init NS_UNAVAILABLE;
--(nullable instancetype)initWithName:(NSString*)name ;
--(nullable instancetype)initWithName:(NSString*)name bundle:(NSBundle*)bundle NS_DESIGNATED_INITIALIZER;
-@property(nonatomic, readonly, copy) NSString* name;
-@property(nonatomic, readonly, copy) NSData* data;
-@property(nonatomic, readonly, copy) NSString* typeIdentifier;
-#if TARGET_OS_IPHONE
--(NSDataAsset*) ios;
-#else
--(NSDataAsset*) mac;
-#endif
+-(nullable instancetype)initWithName:(NSString*)name;
+-(nullable instancetype)initWithName:(NSString*)name bundle:(NSBundle*)bundle;
+@property(readonly, getter=name) NSString* name;
+@property(readonly, getter=data) NSData* data;
+@property(readonly, getter=typeIdentifier) NSString* typeIdentifier;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface NSDataAsset (MAIConversion)
+@interface MAIDataAsset : NSDataAsset<MAIDataAssetProtocol>
 #else
-@interface NSDataAsset (MAIConversion)
+@interface MAIDataAsset : NSDataAsset<MAIDataAssetProtocol>
 #endif
--(MAIDataAsset*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

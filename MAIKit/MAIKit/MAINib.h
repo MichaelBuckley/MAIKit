@@ -88,21 +88,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAINib : NSObject
-#if TARGET_OS_IPHONE
--(UINib*) ios;
-#else
--(NSNib*) mac;
-#endif
+@protocol MAINibProtocol
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface UINib (MAIConversion)
+@interface MAINib : UINib<MAINibProtocol>
 #else
-@interface NSNib (MAIConversion)
+@interface MAINib : NSNib<MAINibProtocol>
 #endif
--(MAINib*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

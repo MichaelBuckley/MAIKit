@@ -88,29 +88,29 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAIWindow : NSObject
--(void)becomeKeyWindow ;
--(void)resignKeyWindow ;
--(void)makeKeyWindow ;
--(void)sendEvent:(MAIEvent*)event ;
--(instancetype)initWithCoder:(NSCoder*)aDecoder NS_DESIGNATED_INITIALIZER;
--(BOOL)becomeFirstResponder ;
--(BOOL)resignFirstResponder ;
-@property(nonatomic, readonly, getter=isKeyWindow) BOOL keyWindow;
-#if TARGET_OS_IPHONE
--(UIWindow*) ios;
-#else
--(NSWindow*) mac;
-#endif
+@protocol MAIWindowProtocol
+-(void)becomeKeyWindow;
+-(void)resignKeyWindow;
+-(void)makeKeyWindow;
+-(void)sendEvent:(MAIEvent*)event;
+-(instancetype)initWithCoder:(NSCoder*)aDecoder;
+-(void)encodeRestorableStateWithCoder:(NSCoder*)coder;
+-(BOOL)becomeFirstResponder;
+-(BOOL)resignFirstResponder;
+-(void)updateUserActivityState:(NSUserActivity*)activity;
+-(void)restoreUserActivityState:(NSUserActivity*)activity;
+@property(readonly, getter=isKeyWindow) BOOL keyWindow;
+@property(setter=setOpaque:, getter=isOpaque) BOOL opaque;
+@property(readonly, nullable, getter=undoManager) NSUndoManager* undoManager;
+@property(nullable, setter=setUserActivity:, getter=userActivity) NSUserActivity* userActivity;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface UIWindow (MAIConversion)
+@interface MAIWindow : UIWindow<MAIWindowProtocol>
 #else
-@interface NSWindow (MAIConversion)
+@interface MAIWindow : NSWindow<MAIWindowProtocol>
 #endif
--(MAIWindow*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

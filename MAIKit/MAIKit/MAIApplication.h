@@ -88,27 +88,29 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAIApplication : NSObject
-+(MAIApplication*)sharedApplication ;
--(void)sendEvent:(MAIEvent*)event ;
--(BOOL)becomeFirstResponder ;
--(BOOL)resignFirstResponder ;
-@property(nonatomic, readwrite, nullable, assign) id<MAIApplicationDelegate> delegate;
-@property(nonatomic, readonly, nullable) MAIWindow* keyWindow;
-#if TARGET_OS_IPHONE
--(UIApplication*) ios;
-#else
--(NSApplication*) mac;
-#endif
+@protocol MAIApplicationProtocol
++(MAIApplication*)sharedApplication;
+-(void)sendEvent:(MAIEvent*)event;
+-(void)unregisterForRemoteNotifications;
+-(void)extendStateRestoration;
+-(void)completeStateRestoration;
+-(BOOL)becomeFirstResponder;
+-(BOOL)resignFirstResponder;
+-(void)updateUserActivityState:(NSUserActivity*)activity;
+-(void)restoreUserActivityState:(NSUserActivity*)activity;
+@property(nullable, setter=setDelegate:, getter=delegate) id<MAIApplicationDelegate> delegate;
+@property(readonly, nullable, getter=keyWindow) MAIWindow* keyWindow;
+@property(readonly, getter=userInterfaceLayoutDirection) MAIUserInterfaceLayoutDirection userInterfaceLayoutDirection;
+@property(readonly, nullable, getter=undoManager) NSUndoManager* undoManager;
+@property(nullable, setter=setUserActivity:, getter=userActivity) NSUserActivity* userActivity;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface UIApplication (MAIConversion)
+@interface MAIApplication : UIApplication<MAIApplicationProtocol>
 #else
-@interface NSApplication (MAIConversion)
+@interface MAIApplication : NSApplication<MAIApplicationProtocol>
 #endif
--(MAIApplication*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

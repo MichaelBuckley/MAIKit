@@ -88,23 +88,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAIMenuItem : NSObject
-@property(nonatomic, readwrite, copy) NSString* title;
-@property(nonatomic, readwrite) SEL action;
-#if TARGET_OS_IPHONE
--(UIMenuItem*) ios;
-#else
--(NSMenuItem*) mac;
-#endif
+@protocol MAIMenuItemProtocol
+@property(setter=setTitle:, getter=title) NSString* title;
+@property(setter=setAction:, getter=action) SEL action;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface UIMenuItem (MAIConversion)
+@interface MAIMenuItem : UIMenuItem<MAIMenuItemProtocol>
 #else
-@interface NSMenuItem (MAIConversion)
+@interface MAIMenuItem : NSMenuItem<MAIMenuItemProtocol>
 #endif
--(MAIMenuItem*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

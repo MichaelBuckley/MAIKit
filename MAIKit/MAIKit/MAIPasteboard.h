@@ -88,25 +88,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAIPasteboard : NSObject
-+(MAIPasteboard*)generalPasteboard ;
-+(MAIPasteboard*)pasteboardWithUniqueName ;
-@property(nonatomic, readonly) NSString* name;
-@property(nonatomic, readonly) NSInteger changeCount;
-#if TARGET_OS_IPHONE
--(UIPasteboard*) ios;
-#else
--(NSPasteboard*) mac;
-#endif
+@protocol MAIPasteboardProtocol
++(MAIPasteboard*)generalPasteboard;
++(MAIPasteboard*)pasteboardWithUniqueName;
+@property(readonly, getter=name) NSString* name;
+@property(readonly, getter=changeCount) NSInteger changeCount;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface UIPasteboard (MAIConversion)
+@interface MAIPasteboard : UIPasteboard<MAIPasteboardProtocol>
 #else
-@interface NSPasteboard (MAIConversion)
+@interface MAIPasteboard : NSPasteboard<MAIPasteboardProtocol>
 #endif
--(MAIPasteboard*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

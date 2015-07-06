@@ -89,11 +89,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol MAITextInput
-
-
-@required
-
--(void)unmarkText;
+@optional
 
 
 

@@ -88,28 +88,26 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAITextContainer : NSObject<NSCoding,MAITextLayoutOrientationProvider>
--(instancetype)initWithSize:(CGSize)size NS_DESIGNATED_INITIALIZER;
--(instancetype)initWithCoder:(NSCoder*)coder NS_DESIGNATED_INITIALIZER;
--(void)replaceLayoutManager:(MAILayoutManager*)newLayoutManager ;
--(CGRect)lineFragmentRectForProposedRect:(CGRect)proposedRect atIndex:(NSUInteger)characterIndex writingDirection:(MAIWritingDirection)baseWritingDirection remainingRect:(nullable CGRect*)remainingRect ;
-@property(nonatomic, readwrite, nullable, assign) MAILayoutManager* layoutManager;
-@property(nonatomic, readwrite, copy) NSArray<MAIBezierPath*>* exclusionPaths;
-@property(nonatomic, readonly, getter=isSimpleRectangularTextContainer) BOOL simpleRectangularTextContainer;
-#if TARGET_OS_IPHONE
--(NSTextContainer*) ios;
-#else
--(NSTextContainer*) mac;
-#endif
+@protocol MAITextContainerProtocol
+-(instancetype)initWithCoder:(NSCoder*)coder;
+-(void)replaceLayoutManager:(MAILayoutManager*)newLayoutManager;
+-(CGRect)lineFragmentRectForProposedRect:(CGRect)proposedRect atIndex:(NSUInteger)characterIndex writingDirection:(MAIWritingDirection)baseWritingDirection remainingRect:(nullable CGRect*)remainingRect;
+@property(nullable, setter=setLayoutManager:, getter=layoutManager) MAILayoutManager* layoutManager;
+@property(setter=setExclusionPaths:, getter=exclusionPaths) NSArray<MAIBezierPath*>* exclusionPaths;
+@property(setter=setLineBreakMode:, getter=lineBreakMode) NSLineBreakMode lineBreakMode;
+@property(setter=setLineFragmentPadding:, getter=lineFragmentPadding) CGFloat lineFragmentPadding;
+@property(setter=setMaximumNumberOfLines:, getter=maximumNumberOfLines) NSUInteger maximumNumberOfLines;
+@property(readonly, getter=isSimpleRectangularTextContainer) BOOL simpleRectangularTextContainer;
+@property(setter=setWidthTracksTextView:, getter=widthTracksTextView) BOOL widthTracksTextView;
+@property(setter=setHeightTracksTextView:, getter=heightTracksTextView) BOOL heightTracksTextView;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface NSTextContainer (MAIConversion)
+@interface MAITextContainer : NSTextContainer<MAITextContainerProtocol>
 #else
-@interface NSTextContainer (MAIConversion)
+@interface MAITextContainer : NSTextContainer<MAITextContainerProtocol>
 #endif
--(MAITextContainer*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

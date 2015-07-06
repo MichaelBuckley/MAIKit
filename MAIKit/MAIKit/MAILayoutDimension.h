@@ -88,30 +88,24 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAILayoutDimension : NSLayoutAnchor
--(MAILayoutConstraint*)constraintEqualToConstant:(CGFloat)c ;
--(MAILayoutConstraint*)constraintGreaterThanOrEqualToConstant:(CGFloat)c ;
--(MAILayoutConstraint*)constraintLessThanOrEqualToConstant:(CGFloat)c ;
--(MAILayoutConstraint*)constraintEqualToAnchor:(MAILayoutDimension*)anchor multiplier:(CGFloat)m ;
--(MAILayoutConstraint*)constraintGreaterThanOrEqualToAnchor:(MAILayoutDimension*)anchor multiplier:(CGFloat)m ;
--(MAILayoutConstraint*)constraintLessThanOrEqualToAnchor:(MAILayoutDimension*)anchor multiplier:(CGFloat)m ;
--(MAILayoutConstraint*)constraintEqualToAnchor:(MAILayoutDimension*)anchor multiplier:(CGFloat)m constant:(CGFloat)c ;
--(MAILayoutConstraint*)constraintGreaterThanOrEqualToAnchor:(MAILayoutDimension*)anchor multiplier:(CGFloat)m constant:(CGFloat)c ;
--(MAILayoutConstraint*)constraintLessThanOrEqualToAnchor:(MAILayoutDimension*)anchor multiplier:(CGFloat)m constant:(CGFloat)c ;
-#if TARGET_OS_IPHONE
--(NSLayoutDimension*) ios;
-#else
--(NSLayoutDimension*) mac;
-#endif
+@protocol MAILayoutDimensionProtocol
+-(MAILayoutConstraint*)constraintEqualToConstant:(CGFloat)c;
+-(MAILayoutConstraint*)constraintGreaterThanOrEqualToConstant:(CGFloat)c;
+-(MAILayoutConstraint*)constraintLessThanOrEqualToConstant:(CGFloat)c;
+-(MAILayoutConstraint*)constraintEqualToAnchor:(MAILayoutDimension*)anchor multiplier:(CGFloat)m;
+-(MAILayoutConstraint*)constraintGreaterThanOrEqualToAnchor:(MAILayoutDimension*)anchor multiplier:(CGFloat)m;
+-(MAILayoutConstraint*)constraintLessThanOrEqualToAnchor:(MAILayoutDimension*)anchor multiplier:(CGFloat)m;
+-(MAILayoutConstraint*)constraintEqualToAnchor:(MAILayoutDimension*)anchor multiplier:(CGFloat)m constant:(CGFloat)c;
+-(MAILayoutConstraint*)constraintGreaterThanOrEqualToAnchor:(MAILayoutDimension*)anchor multiplier:(CGFloat)m constant:(CGFloat)c;
+-(MAILayoutConstraint*)constraintLessThanOrEqualToAnchor:(MAILayoutDimension*)anchor multiplier:(CGFloat)m constant:(CGFloat)c;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface NSLayoutDimension (MAIConversion)
+@interface MAILayoutDimension : NSLayoutDimension<MAILayoutDimensionProtocol>
 #else
-@interface NSLayoutDimension (MAIConversion)
+@interface MAILayoutDimension : NSLayoutDimension<MAILayoutDimensionProtocol>
 #endif
--(MAILayoutDimension*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

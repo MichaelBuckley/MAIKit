@@ -88,21 +88,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAIPrinter : NSObject
-#if TARGET_OS_IPHONE
--(UIPrinter*) ios;
-#else
--(NSPrinter*) mac;
-#endif
+@protocol MAIPrinterProtocol
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface UIPrinter (MAIConversion)
+@interface MAIPrinter : UIPrinter<MAIPrinterProtocol>
 #else
-@interface NSPrinter (MAIConversion)
+@interface MAIPrinter : NSPrinter<MAIPrinterProtocol>
 #endif
--(MAIPrinter*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

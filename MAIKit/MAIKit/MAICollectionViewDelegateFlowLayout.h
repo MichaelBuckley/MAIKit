@@ -89,13 +89,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-@interface MAICollectionViewDelegateFlowLayout <MAICollectionViewDelegate>
+@protocol MAICollectionViewDelegateFlowLayout <MAICollectionViewDelegate>
 
--(CGSize)collectionView:(MAICollectionView*)collectionView layout:(MAICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath*)indexPath;
+@optional
 -(CGFloat)collectionView:(MAICollectionView*)collectionView layout:(MAICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section;
 -(CGFloat)collectionView:(MAICollectionView*)collectionView layout:(MAICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section;
--(CGSize)collectionView:(MAICollectionView*)collectionView layout:(MAICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section;
--(CGSize)collectionView:(MAICollectionView*)collectionView layout:(MAICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section;
 
 
 

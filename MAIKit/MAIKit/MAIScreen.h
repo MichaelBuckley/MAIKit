@@ -88,22 +88,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAIScreen : NSObject
-+(MAIScreen*)mainScreen ;
-#if TARGET_OS_IPHONE
--(UIScreen*) ios;
-#else
--(NSScreen*) mac;
-#endif
+@protocol MAIScreenProtocol
++(MAIScreen*)mainScreen;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface UIScreen (MAIConversion)
+@interface MAIScreen : UIScreen<MAIScreenProtocol>
 #else
-@interface NSScreen (MAIConversion)
+@interface MAIScreen : NSScreen<MAIScreenProtocol>
 #endif
--(MAIScreen*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

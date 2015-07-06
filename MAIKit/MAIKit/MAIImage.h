@@ -88,25 +88,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAIImage : NSObject<NSSecureCoding>
-+(nullable MAIImage*)imageNamed:(NSString*)name ;
--(nullable instancetype)initWithContentsOfFile:(NSString*)path ;
--(nullable instancetype)initWithData:(NSData*)data ;
--(void)drawInRect:(CGRect)rect ;
-#if TARGET_OS_IPHONE
--(UIImage*) ios;
-#else
--(NSImage*) mac;
-#endif
+@protocol MAIImageProtocol
++(nullable MAIImage*)imageNamed:(NSString*)name;
+-(nullable instancetype)initWithContentsOfFile:(NSString*)path;
+-(nullable instancetype)initWithData:(NSData*)data;
+-(void)drawInRect:(CGRect)rect;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface UIImage (MAIConversion)
+@interface MAIImage : UIImage<MAIImageProtocol>
 #else
-@interface NSImage (MAIConversion)
+@interface MAIImage : NSImage<MAIImageProtocol>
 #endif
--(MAIImage*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

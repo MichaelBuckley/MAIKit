@@ -88,33 +88,27 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAILayoutGuide : NSObject<NSCoding>
-@property(nonatomic, readwrite, nullable, weak) MAIView* owningView;
-@property(nonatomic, readwrite, copy) NSString* identifier;
-@property(nonatomic, readonly, strong) MAILayoutXAxisAnchor* leadingAnchor;
-@property(nonatomic, readonly, strong) MAILayoutXAxisAnchor* trailingAnchor;
-@property(nonatomic, readonly, strong) MAILayoutXAxisAnchor* leftAnchor;
-@property(nonatomic, readonly, strong) MAILayoutXAxisAnchor* rightAnchor;
-@property(nonatomic, readonly, strong) MAILayoutYAxisAnchor* topAnchor;
-@property(nonatomic, readonly, strong) MAILayoutYAxisAnchor* bottomAnchor;
-@property(nonatomic, readonly, strong) MAILayoutDimension* widthAnchor;
-@property(nonatomic, readonly, strong) MAILayoutDimension* heightAnchor;
-@property(nonatomic, readonly, strong) MAILayoutXAxisAnchor* centerXAnchor;
-@property(nonatomic, readonly, strong) MAILayoutYAxisAnchor* centerYAnchor;
-#if TARGET_OS_IPHONE
--(UILayoutGuide*) ios;
-#else
--(NSLayoutGuide*) mac;
-#endif
+@protocol MAILayoutGuideProtocol
+@property(nullable, setter=setOwningView:, getter=owningView) MAIView* owningView;
+@property(setter=setIdentifier:, getter=identifier) NSString* identifier;
+@property(readonly, getter=leadingAnchor) MAILayoutXAxisAnchor* leadingAnchor;
+@property(readonly, getter=trailingAnchor) MAILayoutXAxisAnchor* trailingAnchor;
+@property(readonly, getter=leftAnchor) MAILayoutXAxisAnchor* leftAnchor;
+@property(readonly, getter=rightAnchor) MAILayoutXAxisAnchor* rightAnchor;
+@property(readonly, getter=topAnchor) MAILayoutYAxisAnchor* topAnchor;
+@property(readonly, getter=bottomAnchor) MAILayoutYAxisAnchor* bottomAnchor;
+@property(readonly, getter=widthAnchor) MAILayoutDimension* widthAnchor;
+@property(readonly, getter=heightAnchor) MAILayoutDimension* heightAnchor;
+@property(readonly, getter=centerXAnchor) MAILayoutXAxisAnchor* centerXAnchor;
+@property(readonly, getter=centerYAnchor) MAILayoutYAxisAnchor* centerYAnchor;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface UILayoutGuide (MAIConversion)
+@interface MAILayoutGuide : UILayoutGuide<MAILayoutGuideProtocol>
 #else
-@interface NSLayoutGuide (MAIConversion)
+@interface MAILayoutGuide : NSLayoutGuide<MAILayoutGuideProtocol>
 #endif
--(MAILayoutGuide*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

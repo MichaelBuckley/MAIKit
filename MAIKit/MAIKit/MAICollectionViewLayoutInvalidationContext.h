@@ -88,23 +88,18 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAICollectionViewLayoutInvalidationContext : NSObject
-@property(nonatomic, readonly) BOOL invalidateEverything;
-@property(nonatomic, readonly) BOOL invalidateDataSourceCounts;
-#if TARGET_OS_IPHONE
--(UICollectionViewLayoutInvalidationContext*) ios;
-#else
--(NSCollectionViewLayoutInvalidationContext*) mac;
-#endif
+@protocol MAICollectionViewLayoutInvalidationContextProtocol
+@property(readonly, getter=invalidateEverything) BOOL invalidateEverything;
+@property(readonly, getter=invalidateDataSourceCounts) BOOL invalidateDataSourceCounts;
+@property(setter=setContentOffsetAdjustment:, getter=contentOffsetAdjustment) CGPoint contentOffsetAdjustment;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface UICollectionViewLayoutInvalidationContext (MAIConversion)
+@interface MAICollectionViewLayoutInvalidationContext : UICollectionViewLayoutInvalidationContext<MAICollectionViewLayoutInvalidationContextProtocol>
 #else
-@interface NSCollectionViewLayoutInvalidationContext (MAIConversion)
+@interface MAICollectionViewLayoutInvalidationContext : NSCollectionViewLayoutInvalidationContext<MAICollectionViewLayoutInvalidationContextProtocol>
 #endif
--(MAICollectionViewLayoutInvalidationContext*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

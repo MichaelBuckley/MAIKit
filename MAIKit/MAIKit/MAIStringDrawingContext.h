@@ -88,23 +88,18 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAIStringDrawingContext : NSObject
-@property(nonatomic, readonly) CGFloat actualScaleFactor;
-@property(nonatomic, readonly) CGRect totalBounds;
-#if TARGET_OS_IPHONE
--(NSStringDrawingContext*) ios;
-#else
--(NSStringDrawingContext*) mac;
-#endif
+@protocol MAIStringDrawingContextProtocol
+@property(setter=setMinimumScaleFactor:, getter=minimumScaleFactor) CGFloat minimumScaleFactor;
+@property(readonly, getter=actualScaleFactor) CGFloat actualScaleFactor;
+@property(readonly, getter=totalBounds) CGRect totalBounds;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface NSStringDrawingContext (MAIConversion)
+@interface MAIStringDrawingContext : NSStringDrawingContext<MAIStringDrawingContextProtocol>
 #else
-@interface NSStringDrawingContext (MAIConversion)
+@interface MAIStringDrawingContext : NSStringDrawingContext<MAIStringDrawingContextProtocol>
 #endif
--(MAIStringDrawingContext*) mai;
 @end
 
 NS_ASSUME_NONNULL_END

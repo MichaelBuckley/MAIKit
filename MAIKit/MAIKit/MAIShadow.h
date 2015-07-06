@@ -88,22 +88,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MAIShadow : NSObject<NSCopying,NSCoding>
--(instancetype)init NS_DESIGNATED_INITIALIZER;
-#if TARGET_OS_IPHONE
--(NSShadow*) ios;
-#else
--(NSShadow*) mac;
-#endif
+@protocol MAIShadowProtocol
+-(instancetype)init;
+@property(setter=setShadowBlurRadius:, getter=shadowBlurRadius) CGFloat shadowBlurRadius;
 
 @end
 
 #if TARGET_OS_IPHONE
-@interface NSShadow (MAIConversion)
+@interface MAIShadow : NSShadow<MAIShadowProtocol>
 #else
-@interface NSShadow (MAIConversion)
+@interface MAIShadow : NSShadow<MAIShadowProtocol>
 #endif
--(MAIShadow*) mai;
 @end
 
 NS_ASSUME_NONNULL_END
