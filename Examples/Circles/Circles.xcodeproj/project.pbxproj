@@ -1,0 +1,555 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		30109FAE1B37B94900536E92 /* CirclesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30109FAD1B37B94900536E92 /* CirclesView.m */; };
+		3062C75B1B4A2F6300B8D5D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3062C75A1B4A2F6300B8D5D1 /* AppDelegate.swift */; };
+		3062C7601B4A2F6300B8D5D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3062C75E1B4A2F6300B8D5D1 /* Main.storyboard */; };
+		3062C7621B4A2F6300B8D5D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3062C7611B4A2F6300B8D5D1 /* Assets.xcassets */; };
+		3062C7651B4A2F6300B8D5D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3062C7631B4A2F6300B8D5D1 /* LaunchScreen.storyboard */; };
+		3062C76A1B4A301A00B8D5D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F2E09E1B2E0FE400C217F8 /* ViewController.swift */; };
+		3062C76B1B4A30AA00B8D5D1 /* CirclesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30109FAD1B37B94900536E92 /* CirclesView.m */; };
+		3062C76E1B4A30C000B8D5D1 /* MAIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 306BB96F1B30FFF40052EC35 /* MAIKit.framework */; };
+		3062C7711B4A30D900B8D5D1 /* MAIKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 306BB9711B30FFF40052EC35 /* MAIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		306BB9771B3100390052EC35 /* MAIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 306BB96F1B30FFF40052EC35 /* MAIKit.framework */; };
+		306BB9781B3100A60052EC35 /* MAIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 306BB96F1B30FFF40052EC35 /* MAIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		30F2E09D1B2E0FE400C217F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F2E09C1B2E0FE400C217F8 /* AppDelegate.swift */; };
+		30F2E09F1B2E0FE400C217F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F2E09E1B2E0FE400C217F8 /* ViewController.swift */; };
+		30F2E0A11B2E0FE400C217F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30F2E0A01B2E0FE400C217F8 /* Assets.xcassets */; };
+		30F2E0A41B2E0FE400C217F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30F2E0A21B2E0FE400C217F8 /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3062C76C1B4A30B800B8D5D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 306BB9691B30FFF40052EC35 /* MAIKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 3043662A1B0195010067C766;
+			remoteInfo = "MAIKit-ios";
+		};
+		306BB96E1B30FFF40052EC35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 306BB9691B30FFF40052EC35 /* MAIKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3043652C1B0193E40067C766;
+			remoteInfo = "MAIKit-mac";
+		};
+		306BB9701B30FFF40052EC35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 306BB9691B30FFF40052EC35 /* MAIKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3043662B1B0195010067C766;
+			remoteInfo = "MAIKit-ios";
+		};
+		306BB9731B3100330052EC35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 306BB9691B30FFF40052EC35 /* MAIKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 3043652B1B0193E40067C766;
+			remoteInfo = "MAIKit-mac";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3062C76F1B4A30CE00B8D5D1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3062C7711B4A30D900B8D5D1 /* MAIKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30BE55FF1B2F112100B87231 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				306BB9781B3100A60052EC35 /* MAIKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		30109FAC1B37B94900536E92 /* CirclesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CirclesView.h; path = Circles/Common/CirclesView.h; sourceTree = "<group>"; };
+		30109FAD1B37B94900536E92 /* CirclesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CirclesView.m; path = Circles/Common/CirclesView.m; sourceTree = "<group>"; };
+		3062C7581B4A2F6300B8D5D1 /* Circles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Circles.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3062C75A1B4A2F6300B8D5D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../Circles/iOS/AppDelegate.swift; sourceTree = "<group>"; };
+		3062C75F1B4A2F6300B8D5D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3062C7611B4A2F6300B8D5D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Circles/iOS/Assets.xcassets; sourceTree = "<group>"; };
+		3062C7641B4A2F6300B8D5D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3062C7661B4A2F6300B8D5D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Circles/iOS/Info.plist; sourceTree = "<group>"; };
+		306BB9691B30FFF40052EC35 /* MAIKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MAIKit.xcodeproj; path = ../../MAIKit/MAIKit.xcodeproj; sourceTree = "<group>"; };
+		30CC7C101B33AD6100690836 /* Circles-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Circles-Bridging-Header.h"; path = "Circles/Common/Circles-Bridging-Header.h"; sourceTree = "<group>"; };
+		30F2E0991B2E0FE400C217F8 /* Circles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Circles.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		30F2E09C1B2E0FE400C217F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Mac/AppDelegate.swift; sourceTree = "<group>"; };
+		30F2E09E1B2E0FE400C217F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Circles/Common/ViewController.swift; sourceTree = "<group>"; };
+		30F2E0A01B2E0FE400C217F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Mac/Assets.xcassets; sourceTree = "<group>"; };
+		30F2E0A31B2E0FE400C217F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		30F2E0A51B2E0FE400C217F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Mac/Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3062C7551B4A2F6300B8D5D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3062C76E1B4A30C000B8D5D1 /* MAIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30F2E0961B2E0FE400C217F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				306BB9771B3100390052EC35 /* MAIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3062C7371B4A2CE200B8D5D1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				30CC7C101B33AD6100690836 /* Circles-Bridging-Header.h */,
+				30109FAC1B37B94900536E92 /* CirclesView.h */,
+				30109FAD1B37B94900536E92 /* CirclesView.m */,
+				30F2E09E1B2E0FE400C217F8 /* ViewController.swift */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		3062C7591B4A2F6300B8D5D1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3062C75A1B4A2F6300B8D5D1 /* AppDelegate.swift */,
+				3062C7611B4A2F6300B8D5D1 /* Assets.xcassets */,
+				3062C7661B4A2F6300B8D5D1 /* Info.plist */,
+				3062C7631B4A2F6300B8D5D1 /* LaunchScreen.storyboard */,
+				3062C75E1B4A2F6300B8D5D1 /* Main.storyboard */,
+			);
+			name = iOS;
+			path = "Circles-ios";
+			sourceTree = "<group>";
+		};
+		306BB96A1B30FFF40052EC35 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				306BB96F1B30FFF40052EC35 /* MAIKit.framework */,
+				306BB9711B30FFF40052EC35 /* MAIKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		30F2E0901B2E0FE400C217F8 = {
+			isa = PBXGroup;
+			children = (
+				3062C7371B4A2CE200B8D5D1 /* Common */,
+				30F2E09B1B2E0FE400C217F8 /* Mac */,
+				3062C7591B4A2F6300B8D5D1 /* iOS */,
+				30F2E09A1B2E0FE400C217F8 /* Products */,
+				306BB9691B30FFF40052EC35 /* MAIKit.xcodeproj */,
+			);
+			sourceTree = "<group>";
+		};
+		30F2E09A1B2E0FE400C217F8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				30F2E0991B2E0FE400C217F8 /* Circles.app */,
+				3062C7581B4A2F6300B8D5D1 /* Circles.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		30F2E09B1B2E0FE400C217F8 /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				30F2E09C1B2E0FE400C217F8 /* AppDelegate.swift */,
+				30F2E0A01B2E0FE400C217F8 /* Assets.xcassets */,
+				30F2E0A51B2E0FE400C217F8 /* Info.plist */,
+				30F2E0A21B2E0FE400C217F8 /* Main.storyboard */,
+			);
+			name = Mac;
+			path = Circles;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3062C7571B4A2F6300B8D5D1 /* Circles-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3062C7671B4A2F6300B8D5D1 /* Build configuration list for PBXNativeTarget "Circles-ios" */;
+			buildPhases = (
+				3062C7541B4A2F6300B8D5D1 /* Sources */,
+				3062C7551B4A2F6300B8D5D1 /* Frameworks */,
+				3062C7561B4A2F6300B8D5D1 /* Resources */,
+				3062C76F1B4A30CE00B8D5D1 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3062C76D1B4A30B800B8D5D1 /* PBXTargetDependency */,
+			);
+			name = "Circles-ios";
+			productName = "Circles-ios";
+			productReference = 3062C7581B4A2F6300B8D5D1 /* Circles.app */;
+			productType = "com.apple.product-type.application";
+		};
+		30F2E0981B2E0FE400C217F8 /* Circles-mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30F2E0A81B2E0FE400C217F8 /* Build configuration list for PBXNativeTarget "Circles-mac" */;
+			buildPhases = (
+				30F2E0951B2E0FE400C217F8 /* Sources */,
+				30F2E0961B2E0FE400C217F8 /* Frameworks */,
+				30F2E0971B2E0FE400C217F8 /* Resources */,
+				30BE55FF1B2F112100B87231 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				306BB9741B3100330052EC35 /* PBXTargetDependency */,
+			);
+			name = "Circles-mac";
+			productName = Circles;
+			productReference = 30F2E0991B2E0FE400C217F8 /* Circles.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		30F2E0911B2E0FE400C217F8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = Buckleyisms;
+				TargetAttributes = {
+					3062C7571B4A2F6300B8D5D1 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					30F2E0981B2E0FE400C217F8 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = 30F2E0941B2E0FE400C217F8 /* Build configuration list for PBXProject "Circles" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 30F2E0901B2E0FE400C217F8;
+			productRefGroup = 30F2E09A1B2E0FE400C217F8 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 306BB96A1B30FFF40052EC35 /* Products */;
+					ProjectRef = 306BB9691B30FFF40052EC35 /* MAIKit.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				30F2E0981B2E0FE400C217F8 /* Circles-mac */,
+				3062C7571B4A2F6300B8D5D1 /* Circles-ios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		306BB96F1B30FFF40052EC35 /* MAIKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MAIKit.framework;
+			remoteRef = 306BB96E1B30FFF40052EC35 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		306BB9711B30FFF40052EC35 /* MAIKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MAIKit.framework;
+			remoteRef = 306BB9701B30FFF40052EC35 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3062C7561B4A2F6300B8D5D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3062C7651B4A2F6300B8D5D1 /* LaunchScreen.storyboard in Resources */,
+				3062C7621B4A2F6300B8D5D1 /* Assets.xcassets in Resources */,
+				3062C7601B4A2F6300B8D5D1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30F2E0971B2E0FE400C217F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30F2E0A11B2E0FE400C217F8 /* Assets.xcassets in Resources */,
+				30F2E0A41B2E0FE400C217F8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3062C7541B4A2F6300B8D5D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3062C76B1B4A30AA00B8D5D1 /* CirclesView.m in Sources */,
+				3062C76A1B4A301A00B8D5D1 /* ViewController.swift in Sources */,
+				3062C75B1B4A2F6300B8D5D1 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30F2E0951B2E0FE400C217F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30109FAE1B37B94900536E92 /* CirclesView.m in Sources */,
+				30F2E09F1B2E0FE400C217F8 /* ViewController.swift in Sources */,
+				30F2E09D1B2E0FE400C217F8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3062C76D1B4A30B800B8D5D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MAIKit-ios";
+			targetProxy = 3062C76C1B4A30B800B8D5D1 /* PBXContainerItemProxy */;
+		};
+		306BB9741B3100330052EC35 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MAIKit-mac";
+			targetProxy = 306BB9731B3100330052EC35 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3062C75E1B4A2F6300B8D5D1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3062C75F1B4A2F6300B8D5D1 /* Base */,
+			);
+			name = Main.storyboard;
+			path = ../Circles/iOS;
+			sourceTree = "<group>";
+		};
+		3062C7631B4A2F6300B8D5D1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3062C7641B4A2F6300B8D5D1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			path = ../Circles/iOS;
+			sourceTree = "<group>";
+		};
+		30F2E0A21B2E0FE400C217F8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				30F2E0A31B2E0FE400C217F8 /* Base */,
+			);
+			name = Main.storyboard;
+			path = Mac;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3062C7681B4A2F6300B8D5D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"TARGET_OS_IPHONE=1",
+					"DEBUG=1",
+				);
+				INFOPLIST_FILE = Circles/iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.buckleyisms.Circles;
+				PRODUCT_NAME = Circles;
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Circles/Common/Circles-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		3062C7691B4A2F6300B8D5D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = "TARGET_OS_IPHONE=1";
+				INFOPLIST_FILE = Circles/iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.buckleyisms.Circles;
+				PRODUCT_NAME = Circles;
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Circles/Common/Circles-Bridging-Header.h";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		30F2E0A61B2E0FE400C217F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		30F2E0A71B2E0FE400C217F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		30F2E0A91B2E0FE400C217F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Circles/Mac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.buckleyisms.Circles;
+				PRODUCT_NAME = Circles;
+				SWIFT_OBJC_BRIDGING_HEADER = "Circles/Common/Circles-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Circles-Swift.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		30F2E0AA1B2E0FE400C217F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Circles/Mac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.buckleyisms.Circles;
+				PRODUCT_NAME = Circles;
+				SWIFT_OBJC_BRIDGING_HEADER = "Circles/Common/Circles-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Circles-Swift.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3062C7671B4A2F6300B8D5D1 /* Build configuration list for PBXNativeTarget "Circles-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3062C7681B4A2F6300B8D5D1 /* Debug */,
+				3062C7691B4A2F6300B8D5D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		30F2E0941B2E0FE400C217F8 /* Build configuration list for PBXProject "Circles" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30F2E0A61B2E0FE400C217F8 /* Debug */,
+				30F2E0A71B2E0FE400C217F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30F2E0A81B2E0FE400C217F8 /* Build configuration list for PBXNativeTarget "Circles-mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30F2E0A91B2E0FE400C217F8 /* Debug */,
+				30F2E0AA1B2E0FE400C217F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 30F2E0911B2E0FE400C217F8 /* Project object */;
+}
