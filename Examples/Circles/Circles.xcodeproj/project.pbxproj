@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		30109FAE1B37B94900536E92 /* CirclesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30109FAD1B37B94900536E92 /* CirclesView.m */; };
+		30020C3C1B4F458C00B92B55 /* CirclesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30020C3B1B4F458C00B92B55 /* CirclesView.swift */; };
+		30020C3D1B4F458C00B92B55 /* CirclesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30020C3B1B4F458C00B92B55 /* CirclesView.swift */; };
 		3062C75B1B4A2F6300B8D5D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3062C75A1B4A2F6300B8D5D1 /* AppDelegate.swift */; };
 		3062C7601B4A2F6300B8D5D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3062C75E1B4A2F6300B8D5D1 /* Main.storyboard */; };
 		3062C7621B4A2F6300B8D5D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3062C7611B4A2F6300B8D5D1 /* Assets.xcassets */; };
 		3062C7651B4A2F6300B8D5D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3062C7631B4A2F6300B8D5D1 /* LaunchScreen.storyboard */; };
 		3062C76A1B4A301A00B8D5D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F2E09E1B2E0FE400C217F8 /* ViewController.swift */; };
-		3062C76B1B4A30AA00B8D5D1 /* CirclesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30109FAD1B37B94900536E92 /* CirclesView.m */; };
 		3062C76E1B4A30C000B8D5D1 /* MAIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 306BB96F1B30FFF40052EC35 /* MAIKit.framework */; };
 		3062C7711B4A30D900B8D5D1 /* MAIKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 306BB9711B30FFF40052EC35 /* MAIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		306BB9771B3100390052EC35 /* MAIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 306BB96F1B30FFF40052EC35 /* MAIKit.framework */; };
 		306BB9781B3100A60052EC35 /* MAIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 306BB96F1B30FFF40052EC35 /* MAIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		30F2E09D1B2E0FE400C217F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F2E09C1B2E0FE400C217F8 /* AppDelegate.swift */; };
-		30F2E09F1B2E0FE400C217F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F2E09E1B2E0FE400C217F8 /* ViewController.swift */; };
+		307AD4B21B4CC0C1002EA1A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F2E09E1B2E0FE400C217F8 /* ViewController.swift */; };
+		307AD4B31B4CC0EE002EA1A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F2E09C1B2E0FE400C217F8 /* AppDelegate.swift */; };
 		30F2E0A11B2E0FE400C217F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30F2E0A01B2E0FE400C217F8 /* Assets.xcassets */; };
 		30F2E0A41B2E0FE400C217F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30F2E0A21B2E0FE400C217F8 /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -80,16 +80,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		30109FAC1B37B94900536E92 /* CirclesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CirclesView.h; path = Circles/Common/CirclesView.h; sourceTree = "<group>"; };
-		30109FAD1B37B94900536E92 /* CirclesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CirclesView.m; path = Circles/Common/CirclesView.m; sourceTree = "<group>"; };
+		30020C3B1B4F458C00B92B55 /* CirclesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CirclesView.swift; path = Circles/Common/CirclesView.swift; sourceTree = "<group>"; };
 		3062C7581B4A2F6300B8D5D1 /* Circles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Circles.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3062C75A1B4A2F6300B8D5D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../Circles/iOS/AppDelegate.swift; sourceTree = "<group>"; };
+		3062C75A1B4A2F6300B8D5D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Circles/iOS/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		3062C75F1B4A2F6300B8D5D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3062C7611B4A2F6300B8D5D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Circles/iOS/Assets.xcassets; sourceTree = "<group>"; };
+		3062C7611B4A2F6300B8D5D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Circles/iOS/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		3062C7641B4A2F6300B8D5D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		3062C7661B4A2F6300B8D5D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Circles/iOS/Info.plist; sourceTree = "<group>"; };
+		3062C7661B4A2F6300B8D5D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Circles/iOS/Info.plist; sourceTree = SOURCE_ROOT; };
 		306BB9691B30FFF40052EC35 /* MAIKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MAIKit.xcodeproj; path = ../../MAIKit/MAIKit.xcodeproj; sourceTree = "<group>"; };
-		30CC7C101B33AD6100690836 /* Circles-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Circles-Bridging-Header.h"; path = "Circles/Common/Circles-Bridging-Header.h"; sourceTree = "<group>"; };
 		30F2E0991B2E0FE400C217F8 /* Circles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Circles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30F2E09C1B2E0FE400C217F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Mac/AppDelegate.swift; sourceTree = "<group>"; };
 		30F2E09E1B2E0FE400C217F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Circles/Common/ViewController.swift; sourceTree = "<group>"; };
@@ -121,10 +119,8 @@
 		3062C7371B4A2CE200B8D5D1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				30CC7C101B33AD6100690836 /* Circles-Bridging-Header.h */,
-				30109FAC1B37B94900536E92 /* CirclesView.h */,
-				30109FAD1B37B94900536E92 /* CirclesView.m */,
 				30F2E09E1B2E0FE400C217F8 /* ViewController.swift */,
+				30020C3B1B4F458C00B92B55 /* CirclesView.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -311,7 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3062C76B1B4A30AA00B8D5D1 /* CirclesView.m in Sources */,
+				30020C3D1B4F458C00B92B55 /* CirclesView.swift in Sources */,
 				3062C76A1B4A301A00B8D5D1 /* ViewController.swift in Sources */,
 				3062C75B1B4A2F6300B8D5D1 /* AppDelegate.swift in Sources */,
 			);
@@ -321,9 +317,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30109FAE1B37B94900536E92 /* CirclesView.m in Sources */,
-				30F2E09F1B2E0FE400C217F8 /* ViewController.swift in Sources */,
-				30F2E09D1B2E0FE400C217F8 /* AppDelegate.swift in Sources */,
+				30020C3C1B4F458C00B92B55 /* CirclesView.swift in Sources */,
+				307AD4B31B4CC0EE002EA1A4 /* AppDelegate.swift in Sources */,
+				307AD4B21B4CC0C1002EA1A4 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,8 +345,8 @@
 				3062C75F1B4A2F6300B8D5D1 /* Base */,
 			);
 			name = Main.storyboard;
-			path = ../Circles/iOS;
-			sourceTree = "<group>";
+			path = Circles/iOS;
+			sourceTree = SOURCE_ROOT;
 		};
 		3062C7631B4A2F6300B8D5D1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -358,8 +354,8 @@
 				3062C7641B4A2F6300B8D5D1 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			path = ../Circles/iOS;
-			sourceTree = "<group>";
+			path = Circles/iOS;
+			sourceTree = SOURCE_ROOT;
 		};
 		30F2E0A21B2E0FE400C217F8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -385,7 +381,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.buckleyisms.Circles;
 				PRODUCT_NAME = Circles;
 				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "Circles/Common/Circles-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -401,7 +396,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.buckleyisms.Circles;
 				PRODUCT_NAME = Circles;
 				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "Circles/Common/Circles-Bridging-Header.h";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -496,7 +490,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.buckleyisms.Circles;
 				PRODUCT_NAME = Circles;
-				SWIFT_OBJC_BRIDGING_HEADER = "Circles/Common/Circles-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Circles-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -512,7 +505,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.buckleyisms.Circles;
 				PRODUCT_NAME = Circles;
-				SWIFT_OBJC_BRIDGING_HEADER = "Circles/Common/Circles-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Circles-Swift.h";
 			};
 			name = Release;
@@ -527,6 +519,7 @@
 				3062C7691B4A2F6300B8D5D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		30F2E0941B2E0FE400C217F8 /* Build configuration list for PBXProject "Circles" */ = {
 			isa = XCConfigurationList;
