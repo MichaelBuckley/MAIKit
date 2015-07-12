@@ -167,6 +167,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nullable, setter=setDelegate:, getter=delegate) id <MAITextStorageDelegate> delegate;
 @property(readonly, getter=fixesAttributesLazily) BOOL fixesAttributesLazily;
 
+#if TARGET_OS_IPHONE
+#else
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE

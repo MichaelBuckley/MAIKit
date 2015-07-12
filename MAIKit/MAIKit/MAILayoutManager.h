@@ -233,6 +233,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property(readonly, getter=extraLineFragmentUsedRect) CGRect extraLineFragmentUsedRect;
 @property(readonly, nullable, getter=extraLineFragmentTextContainer) id<MAITextContainerProtocol> extraLineFragmentTextContainer;
 
+#if TARGET_OS_IPHONE
+#else
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE

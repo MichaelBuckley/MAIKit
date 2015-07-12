@@ -161,6 +161,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property(setter=setBounds:, getter=bounds) CGRect bounds;
 @property(nullable, setter=setFileWrapper:, getter=fileWrapper) NSFileWrapper* fileWrapper;
 
+#if TARGET_OS_IPHONE
+#else
+-(instancetype)initWithFileWrapper:(nullable NSFileWrapper*)fileWrapper NS_UNAVAILABLE;
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE

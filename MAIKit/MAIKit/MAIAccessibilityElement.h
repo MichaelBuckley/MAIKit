@@ -155,6 +155,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol MAIAccessibilityElementProtocol
 
+#if TARGET_OS_IPHONE
+-(instancetype)initWithAccessibilityContainer:(id)container NS_UNAVAILABLE;
+#else
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE

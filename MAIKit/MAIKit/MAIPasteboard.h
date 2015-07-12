@@ -159,6 +159,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property(readonly, getter=name) NSString* name;
 @property(readonly, getter=changeCount) NSInteger changeCount;
 
+#if TARGET_OS_IPHONE
++(nullable id<MAIPasteboardProtocol>)pasteboardWithName:(NSString*)pasteboardName create:(BOOL)create NS_UNAVAILABLE;
+#else
++(id<MAIPasteboardProtocol>)pasteboardWithName:(NSString*)name NS_UNAVAILABLE;
++(id<MAIPasteboardProtocol>)pasteboardByFilteringFile:(NSString*)filename NS_UNAVAILABLE;
++(id<MAIPasteboardProtocol>)pasteboardByFilteringData:(NSData*)data ofType:(NSString*)type NS_UNAVAILABLE;
++(id<MAIPasteboardProtocol>)pasteboardByFilteringTypesInPasteboard:(id<MAIPasteboardProtocol>)pboard NS_UNAVAILABLE;
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE

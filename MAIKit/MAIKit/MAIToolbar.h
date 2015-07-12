@@ -156,6 +156,13 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol MAIToolbarProtocol
 @property(nullable, setter=setDelegate:, getter=delegate) id<MAIToolbarDelegate> delegate;
 
+#if TARGET_OS_IPHONE
+-(instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
+-(nullable instancetype)initWithCoder:(NSCoder*)aDecoder NS_UNAVAILABLE;
+#else
+-(instancetype)initWithIdentifier:(NSString*)identifier NS_UNAVAILABLE;
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE

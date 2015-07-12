@@ -156,6 +156,11 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol MAIScreenProtocol
 +(id<MAIScreenProtocol>)mainScreen;
 
+#if TARGET_OS_IPHONE
+#else
++(nullable id<MAIScreenProtocol>)deepestScreen NS_UNAVAILABLE;
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE

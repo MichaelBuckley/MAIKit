@@ -155,6 +155,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol MAIPrinterProtocol
 
+#if TARGET_OS_IPHONE
++(id<MAIPrinterProtocol>)printerWithURL:(NSURL*)url NS_UNAVAILABLE;
+#else
++(nullable id<MAIPrinterProtocol>)printerWithName:(NSString*)name NS_UNAVAILABLE;
++(nullable id<MAIPrinterProtocol>)printerWithType:(NSString*)type NS_UNAVAILABLE;
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE

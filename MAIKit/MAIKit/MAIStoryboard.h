@@ -155,6 +155,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol MAIStoryboardProtocol
 
+#if TARGET_OS_IPHONE
+#else
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE

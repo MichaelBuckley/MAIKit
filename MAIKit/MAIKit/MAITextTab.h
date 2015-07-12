@@ -160,6 +160,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property(readonly, getter=location) CGFloat location;
 @property(readonly, getter=options) NSDictionary<NSString*, id>* options;
 
+#if TARGET_OS_IPHONE
+#else
+-(instancetype)initWithType:(NSTextTabType)type location:(CGFloat)loc NS_UNAVAILABLE;
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE

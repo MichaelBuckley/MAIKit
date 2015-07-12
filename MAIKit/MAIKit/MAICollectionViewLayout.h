@@ -185,6 +185,12 @@ NS_ASSUME_NONNULL_BEGIN
 -(nullable id<MAICollectionViewLayoutAttributesProtocol>)finalLayoutAttributesForDisappearingDecorationElementOfKind:(NSString*)elementKind atIndexPath:(NSIndexPath*)decorationIndexPath;
 @property(readonly, nullable, getter=collectionView) id<MAICollectionViewProtocol> collectionView;
 
+#if TARGET_OS_IPHONE
+-(instancetype)init NS_UNAVAILABLE;
+-(nullable instancetype)initWithCoder:(NSCoder*)aDecoder NS_UNAVAILABLE;
+#else
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE

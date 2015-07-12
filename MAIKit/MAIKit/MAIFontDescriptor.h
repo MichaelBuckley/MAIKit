@@ -162,6 +162,13 @@ NS_ASSUME_NONNULL_BEGIN
 -(id<MAIFontDescriptorProtocol>)fontDescriptorWithFamily:(NSString*)newFamily;
 @property(readonly, getter=pointSize) CGFloat pointSize;
 
+#if TARGET_OS_IPHONE
+-(instancetype)init NS_UNAVAILABLE;
+-(nullable instancetype)initWithCoder:(NSCoder*)aDecoder NS_UNAVAILABLE;
++(id<MAIFontDescriptorProtocol>)preferredFontDescriptorWithTextStyle:(NSString*)style NS_UNAVAILABLE;
+#else
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE

@@ -156,6 +156,10 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol MAICollectionViewUpdateItemProtocol
 @property(readonly, getter=updateAction) MAICollectionUpdateAction updateAction;
 
+#if TARGET_OS_IPHONE
+#else
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE

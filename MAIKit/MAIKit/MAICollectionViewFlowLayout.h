@@ -188,6 +188,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property(setter=setScrollDirection:, getter=scrollDirection) MAICollectionViewScrollDirection scrollDirection;
 @property(readonly, nullable, getter=collectionView) id<MAICollectionViewProtocol> collectionView;
 
+#if TARGET_OS_IPHONE
+-(instancetype)init NS_UNAVAILABLE;
+-(nullable instancetype)initWithCoder:(NSCoder*)aDecoder NS_UNAVAILABLE;
+#else
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE

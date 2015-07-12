@@ -188,6 +188,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property(readonly, nullable, getter=undoManager) NSUndoManager* undoManager;
 @property(nullable, setter=setUserActivity:, getter=userActivity) NSUserActivity* userActivity;
 
+#if TARGET_OS_IPHONE
++(instancetype)buttonWithType:(UIButtonType)buttonType NS_UNAVAILABLE;
+#else
+-(instancetype)init NS_UNAVAILABLE;
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE

@@ -159,6 +159,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nullable, setter=setFileModificationDate:, getter=fileModificationDate) NSDate* fileModificationDate;
 @property(nullable, setter=setUserActivity:, getter=userActivity) NSUserActivity* userActivity;
 
+#if TARGET_OS_IPHONE
+-(instancetype)initWithFileURL:(NSURL*)url NS_UNAVAILABLE;
+#else
+-(instancetype)init NS_UNAVAILABLE;
+-(nullable instancetype)initWithType:(NSString*)typeName error:(NSError**)outError NS_UNAVAILABLE;
+-(nullable instancetype)initWithContentsOfURL:(NSURL*)url ofType:(NSString*)typeName error:(NSError**)outError NS_UNAVAILABLE;
+-(nullable instancetype)initForURL:(nullable NSURL*)urlOrNil withContentsOfURL:(NSURL*)contentsURL ofType:(NSString*)typeName error:(NSError**)outError NS_UNAVAILABLE;
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE

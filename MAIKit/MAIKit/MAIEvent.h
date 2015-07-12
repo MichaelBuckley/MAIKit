@@ -156,6 +156,16 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol MAIEventProtocol
 @property(readonly, getter=timestamp) NSTimeInterval timestamp;
 
+#if TARGET_OS_IPHONE
+#else
++(nullable id<MAIEventProtocol>)eventWithEventRef:(const void*)eventRef NS_UNAVAILABLE;
++(nullable id<MAIEventProtocol>)eventWithCGEvent:(CGEventRef)cgEvent NS_UNAVAILABLE;
++(nullable id<MAIEventProtocol>)mouseEventWithType:(NSEventType)type location:(CGPoint)location modifierFlags:(NSEventModifierFlags)flags timestamp:(NSTimeInterval)time windowNumber:(NSInteger)wNum context:(nullable NSGraphicsContext*)context eventNumber:(NSInteger)eNum clickCount:(NSInteger)cNum pressure:(float)pressure NS_UNAVAILABLE;
++(nullable id<MAIEventProtocol>)keyEventWithType:(NSEventType)type location:(CGPoint)location modifierFlags:(NSEventModifierFlags)flags timestamp:(NSTimeInterval)time windowNumber:(NSInteger)wNum context:(nullable NSGraphicsContext*)context characters:(NSString*)keys charactersIgnoringModifiers:(NSString*)ukeys isARepeat:(BOOL)flag keyCode:(unsigned short)code NS_UNAVAILABLE;
++(nullable id<MAIEventProtocol>)enterExitEventWithType:(NSEventType)type location:(CGPoint)location modifierFlags:(NSEventModifierFlags)flags timestamp:(NSTimeInterval)time windowNumber:(NSInteger)wNum context:(nullable NSGraphicsContext*)context eventNumber:(NSInteger)eNum trackingNumber:(NSInteger)tNum userData:(nullable void*)data NS_UNAVAILABLE;
++(nullable id<MAIEventProtocol>)otherEventWithType:(NSEventType)type location:(CGPoint)location modifierFlags:(NSEventModifierFlags)flags timestamp:(NSTimeInterval)time windowNumber:(NSInteger)wNum context:(nullable NSGraphicsContext*)context subtype:(short)subtype data1:(NSInteger)d1 data2:(NSInteger)d2 NS_UNAVAILABLE;
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE

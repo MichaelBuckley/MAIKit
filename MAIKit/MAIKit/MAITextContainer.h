@@ -166,6 +166,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property(setter=setWidthTracksTextView:, getter=widthTracksTextView) BOOL widthTracksTextView;
 @property(setter=setHeightTracksTextView:, getter=heightTracksTextView) BOOL heightTracksTextView;
 
+#if TARGET_OS_IPHONE
+#else
+-(instancetype)initWithContainerSize:(NSSize)aContainerSize NS_UNAVAILABLE;
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE

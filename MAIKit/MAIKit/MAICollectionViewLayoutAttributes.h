@@ -162,6 +162,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property(setter=setHidden:, getter=isHidden) BOOL hidden;
 @property(readonly, nullable, getter=representedElementKind) NSString* representedElementKind;
 
+#if TARGET_OS_IPHONE
++(instancetype)layoutAttributesForCellWithIndexPath:(NSIndexPath*)indexPath NS_UNAVAILABLE;
+#else
++(instancetype)layoutAttributesForItemWithIndexPath:(NSIndexPath*)indexPath NS_UNAVAILABLE;
++(instancetype)layoutAttributesForInterItemGapBeforeIndexPath:(NSIndexPath*)indexPath NS_UNAVAILABLE;
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE

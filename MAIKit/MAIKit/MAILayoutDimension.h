@@ -164,6 +164,10 @@ NS_ASSUME_NONNULL_BEGIN
 -(id<MAILayoutConstraintProtocol>)constraintGreaterThanOrEqualToAnchor:(id<MAILayoutDimensionProtocol>)anchor multiplier:(CGFloat)m constant:(CGFloat)c;
 -(id<MAILayoutConstraintProtocol>)constraintLessThanOrEqualToAnchor:(id<MAILayoutDimensionProtocol>)anchor multiplier:(CGFloat)m constant:(CGFloat)c;
 
+#if TARGET_OS_IPHONE
+#else
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE

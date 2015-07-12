@@ -158,6 +158,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property(readonly, getter=actualScaleFactor) CGFloat actualScaleFactor;
 @property(readonly, getter=totalBounds) CGRect totalBounds;
 
+#if TARGET_OS_IPHONE
+#else
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE

@@ -157,6 +157,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property(setter=setTitle:, getter=title) NSString* title;
 @property(setter=setAction:, getter=action) SEL action;
 
+#if TARGET_OS_IPHONE
+-(instancetype)initWithTitle:(NSString*)title action:(SEL)action NS_UNAVAILABLE;
+#else
++(id<MAIMenuItemProtocol>)separatorItem NS_UNAVAILABLE;
+-(instancetype)initWithTitle:(NSString*)aString action:(null_unspecified SEL)aSelector keyEquivalent:(NSString*)charCode NS_UNAVAILABLE;
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE

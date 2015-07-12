@@ -169,6 +169,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property(readonly, nullable, getter=undoManager) NSUndoManager* undoManager;
 @property(nullable, setter=setUserActivity:, getter=userActivity) NSUserActivity* userActivity;
 
+#if TARGET_OS_IPHONE
+-(instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
+#else
+-(instancetype)initWithContentRect:(CGRect)contentRect styleMask:(NSUInteger)aStyle backing:(NSBackingStoreType)bufferingType defer:(BOOL)flag NS_UNAVAILABLE;
+-(instancetype)initWithContentRect:(CGRect)contentRect styleMask:(NSUInteger)aStyle backing:(NSBackingStoreType)bufferingType defer:(BOOL)flag screen:(nullable id<MAIScreenProtocol>)screen NS_UNAVAILABLE;
++(instancetype)windowWithContentViewController:(id<MAIViewControllerProtocol>)contentViewController NS_UNAVAILABLE;
+-(nullable id<MAIWindowProtocol>)initWithWindowRef:(void*)windowRef NS_UNAVAILABLE;
+-(instancetype)init NS_UNAVAILABLE;
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE

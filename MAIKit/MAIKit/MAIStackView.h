@@ -188,6 +188,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property(readonly, nullable, getter=undoManager) NSUndoManager* undoManager;
 @property(nullable, setter=setUserActivity:, getter=userActivity) NSUserActivity* userActivity;
 
+#if TARGET_OS_IPHONE
+-(instancetype)initWithArrangedSubviews:(NSArray<__kindof MAIView*>*)views NS_UNAVAILABLE;
+#else
++(instancetype)stackViewWithViews:(NSArray<MAIView*>*)views NS_UNAVAILABLE;
+-(instancetype)init NS_UNAVAILABLE;
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE

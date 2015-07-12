@@ -160,6 +160,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property(setter=setEnabled:, getter=isEnabled) BOOL enabled;
 @property(readonly, nullable, getter=view) id<MAIViewProtocol> view;
 
+#if TARGET_OS_IPHONE
+#else
+-(nullable instancetype)initWithCoder:(NSCoder*)coder NS_UNAVAILABLE;
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE

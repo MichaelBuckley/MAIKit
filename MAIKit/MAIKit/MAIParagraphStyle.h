@@ -173,6 +173,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property(readonly, getter=defaultTabInterval) CGFloat defaultTabInterval;
 @property(readonly, getter=allowsDefaultTighteningForTruncation) BOOL allowsDefaultTighteningForTruncation;
 
+#if TARGET_OS_IPHONE
+#else
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE

@@ -168,6 +168,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property(setter=setActive:, getter=isActive) BOOL active;
 @property(nullable, setter=setIdentifier:, getter=identifier) NSString* identifier;
 
+#if TARGET_OS_IPHONE
+#else
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE

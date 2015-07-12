@@ -157,6 +157,11 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)perform;
 @property(readonly, nullable, getter=identifier) NSString* identifier;
 
+#if TARGET_OS_IPHONE
+-(instancetype)init NS_UNAVAILABLE;
+#else
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE

@@ -167,6 +167,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property(readonly, getter=centerXAnchor) id<MAILayoutXAxisAnchorProtocol> centerXAnchor;
 @property(readonly, getter=centerYAnchor) id<MAILayoutYAxisAnchorProtocol> centerYAnchor;
 
+#if TARGET_OS_IPHONE
+#else
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE

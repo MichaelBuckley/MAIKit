@@ -191,6 +191,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property(readonly, getter=nextLayout) id<MAICollectionViewLayoutProtocol> nextLayout;
 @property(readonly, nullable, getter=collectionView) id<MAICollectionViewProtocol> collectionView;
 
+#if TARGET_OS_IPHONE
+-(nullable instancetype)initWithCoder:(NSCoder*)aDecoder NS_UNAVAILABLE;
+-(instancetype)init NS_UNAVAILABLE;
+#else
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE

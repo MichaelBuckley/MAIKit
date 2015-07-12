@@ -170,6 +170,17 @@ NS_ASSUME_NONNULL_BEGIN
 @property(setter=setMiterLimit:, getter=miterLimit) CGFloat miterLimit;
 @property(setter=setFlatness:, getter=flatness) CGFloat flatness;
 
+#if TARGET_OS_IPHONE
++(instancetype)bezierPathWithRoundedRect:(CGRect)rect cornerRadius:(CGFloat)cornerRadius NS_UNAVAILABLE;
++(instancetype)bezierPathWithRoundedRect:(CGRect)rect byRoundingCorners:(UIRectCorner)corners cornerRadii:(CGSize)cornerRadii NS_UNAVAILABLE;
++(instancetype)bezierPathWithArcCenter:(CGPoint)center radius:(CGFloat)radius startAngle:(CGFloat)startAngle endAngle:(CGFloat)endAngle clockwise:(BOOL)clockwise NS_UNAVAILABLE;
++(instancetype)bezierPathWithCGPath:(CGPathRef)CGPath NS_UNAVAILABLE;
+-(instancetype)init NS_UNAVAILABLE;
+-(nullable instancetype)initWithCoder:(NSCoder*)aDecoder NS_UNAVAILABLE;
+#else
++(id<MAIBezierPathProtocol>)bezierPathWithRoundedRect:(CGRect)rect xRadius:(CGFloat)xRadius yRadius:(CGFloat)yRadius NS_UNAVAILABLE;
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE

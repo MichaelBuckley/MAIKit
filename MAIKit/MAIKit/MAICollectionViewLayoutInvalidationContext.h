@@ -158,6 +158,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property(readonly, getter=invalidateDataSourceCounts) BOOL invalidateDataSourceCounts;
 @property(setter=setContentOffsetAdjustment:, getter=contentOffsetAdjustment) CGPoint contentOffsetAdjustment;
 
+#if TARGET_OS_IPHONE
+#else
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE

@@ -161,6 +161,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property(readonly, getter=data) NSData* data;
 @property(readonly, getter=typeIdentifier) NSString* typeIdentifier;
 
+#if TARGET_OS_IPHONE
+#else
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE

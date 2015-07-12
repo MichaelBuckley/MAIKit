@@ -157,6 +157,11 @@ NS_ASSUME_NONNULL_BEGIN
 -(instancetype)init;
 @property(setter=setShadowBlurRadius:, getter=shadowBlurRadius) CGFloat shadowBlurRadius;
 
+#if TARGET_OS_IPHONE
+-(nullable instancetype)initWithCoder:(NSCoder*)aDecoder NS_UNAVAILABLE;
+#else
+#endif
+
 @end
 
 #if TARGET_OS_IPHONE
