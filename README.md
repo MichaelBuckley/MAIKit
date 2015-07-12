@@ -14,7 +14,7 @@ Of course, this error would be easily caught the next time the code was compiled
 
 MAIKit aims to prevent these problems, speeding up cross-platform development. It does so by defining protocols which contain the intersection of methods and properties of UIKit and AppKit classes. It also defines classes which implement these protocols, and can be used in both iOS and OS X code. These classes inherit from their UIKit and Appkit counterparts, and can be safely subclassed.
 
-Continuing the NSColor example, MAIKit defines a class named MAIKit, and a protocol named MAIKitProtocol. The same pattern applies to all UIKit and AppKit classes.
+Continuing the NSColor example, MAIKit defines a class named MAIColor, and a protocol named MAIColorProtocol. The same pattern applies to all UIKit and AppKit classes.
 
 When declaring variables, you will need to declare them as MAIKit-defined protocols in Swift, or as Objective-C objects conforming to those protocols. You cannot instantiate protocols, however, so you will need to initialize them using MAIKit-defined classes.
 
