@@ -1,5 +1,8 @@
 #import <TargetConditionals.h>
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wobjc-property-no-attribute"
+
 #if TARGET_OS_IPHONE
 @import UIKit;
 #else
@@ -170,3 +173,5 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
+
+#pragma clang diagnostic pop
