@@ -50,7 +50,7 @@ During Xcode betas, MAIKit may introduce API-incompatible changes without increa
 
 Start by adding the following line to your [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile).
 ```
-github "MichaelBuckley/MAIKit" ~> 70.0
+github "MichaelBuckley/MAIKit" ~> 70.0.0
 ```
 
 Full instructions on installing dependencies with Carthage can be found in [Carthage's README](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application).
@@ -60,7 +60,7 @@ Full instructions on installing dependencies with Carthage can be found in [Cart
 Add the following line to your [Podfile](http://guides.cocoapods.org/using/the-podfile.html).
 
 ```ruby
-pod 'MAIKit', '~> 70.0'
+pod 'MAIKit', '~> 70.0.0'
 ```
 Then, run `pod update`.
 
