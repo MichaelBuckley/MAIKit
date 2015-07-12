@@ -179,6 +179,23 @@ NS_ASSUME_NONNULL_BEGIN
 -(nullable instancetype)initWithCoder:(NSCoder*)aDecoder NS_UNAVAILABLE;
 #else
 +(id<MAIBezierPathProtocol>)bezierPathWithRoundedRect:(CGRect)rect xRadius:(CGFloat)xRadius yRadius:(CGFloat)yRadius NS_UNAVAILABLE;
++(void)fillRect:(CGRect)rect NS_UNAVAILABLE;
++(void)strokeRect:(CGRect)rect NS_UNAVAILABLE;
++(void)clipRect:(CGRect)rect NS_UNAVAILABLE;
++(void)strokeLineFromPoint:(CGPoint)point1 toPoint:(CGPoint)point2 NS_UNAVAILABLE;
++(void)drawPackedGlyphs:(const char*)packedGlyphs atPoint:(CGPoint)point NS_UNAVAILABLE;
++(void)setDefaultMiterLimit:(CGFloat)limit NS_UNAVAILABLE;
++(CGFloat)defaultMiterLimit NS_UNAVAILABLE;
++(void)setDefaultFlatness:(CGFloat)flatness NS_UNAVAILABLE;
++(CGFloat)defaultFlatness NS_UNAVAILABLE;
++(void)setDefaultWindingRule:(NSWindingRule)windingRule NS_UNAVAILABLE;
++(NSWindingRule)defaultWindingRule NS_UNAVAILABLE;
++(void)setDefaultLineCapStyle:(NSLineCapStyle)lineCapStyle NS_UNAVAILABLE;
++(NSLineCapStyle)defaultLineCapStyle NS_UNAVAILABLE;
++(void)setDefaultLineJoinStyle:(NSLineJoinStyle)lineJoinStyle NS_UNAVAILABLE;
++(NSLineJoinStyle)defaultLineJoinStyle NS_UNAVAILABLE;
++(void)setDefaultLineWidth:(CGFloat)lineWidth NS_UNAVAILABLE;
++(CGFloat)defaultLineWidth NS_UNAVAILABLE;
 #endif
 
 @end

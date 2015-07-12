@@ -175,6 +175,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nullable, setter=setUserActivity:, getter=userActivity) NSUserActivity* userActivity;
 
 #if TARGET_OS_IPHONE
++(void)attemptRotationToDeviceOrientation NS_UNAVAILABLE;
++(void)clearTextInputContextIdentifier:(NSString*)identifier NS_UNAVAILABLE;
 #else
 -(instancetype)init NS_UNAVAILABLE;
 #endif

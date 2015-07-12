@@ -164,8 +164,14 @@ NS_ASSUME_NONNULL_BEGIN
 #else
 -(instancetype)init NS_UNAVAILABLE;
 -(nullable instancetype)initWithType:(NSString*)typeName error:(NSError**)outError NS_UNAVAILABLE;
++(BOOL)canConcurrentlyReadDocumentsOfType:(NSString*)typeName NS_UNAVAILABLE;
 -(nullable instancetype)initWithContentsOfURL:(NSURL*)url ofType:(NSString*)typeName error:(NSError**)outError NS_UNAVAILABLE;
 -(nullable instancetype)initForURL:(nullable NSURL*)urlOrNil withContentsOfURL:(NSURL*)contentsURL ofType:(NSString*)typeName error:(NSError**)outError NS_UNAVAILABLE;
++(BOOL)autosavesInPlace NS_UNAVAILABLE;
++(BOOL)preservesVersions NS_UNAVAILABLE;
++(BOOL)autosavesDrafts NS_UNAVAILABLE;
++(BOOL)isNativeType:(NSString*)type NS_UNAVAILABLE;
++(BOOL)usesUbiquitousStorage NS_UNAVAILABLE;
 #endif
 
 @end

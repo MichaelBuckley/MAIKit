@@ -161,6 +161,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #if TARGET_OS_IPHONE
 +(nullable id<MAIPasteboardProtocol>)pasteboardWithName:(NSString*)pasteboardName create:(BOOL)create NS_UNAVAILABLE;
++(void)removePasteboardWithName:(NSString*)pasteboardName NS_UNAVAILABLE;
 #else
 +(id<MAIPasteboardProtocol>)pasteboardWithName:(NSString*)name NS_UNAVAILABLE;
 +(id<MAIPasteboardProtocol>)pasteboardByFilteringFile:(NSString*)filename NS_UNAVAILABLE;

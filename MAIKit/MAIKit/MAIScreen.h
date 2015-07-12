@@ -159,6 +159,7 @@ NS_ASSUME_NONNULL_BEGIN
 #if TARGET_OS_IPHONE
 #else
 +(nullable id<MAIScreenProtocol>)deepestScreen NS_UNAVAILABLE;
++(BOOL)screensHaveSeparateSpaces NS_UNAVAILABLE;
 #endif
 
 @end

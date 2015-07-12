@@ -158,6 +158,7 @@ NS_ASSUME_NONNULL_BEGIN
 #if TARGET_OS_IPHONE
 -(instancetype)initWithAccessibilityContainer:(id)container NS_UNAVAILABLE;
 #else
++(id)accessibilityElementWithRole:(NSString*)role frame:(CGRect)frame label:(nullable NSString*)label parent:(nullable id)parent NS_UNAVAILABLE;
 #endif
 
 @end

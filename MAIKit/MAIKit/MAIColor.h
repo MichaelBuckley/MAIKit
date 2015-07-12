@@ -242,7 +242,10 @@ NS_ASSUME_NONNULL_BEGIN
 +(id<MAIColorProtocol>)alternateSelectedControlColor NS_UNAVAILABLE;
 +(id<MAIColorProtocol>)alternateSelectedControlTextColor NS_UNAVAILABLE;
 +(id<MAIColorProtocol>)colorForControlTint:(NSControlTint)controlTint NS_UNAVAILABLE;
++(NSControlTint)currentControlTint NS_UNAVAILABLE;
 +(nullable id<MAIColorProtocol>)colorFromPasteboard:(id<MAIPasteboardProtocol>)pasteBoard NS_UNAVAILABLE;
++(void)setIgnoresAlpha:(BOOL)flag NS_UNAVAILABLE;
++(BOOL)ignoresAlpha NS_UNAVAILABLE;
 #endif
 
 @end

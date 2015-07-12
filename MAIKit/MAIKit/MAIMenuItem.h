@@ -160,6 +160,8 @@ NS_ASSUME_NONNULL_BEGIN
 #if TARGET_OS_IPHONE
 -(instancetype)initWithTitle:(NSString*)title action:(SEL)action NS_UNAVAILABLE;
 #else
++(void)setUsesUserKeyEquivalents:(BOOL)flag NS_UNAVAILABLE;
++(BOOL)usesUserKeyEquivalents NS_UNAVAILABLE;
 +(id<MAIMenuItemProtocol>)separatorItem NS_UNAVAILABLE;
 -(instancetype)initWithTitle:(NSString*)aString action:(null_unspecified SEL)aSelector keyEquivalent:(NSString*)charCode NS_UNAVAILABLE;
 #endif

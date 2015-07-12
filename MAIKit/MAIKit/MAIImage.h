@@ -186,6 +186,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(nullable instancetype)initWithPasteboard:(id<MAIPasteboardProtocol>)pasteboard NS_UNAVAILABLE;
 -(nullable instancetype)initWithDataIgnoringOrientation:(NSData*)data NS_UNAVAILABLE;
 +(id<MAIImageProtocol>)imageWithSize:(NSSize)size flipped:(BOOL)drawingHandlerShouldBeCalledWithFlippedContext drawingHandler:(BOOL (^)(CGRect dstRect))drawingHandler NS_UNAVAILABLE;
++(BOOL)canInitWithPasteboard:(id<MAIPasteboardProtocol>)pasteboard NS_UNAVAILABLE;
 -(instancetype)initWithCGImage:(CGImageRef)cgImage size:(NSSize)size NS_UNAVAILABLE;
 #endif
 

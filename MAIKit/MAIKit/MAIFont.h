@@ -174,11 +174,14 @@ NS_ASSUME_NONNULL_BEGIN
 #if TARGET_OS_IPHONE
 +(id<MAIFontProtocol>)preferredFontForTextStyle:(NSString*)style NS_UNAVAILABLE;
 +(id<MAIFontProtocol>)italicSystemFontOfSize:(CGFloat)fontSize NS_UNAVAILABLE;
++(CGFloat)buttonFontSize NS_UNAVAILABLE;
 #else
 +(nullable id<MAIFontProtocol>)fontWithName:(NSString*)fontName matrix:(const CGFloat*)fontMatrix NS_UNAVAILABLE;
 +(nullable id<MAIFontProtocol>)fontWithDescriptor:(id<MAIFontDescriptorProtocol>)fontDescriptor textTransform:(nullable NSAffineTransform*)textTransform NS_UNAVAILABLE;
 +(nullable id<MAIFontProtocol>)userFontOfSize:(CGFloat)fontSize NS_UNAVAILABLE;
 +(nullable id<MAIFontProtocol>)userFixedPitchFontOfSize:(CGFloat)fontSize NS_UNAVAILABLE;
++(void)setUserFont:(nullable id<MAIFontProtocol>)aFont NS_UNAVAILABLE;
++(void)setUserFixedPitchFont:(nullable id<MAIFontProtocol>)aFont NS_UNAVAILABLE;
 +(id<MAIFontProtocol>)labelFontOfSize:(CGFloat)fontSize NS_UNAVAILABLE;
 +(id<MAIFontProtocol>)titleBarFontOfSize:(CGFloat)fontSize NS_UNAVAILABLE;
 +(id<MAIFontProtocol>)menuFontOfSize:(CGFloat)fontSize NS_UNAVAILABLE;
@@ -187,6 +190,7 @@ NS_ASSUME_NONNULL_BEGIN
 +(id<MAIFontProtocol>)paletteFontOfSize:(CGFloat)fontSize NS_UNAVAILABLE;
 +(id<MAIFontProtocol>)toolTipsFontOfSize:(CGFloat)fontSize NS_UNAVAILABLE;
 +(id<MAIFontProtocol>)controlContentFontOfSize:(CGFloat)fontSize NS_UNAVAILABLE;
++(CGFloat)systemFontSizeForControlSize:(NSControlSize)controlSize NS_UNAVAILABLE;
 #endif
 
 @end
