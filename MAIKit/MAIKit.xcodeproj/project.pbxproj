@@ -297,6 +297,8 @@
 		3062C7341B49EC2000B8D5D1 /* MAIVisualEffectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3062C6B51B49EC2000B8D5D1 /* MAIVisualEffectView.m */; };
 		3062C7351B49EC2000B8D5D1 /* MAIWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3062C6B61B49EC2000B8D5D1 /* MAIWindow.m */; };
 		3062C7361B49EC2000B8D5D1 /* MAIWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3062C6B61B49EC2000B8D5D1 /* MAIWindow.m */; };
+		309654B91B5A1E25001F97B9 /* MAIDeclarations.h in Headers */ = {isa = PBXBuildFile; fileRef = 309654B81B5A1E25001F97B9 /* MAIDeclarations.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		309654BA1B5A1E25001F97B9 /* MAIDeclarations.h in Headers */ = {isa = PBXBuildFile; fileRef = 309654B81B5A1E25001F97B9 /* MAIDeclarations.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -448,6 +450,7 @@
 		3062C6B41B49EC2000B8D5D1 /* MAIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIViewController.m; sourceTree = "<group>"; };
 		3062C6B51B49EC2000B8D5D1 /* MAIVisualEffectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIVisualEffectView.m; sourceTree = "<group>"; };
 		3062C6B61B49EC2000B8D5D1 /* MAIWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAIWindow.m; sourceTree = "<group>"; };
+		309654B81B5A1E25001F97B9 /* MAIDeclarations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAIDeclarations.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -488,6 +491,7 @@
 		3043652E1B0193E40067C766 /* MAIKit */ = {
 			isa = PBXGroup;
 			children = (
+				309654B81B5A1E25001F97B9 /* MAIDeclarations.h */,
 				3062C6771B49EC2000B8D5D1 /* MAIAccessibilityElement.m */,
 				3062C6781B49EC2000B8D5D1 /* MAIApplication.m */,
 				3062C6791B49EC2000B8D5D1 /* MAIBezierPath.m */,
@@ -733,6 +737,7 @@
 				3062C6281B49DC4700B8D5D1 /* MAIPasteboard.h in Headers */,
 				3062C6621B49DC4B00B8D5D1 /* MAITextTab.h in Headers */,
 				3062C6581B49DC4A00B8D5D1 /* MAITextFieldDelegate.h in Headers */,
+				309654B91B5A1E25001F97B9 /* MAIDeclarations.h in Headers */,
 				3062C63A1B49DC4800B8D5D1 /* MAISlider.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -821,6 +826,7 @@
 				3062C6291B49DC4700B8D5D1 /* MAIPasteboard.h in Headers */,
 				3062C6631B49DC4C00B8D5D1 /* MAITextTab.h in Headers */,
 				3062C6591B49DC4B00B8D5D1 /* MAITextFieldDelegate.h in Headers */,
+				309654BA1B5A1E25001F97B9 /* MAIDeclarations.h in Headers */,
 				3062C63B1B49DC4800B8D5D1 /* MAISlider.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
