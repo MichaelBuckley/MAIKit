@@ -162,6 +162,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(BOOL)layoutManager:(id<MAILayoutManagerProtocol>)layoutManager shouldBreakLineByWordBeforeCharacterAtIndex:(NSUInteger)charIndex;
 -(BOOL)layoutManager:(id<MAILayoutManagerProtocol>)layoutManager shouldBreakLineByHyphenatingBeforeCharacterAtIndex:(NSUInteger)charIndex;
 -(CGRect)layoutManager:(id<MAILayoutManagerProtocol>)layoutManager boundingBoxForControlGlyphAtIndex:(NSUInteger)glyphIndex forTextContainer:(id<MAITextContainerProtocol>)textContainer proposedLineFragment:(CGRect)proposedRect glyphPosition:(CGPoint)glyphPosition characterIndex:(NSUInteger)charIndex;
+-(BOOL)layoutManager:(id<MAILayoutManagerProtocol>)layoutManager shouldSetLineFragmentRect:(inout CGRect*)lineFragmentRect lineFragmentUsedRect:(inout CGRect*)lineFragmentUsedRect baselineOffset:(inout CGFloat*)baselineOffset inTextContainer:(id<MAITextContainerProtocol>)textContainer forGlyphRange:(NSRange)glyphRange;
 -(void)layoutManagerDidInvalidateLayout:(id<MAILayoutManagerProtocol>)sender;
 -(void)layoutManager:(id<MAILayoutManagerProtocol>)layoutManager didCompleteLayoutForTextContainer:(nullable id<MAITextContainerProtocol>)textContainer atEnd:(BOOL)layoutFinishedFlag;
 
