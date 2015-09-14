@@ -30,6 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(setter=setLineWidth:, getter=lineWidth) CGFloat lineWidth;
 @property(setter=setMiterLimit:, getter=miterLimit) CGFloat miterLimit;
 @property(setter=setFlatness:, getter=flatness) CGFloat flatness;
+@property(readonly, getter=bezierPathByReversingPath) id<MAIBezierPathProtocol> bezierPathByReversingPath;
 
 #if TARGET_OS_IPHONE
 +(instancetype)bezierPathWithRoundedRect:(CGRect)rect cornerRadius:(CGFloat)cornerRadius NS_UNAVAILABLE;

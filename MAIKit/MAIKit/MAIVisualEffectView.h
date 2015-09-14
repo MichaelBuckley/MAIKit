@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)addSubview:(id<MAIViewProtocol>)view;
 -(void)didAddSubview:(id<MAIViewProtocol>)subview;
 -(void)willRemoveSubview:(id<MAIViewProtocol>)subview;
--(nullable id<MAIViewProtocol>)viewWithTag:(NSInteger)tag;
+-(nullable __kindof id<MAIViewProtocol>)viewWithTag:(NSInteger)tag;
 -(void)drawRect:(CGRect)rect;
 -(void)setNeedsDisplayInRect:(CGRect)rect;
 -(void)addGestureRecognizer:(id<MAIGestureRecognizerProtocol>)gestureRecognizer;
@@ -69,7 +69,7 @@ NS_ASSUME_NONNULL_BEGIN
 +(void)animateWithDuration:(NSTimeInterval)duration animations:(void (^)(void))animations completion:(void (^ __nullable)(BOOL finished))completion NS_UNAVAILABLE;
 +(void)animateWithDuration:(NSTimeInterval)duration animations:(void (^)(void))animations NS_UNAVAILABLE;
 +(void)animateWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay usingSpringWithDamping:(CGFloat)dampingRatio initialSpringVelocity:(CGFloat)velocity options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^ __nullable)(BOOL finished))completion NS_UNAVAILABLE;
-+(void)transitionWithView:(id<MAIViewProtocol>)view duration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^ __nullable)(BOOL finished))completion NS_UNAVAILABLE;
++(void)transitionWithView:(id<MAIViewProtocol>)view duration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options animations:(void (^ __nullable)(void))animations completion:(void (^ __nullable)(BOOL finished))completion NS_UNAVAILABLE;
 +(void)transitionFromView:(id<MAIViewProtocol>)fromView toView:(id<MAIViewProtocol>)toView duration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options completion:(void (^ __nullable)(BOOL finished))completion NS_UNAVAILABLE;
 +(void)performSystemAnimation:(UISystemAnimation)animation onViews:(NSArray<__kindof MAIView*>*)views options:(UIViewAnimationOptions)options animations:(void (^ __nullable)(void))parallelAnimations completion:(void (^ __nullable)(BOOL finished))completion NS_UNAVAILABLE;
 +(void)animateKeyframesWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay options:(UIViewKeyframeAnimationOptions)options animations:(void (^)(void))animations completion:(void (^ __nullable)(BOOL finished))completion NS_UNAVAILABLE;

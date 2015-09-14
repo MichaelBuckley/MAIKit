@@ -31,6 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(readonly, getter=capHeight) CGFloat capHeight;
 @property(readonly, getter=xHeight) CGFloat xHeight;
 @property(readonly, getter=leading) CGFloat leading;
+@property(readonly, getter=fontDescriptor) id<MAIFontDescriptorProtocol> fontDescriptor;
 
 #if TARGET_OS_IPHONE
 +(id<MAIFontProtocol>)preferredFontForTextStyle:(NSString*)style NS_UNAVAILABLE;
