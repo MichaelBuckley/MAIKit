@@ -17,7 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol MAICollectionViewProtocol
 -(nullable instancetype)initWithCoder:(NSCoder*)aDecoder;
 -(void)reloadData;
--(NSInteger)numberOfSections;
 -(NSInteger)numberOfItemsInSection:(NSInteger)section;
 -(nullable id<MAICollectionViewLayoutAttributesProtocol>)layoutAttributesForItemAtIndexPath:(NSIndexPath*)indexPath;
 -(nullable id<MAICollectionViewLayoutAttributesProtocol>)layoutAttributesForSupplementaryElementOfKind:(NSString*)kind atIndexPath:(NSIndexPath*)indexPath;
@@ -56,6 +55,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(setter=setHidden:, getter=isHidden) BOOL hidden;
 @property(readonly, nullable, getter=undoManager) NSUndoManager* undoManager;
 @property(nullable, setter=setUserActivity:, getter=userActivity) NSUserActivity* userActivity;
+@property(readonly, getter=numberOfSections) NSInteger numberOfSections;
+@property(readonly, getter=isFirstResponder) BOOL firstResponder;
 
 #if TARGET_OS_IPHONE
 -(instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(id<MAICollectionViewLayoutProtocol>)layout NS_UNAVAILABLE;
@@ -82,7 +83,7 @@ NS_ASSUME_NONNULL_BEGIN
 +(void)animateWithDuration:(NSTimeInterval)duration animations:(void (^)(void))animations completion:(void (^ __nullable)(BOOL finished))completion NS_UNAVAILABLE;
 +(void)animateWithDuration:(NSTimeInterval)duration animations:(void (^)(void))animations NS_UNAVAILABLE;
 +(void)animateWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay usingSpringWithDamping:(CGFloat)dampingRatio initialSpringVelocity:(CGFloat)velocity options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^ __nullable)(BOOL finished))completion NS_UNAVAILABLE;
-+(void)transitionWithView:(id<MAIViewProtocol>)view duration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^ __nullable)(BOOL finished))completion NS_UNAVAILABLE;
++(void)transitionWithView:(id<MAIViewProtocol>)view duration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options animations:(void (^ __nullable)(void))animations completion:(void (^ __nullable)(BOOL finished))completion NS_UNAVAILABLE;
 +(void)transitionFromView:(id<MAIViewProtocol>)fromView toView:(id<MAIViewProtocol>)toView duration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options completion:(void (^ __nullable)(BOOL finished))completion NS_UNAVAILABLE;
 +(void)performSystemAnimation:(UISystemAnimation)animation onViews:(NSArray<__kindof MAIView*>*)views options:(UIViewAnimationOptions)options animations:(void (^ __nullable)(void))parallelAnimations completion:(void (^ __nullable)(BOOL finished))completion NS_UNAVAILABLE;
 +(void)animateKeyframesWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay options:(UIViewKeyframeAnimationOptions)options animations:(void (^)(void))animations completion:(void (^ __nullable)(BOOL finished))completion NS_UNAVAILABLE;

@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MAIKit"
-  s.version      = "70.0.5"
+  s.version      = "70.0.6"
   s.summary      = "A framework for sharing code between iOS and OS X"
 
   s.description  = <<-DESC
@@ -74,7 +74,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/MichaelBuckley/MAIKit.git", :tag => "70.0.5" }
+  s.source       = { :git => "https://github.com/MichaelBuckley/MAIKit.git", :tag => "70.0.6" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
