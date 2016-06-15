@@ -10,32 +10,32 @@ import MAIKit
 
 class ViewController: MAIViewController {
 
-    @IBOutlet weak var circlesView : CirclesView? = nil
+    weak var circlesView : CirclesView? = nil
     @IBOutlet weak var clearButton : MAIButtonProtocol? = nil
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
 
-        self.clearButton?.enabled = false
+        self.clearButton?.isEnabled = false
 
-        NSNotificationCenter.defaultCenter().addObserver(
+        NotificationCenter.default().addObserver(
             self,
-            selector: "circleDrawn:",
+            selector: #selector(ViewController.circleDrawn(_:)),
             name: "circleDrawn",
             object: nil
         )
     }
 
-    @IBAction func clear(sender: AnyObject)
+    @IBAction func clear(_ sender: AnyObject)
     {
         self.circlesView?.clear()
-        self.clearButton?.enabled = false
+        self.clearButton?.isEnabled = false
     }
 
-    @objc func circleDrawn(notification: NSNotification?)
+    @objc func circleDrawn(_ notification: NSNotification?)
     {
-        self.clearButton?.enabled = true
+        self.clearButton?.isEnabled = true
     }
 
 }

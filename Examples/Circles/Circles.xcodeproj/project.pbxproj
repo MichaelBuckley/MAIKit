@@ -25,6 +25,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		305054FD1D110063007B041A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 306BB9691B30FFF40052EC35 /* MAIKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 305054E51D10FEB5007B041A;
+			remoteInfo = "MAIKit-tvOS";
+		};
+		305054FF1D110063007B041A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 306BB9691B30FFF40052EC35 /* MAIKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 305054F21D10FF34007B041A;
+			remoteInfo = "MAIKit-watchOS";
+		};
 		3062C76C1B4A30B800B8D5D1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 306BB9691B30FFF40052EC35 /* MAIKit.xcodeproj */;
@@ -143,6 +157,8 @@
 			children = (
 				306BB96F1B30FFF40052EC35 /* MAIKit.framework */,
 				306BB9711B30FFF40052EC35 /* MAIKit.framework */,
+				305054FE1D110063007B041A /* MAIKit.framework */,
+				305055001D110063007B041A /* MAIKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -227,11 +243,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Buckleyisms;
 				TargetAttributes = {
 					3062C7571B4A2F6300B8D5D1 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0800;
 					};
 					30F2E0981B2E0FE400C217F8 = {
 						CreatedOnToolsVersion = 7.0;
@@ -264,6 +281,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		305054FE1D110063007B041A /* MAIKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MAIKit.framework;
+			remoteRef = 305054FD1D110063007B041A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		305055001D110063007B041A /* MAIKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MAIKit.framework;
+			remoteRef = 305054FF1D110063007B041A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		306BB96F1B30FFF40052EC35 /* MAIKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -381,6 +412,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.buckleyisms.Circles;
 				PRODUCT_NAME = Circles;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -396,6 +428,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.buckleyisms.Circles;
 				PRODUCT_NAME = Circles;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -436,7 +470,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -474,7 +507,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
@@ -506,6 +538,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.buckleyisms.Circles;
 				PRODUCT_NAME = Circles;
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Circles-Swift.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
