@@ -7,6 +7,7 @@
 #
 
 Pod::Spec.new do |s|
+  use_frameworks!
 
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -16,7 +17,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MAIKit"
-  s.version      = "70.0.6"
+  s.version      = "80.0.0"
   s.summary      = "A framework for sharing code between iOS and OS X"
 
   s.description  = <<-DESC
@@ -66,6 +67,8 @@ Pod::Spec.new do |s|
   #  When using multiple platforms
   s.ios.deployment_target = "8.0"
   s.osx.deployment_target = "10.10"
+  s.tvos.deployment_target = "10.0"
+  s.watchos.deployment_target = "3.0"
 
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -74,7 +77,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/MichaelBuckley/MAIKit.git", :tag => "70.0.6" }
+  s.source       = { :git => "https://github.com/MichaelBuckley/MAIKit.git", :tag => "80.0.0" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
