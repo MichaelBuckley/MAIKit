@@ -25,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(BOOL)resignFirstResponder;
 -(void)updateUserActivityState:(NSUserActivity*)activity;
 -(void)restoreUserActivityState:(NSUserActivity*)activity;
+@property(setter=setView:, getter=view) id<MAIViewProtocol> view;
 @property(readonly, nullable, getter=nibName) NSString* nibName;
 @property(readonly, nullable, getter=nibBundle) NSBundle* nibBundle;
 @property(readonly, nullable, getter=storyboard) id<MAIStoryboardProtocol> storyboard;
@@ -37,7 +38,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property(readonly, getter=isViewLoaded) BOOL viewLoaded;
 
 #if TARGET_OS_IPHONE
-+(void)attemptRotationToDeviceOrientation NS_UNAVAILABLE;
 +(void)clearTextInputContextIdentifier:(NSString*)identifier NS_UNAVAILABLE;
 #else
 -(instancetype)init NS_UNAVAILABLE;

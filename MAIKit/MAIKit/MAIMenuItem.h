@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol MAIMenuItemProtocol
 @property(setter=setTitle:, getter=title) NSString* title;
+@property(setter=setAction:, getter=action) SEL action;
 
 #if TARGET_OS_IPHONE
 -(instancetype)initWithTitle:(NSString*)title action:(SEL)action NS_UNAVAILABLE;
@@ -23,7 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 +(void)setUsesUserKeyEquivalents:(BOOL)flag NS_UNAVAILABLE;
 +(BOOL)usesUserKeyEquivalents NS_UNAVAILABLE;
 +(id<MAIMenuItemProtocol>)separatorItem NS_UNAVAILABLE;
--(instancetype)initWithTitle:(NSString*)aString action:(nullable SEL)aSelector keyEquivalent:(NSString*)charCode NS_UNAVAILABLE;
+-(instancetype)initWithTitle:(NSString*)string action:(nullable SEL)selector keyEquivalent:(NSString*)charCode NS_UNAVAILABLE;
+-(instancetype)initWithCoder:(NSCoder*)decoder NS_UNAVAILABLE;
 #endif
 
 @end

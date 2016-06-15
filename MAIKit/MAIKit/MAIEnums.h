@@ -33,9 +33,9 @@ MAILayoutAttributeWidth,
 MAILayoutAttributeHeight,
 MAILayoutAttributeCenterX,
 MAILayoutAttributeCenterY,
-MAILayoutAttributeBaseline,
-MAILayoutAttributeLastBaseline = MAILayoutAttributeBaseline,
+MAILayoutAttributeLastBaseline,
 MAILayoutAttributeFirstBaseline,
+MAILayoutAttributeBaseline NS_SWIFT_UNAVAILABLE("Use '.lastBaseline' instead") = MAILayoutAttributeLastBaseline,
 MAILayoutAttributeNotAnAttribute = 0
 };
 
@@ -48,8 +48,8 @@ MAILayoutFormatAlignAllLeading = (1 << MAILayoutAttributeLeading),
 MAILayoutFormatAlignAllTrailing = (1 << MAILayoutAttributeTrailing),
 MAILayoutFormatAlignAllCenterX = (1 << MAILayoutAttributeCenterX),
 MAILayoutFormatAlignAllCenterY = (1 << MAILayoutAttributeCenterY),
-MAILayoutFormatAlignAllBaseline = (1 << MAILayoutAttributeBaseline),
-MAILayoutFormatAlignAllLastBaseline = MAILayoutFormatAlignAllBaseline,
+MAILayoutFormatAlignAllBaseline NS_SWIFT_UNAVAILABLE("Use '.alignAllLastBaseline' instead") = (1 << MAILayoutAttributeBaseline),
+MAILayoutFormatAlignAllLastBaseline = (1 << MAILayoutAttributeLastBaseline),
 MAILayoutFormatAlignAllFirstBaseline = (1 << MAILayoutAttributeFirstBaseline),
 MAILayoutFormatAlignmentMask = 0xFFFF,
 MAILayoutFormatDirectionLeadingToTrailing = 0 << 16,
@@ -137,16 +137,16 @@ MAIGestureRecognizerStateFailed,
 MAIGestureRecognizerStateRecognized = MAIGestureRecognizerStateEnded
 };
 
+typedef NS_ENUM(NSInteger, MAIUserInterfaceLayoutDirection) {
+MAIUserInterfaceLayoutDirectionLeftToRight,
+MAIUserInterfaceLayoutDirectionRightToLeft
+};
+
 typedef NS_ENUM(NSInteger, MAIStackViewDistribution) {
 MAIStackViewDistributionFill = 0,
 MAIStackViewDistributionFillEqually,
 MAIStackViewDistributionFillProportionally,
 MAIStackViewDistributionEqualSpacing,
 MAIStackViewDistributionEqualCentering
-};
-
-typedef NS_ENUM(NSInteger, MAIUserInterfaceLayoutDirection) {
-MAIUserInterfaceLayoutDirectionLeftToRight,
-MAIUserInterfaceLayoutDirectionRightToLeft
 };
 

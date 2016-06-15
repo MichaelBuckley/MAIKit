@@ -21,9 +21,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property(setter=setShouldBeArchived:, getter=shouldBeArchived) BOOL shouldBeArchived;
 @property(readonly, getter=firstItem) id firstItem;
 @property(readonly, getter=firstAttribute) MAILayoutAttribute firstAttribute;
-@property(readonly, getter=relation) MAILayoutRelation relation;
 @property(readonly, nullable, getter=secondItem) id secondItem;
 @property(readonly, getter=secondAttribute) MAILayoutAttribute secondAttribute;
+@property(readonly, getter=firstAnchor) NSLayoutAnchor* firstAnchor;
+@property(readonly, nullable, getter=secondAnchor) NSLayoutAnchor* secondAnchor;
+@property(readonly, getter=relation) MAILayoutRelation relation;
 @property(readonly, getter=multiplier) CGFloat multiplier;
 @property(setter=setConstant:, getter=constant) CGFloat constant;
 @property(setter=setActive:, getter=isActive) BOOL active;

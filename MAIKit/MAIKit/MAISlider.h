@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)addSubview:(id<MAIViewProtocol>)view;
 -(void)didAddSubview:(id<MAIViewProtocol>)subview;
 -(void)willRemoveSubview:(id<MAIViewProtocol>)subview;
--(nullable id<MAIViewProtocol>)viewWithTag:(NSInteger)tag;
+-(nullable __kindof id<MAIViewProtocol>)viewWithTag:(NSInteger)tag;
 -(void)drawRect:(CGRect)rect;
 -(void)setNeedsDisplay;
 -(void)setNeedsDisplayInRect:(CGRect)rect;
@@ -46,12 +46,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property(readonly, nullable, getter=superview) id<MAIViewProtocol> superview;
 @property(readonly, nullable, getter=window) id<MAIWindowProtocol> window;
 @property(setter=setHidden:, getter=isHidden) BOOL hidden;
+@property(setter=setGestureRecognizers:, getter=gestureRecognizers) NSArray<__kindof MAIGestureRecognizer*>* gestureRecognizers;
 @property(readonly, nullable, getter=undoManager) NSUndoManager* undoManager;
 @property(nullable, setter=setUserActivity:, getter=userActivity) NSUserActivity* userActivity;
 
 #if TARGET_OS_IPHONE
 +(Class)layerClass NS_UNAVAILABLE;
 +(MAIUserInterfaceLayoutDirection)userInterfaceLayoutDirectionForSemanticContentAttribute:(UISemanticContentAttribute)attribute NS_UNAVAILABLE;
++(MAIUserInterfaceLayoutDirection)userInterfaceLayoutDirectionForSemanticContentAttribute:(UISemanticContentAttribute)semanticContentAttribute relativeToLayoutDirection:(MAIUserInterfaceLayoutDirection)layoutDirection NS_UNAVAILABLE;
 +(void)beginAnimations:(nullable NSString*)animationID context:(nullable void*)context NS_UNAVAILABLE;
 +(void)commitAnimations NS_UNAVAILABLE;
 +(void)setAnimationDelegate:(nullable id)delegate NS_UNAVAILABLE;
@@ -67,7 +69,7 @@ NS_ASSUME_NONNULL_BEGIN
 +(void)setAnimationTransition:(UIViewAnimationTransition)transition forView:(id<MAIViewProtocol>)view cache:(BOOL)cache NS_UNAVAILABLE;
 +(void)setAnimationsEnabled:(BOOL)enabled NS_UNAVAILABLE;
 +(BOOL)areAnimationsEnabled NS_UNAVAILABLE;
-+(void)performWithoutAnimation:(void (^)(void))actionsWithoutAnimation NS_UNAVAILABLE;
++(void)performWithoutAnimation:(void (NS_NOESCAPE ^)(void))actionsWithoutAnimation NS_UNAVAILABLE;
 +(NSTimeInterval)inheritedAnimationDuration NS_UNAVAILABLE;
 +(void)animateWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^ __nullable)(BOOL finished))completion NS_UNAVAILABLE;
 +(void)animateWithDuration:(NSTimeInterval)duration animations:(void (^)(void))animations completion:(void (^ __nullable)(BOOL finished))completion NS_UNAVAILABLE;
@@ -81,6 +83,8 @@ NS_ASSUME_NONNULL_BEGIN
 +(BOOL)requiresConstraintBasedLayout NS_UNAVAILABLE;
 +(void)clearTextInputContextIdentifier:(NSString*)identifier NS_UNAVAILABLE;
 #else
++(instancetype)sliderWithTarget:(nullable id)target action:(nullable SEL)action NS_UNAVAILABLE;
++(instancetype)sliderWithValue:(double)value minValue:(double)minValue maxValue:(double)maxValue target:(nullable id)target action:(nullable SEL)action NS_UNAVAILABLE;
 +(void)setCellClass:(nullable Class)factoryId NS_UNAVAILABLE;
 +(nullable Class)cellClass NS_UNAVAILABLE;
 +(nullable id<MAIViewProtocol>)focusView NS_UNAVAILABLE;

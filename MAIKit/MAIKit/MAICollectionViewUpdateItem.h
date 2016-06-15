@@ -15,6 +15,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol MAICollectionViewUpdateItemProtocol
+@property(readonly, nullable, getter=indexPathBeforeUpdate) NSIndexPath* indexPathBeforeUpdate;
+@property(readonly, nullable, getter=indexPathAfterUpdate) NSIndexPath* indexPathAfterUpdate;
 @property(readonly, getter=updateAction) MAICollectionUpdateAction updateAction;
 
 #if TARGET_OS_IPHONE

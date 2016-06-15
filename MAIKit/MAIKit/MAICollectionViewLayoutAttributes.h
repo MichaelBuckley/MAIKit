@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(setter=setAlpha:, getter=alpha) CGFloat alpha;
 @property(setter=setZIndex:, getter=zIndex) NSInteger zIndex;
 @property(setter=setHidden:, getter=isHidden) BOOL hidden;
+@property(setter=setIndexPath:, getter=indexPath) NSIndexPath* indexPath;
 @property(readonly, nullable, getter=representedElementKind) NSString* representedElementKind;
 
 #if TARGET_OS_IPHONE

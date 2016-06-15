@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)addSubview:(id<MAIViewProtocol>)view;
 -(void)didAddSubview:(id<MAIViewProtocol>)subview;
 -(void)willRemoveSubview:(id<MAIViewProtocol>)subview;
--(nullable id<MAIViewProtocol>)viewWithTag:(NSInteger)tag;
+-(nullable __kindof id<MAIViewProtocol>)viewWithTag:(NSInteger)tag;
 -(void)drawRect:(CGRect)rect;
 -(void)setNeedsDisplayInRect:(CGRect)rect;
 -(void)addGestureRecognizer:(id<MAIGestureRecognizerProtocol>)gestureRecognizer;
@@ -41,22 +41,27 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nullable, setter=setFont:, getter=font) id<MAIFontProtocol> font;
 @property(nullable, setter=setTextColor:, getter=textColor) id<MAIColorProtocol> textColor;
 @property(setter=setSelectedRange:, getter=selectedRange) NSRange selectedRange;
-@property(setter=setEditable:, getter=isEditable) BOOL editable;
+@property(setter=setEditable:, getter=isEditable) BOOL editable __TVOS_PROHIBITED;
 @property(setter=setSelectable:, getter=isSelectable) BOOL selectable;
 @property(setter=setTypingAttributes:, getter=typingAttributes) NSDictionary<NSString*, id>* typingAttributes;
+@property(readonly, getter=layoutManager) id<MAILayoutManagerProtocol> layoutManager;
+@property(readonly, getter=textStorage) id<MAITextStorageProtocol> textStorage;
+@property(setter=setLinkTextAttributes:, getter=linkTextAttributes) NSDictionary<NSString*, id>* linkTextAttributes;
 @property(setter=setFrame:, getter=frame) CGRect frame;
 @property(setter=setBounds:, getter=bounds) CGRect bounds;
 @property(setter=setAutoresizesSubviews:, getter=autoresizesSubviews) BOOL autoresizesSubviews;
 @property(readonly, nullable, getter=superview) id<MAIViewProtocol> superview;
 @property(readonly, nullable, getter=window) id<MAIWindowProtocol> window;
-@property(nullable, setter=setBackgroundColor:, getter=backgroundColor) id<MAIColorProtocol> backgroundColor;
+@property(setter=setBackgroundColor:, getter=backgroundColor) id<MAIColorProtocol> backgroundColor;
 @property(setter=setHidden:, getter=isHidden) BOOL hidden;
+@property(setter=setGestureRecognizers:, getter=gestureRecognizers) NSArray<__kindof MAIGestureRecognizer*>* gestureRecognizers;
 @property(readonly, nullable, getter=undoManager) NSUndoManager* undoManager;
 @property(nullable, setter=setUserActivity:, getter=userActivity) NSUserActivity* userActivity;
 
 #if TARGET_OS_IPHONE
 +(Class)layerClass NS_UNAVAILABLE;
 +(MAIUserInterfaceLayoutDirection)userInterfaceLayoutDirectionForSemanticContentAttribute:(UISemanticContentAttribute)attribute NS_UNAVAILABLE;
++(MAIUserInterfaceLayoutDirection)userInterfaceLayoutDirectionForSemanticContentAttribute:(UISemanticContentAttribute)semanticContentAttribute relativeToLayoutDirection:(MAIUserInterfaceLayoutDirection)layoutDirection NS_UNAVAILABLE;
 +(void)beginAnimations:(nullable NSString*)animationID context:(nullable void*)context NS_UNAVAILABLE;
 +(void)commitAnimations NS_UNAVAILABLE;
 +(void)setAnimationDelegate:(nullable id)delegate NS_UNAVAILABLE;
@@ -72,7 +77,7 @@ NS_ASSUME_NONNULL_BEGIN
 +(void)setAnimationTransition:(UIViewAnimationTransition)transition forView:(id<MAIViewProtocol>)view cache:(BOOL)cache NS_UNAVAILABLE;
 +(void)setAnimationsEnabled:(BOOL)enabled NS_UNAVAILABLE;
 +(BOOL)areAnimationsEnabled NS_UNAVAILABLE;
-+(void)performWithoutAnimation:(void (^)(void))actionsWithoutAnimation NS_UNAVAILABLE;
++(void)performWithoutAnimation:(void (NS_NOESCAPE ^)(void))actionsWithoutAnimation NS_UNAVAILABLE;
 +(NSTimeInterval)inheritedAnimationDuration NS_UNAVAILABLE;
 +(void)animateWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^ __nullable)(BOOL finished))completion NS_UNAVAILABLE;
 +(void)animateWithDuration:(NSTimeInterval)duration animations:(void (^)(void))animations completion:(void (^ __nullable)(BOOL finished))completion NS_UNAVAILABLE;

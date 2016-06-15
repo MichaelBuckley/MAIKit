@@ -15,10 +15,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol MAIDocumentProtocol
--(void)updateUserActivityState:(NSUserActivity*)userActivity;
--(void)restoreUserActivityState:(NSUserActivity*)userActivity;
-@property(nullable, setter=setFileModificationDate:, getter=fileModificationDate) NSDate* fileModificationDate;
-@property(nullable, setter=setUserActivity:, getter=userActivity) NSUserActivity* userActivity;
+-(void)updateUserActivityState:(NSUserActivity*)userActivity __TVOS_PROHIBITED;
+-(void)restoreUserActivityState:(NSUserActivity*)userActivity __TVOS_PROHIBITED;
+@property(nullable, setter=setFileModificationDate:, getter=fileModificationDate) NSDate* fileModificationDate __TVOS_PROHIBITED;
+@property(setter=setUndoManager:, getter=undoManager) NSUndoManager* undoManager __TVOS_PROHIBITED;
+@property(nullable, setter=setUserActivity:, getter=userActivity) NSUserActivity* userActivity __TVOS_PROHIBITED;
 
 #if TARGET_OS_IPHONE
 -(instancetype)initWithFileURL:(NSURL*)url NS_UNAVAILABLE;

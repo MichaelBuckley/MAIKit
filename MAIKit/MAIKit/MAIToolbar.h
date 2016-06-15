@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
 -(nullable instancetype)initWithCoder:(NSCoder*)aDecoder NS_UNAVAILABLE;
 +(MAIUserInterfaceLayoutDirection)userInterfaceLayoutDirectionForSemanticContentAttribute:(UISemanticContentAttribute)attribute NS_UNAVAILABLE;
++(MAIUserInterfaceLayoutDirection)userInterfaceLayoutDirectionForSemanticContentAttribute:(UISemanticContentAttribute)semanticContentAttribute relativeToLayoutDirection:(MAIUserInterfaceLayoutDirection)layoutDirection NS_UNAVAILABLE;
 +(void)beginAnimations:(nullable NSString*)animationID context:(nullable void*)context NS_UNAVAILABLE;
 +(void)commitAnimations NS_UNAVAILABLE;
 +(void)setAnimationDelegate:(nullable id)delegate NS_UNAVAILABLE;
@@ -37,7 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 +(void)setAnimationTransition:(UIViewAnimationTransition)transition forView:(id<MAIViewProtocol>)view cache:(BOOL)cache NS_UNAVAILABLE;
 +(void)setAnimationsEnabled:(BOOL)enabled NS_UNAVAILABLE;
 +(BOOL)areAnimationsEnabled NS_UNAVAILABLE;
-+(void)performWithoutAnimation:(void (^)(void))actionsWithoutAnimation NS_UNAVAILABLE;
++(void)performWithoutAnimation:(void (NS_NOESCAPE ^)(void))actionsWithoutAnimation NS_UNAVAILABLE;
 +(NSTimeInterval)inheritedAnimationDuration NS_UNAVAILABLE;
 +(void)animateWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^ __nullable)(BOOL finished))completion NS_UNAVAILABLE;
 +(void)animateWithDuration:(NSTimeInterval)duration animations:(void (^)(void))animations completion:(void (^ __nullable)(BOOL finished))completion NS_UNAVAILABLE;

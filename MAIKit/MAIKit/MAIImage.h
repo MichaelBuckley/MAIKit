@@ -39,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 +(nullable id<MAIImageProtocol>)animatedResizableImageNamed:(NSString*)name capInsets:(UIEdgeInsets)capInsets resizingMode:(UIImageResizingMode)resizingMode duration:(NSTimeInterval)duration NS_UNAVAILABLE;
 +(nullable id<MAIImageProtocol>)animatedImageWithImages:(NSArray<MAIImage*>*)images duration:(NSTimeInterval)duration NS_UNAVAILABLE;
 #else
--(instancetype)initWithSize:(NSSize)aSize NS_UNAVAILABLE;
+-(instancetype)initWithSize:(NSSize)size NS_UNAVAILABLE;
 -(nullable instancetype)initWithContentsOfURL:(NSURL*)url NS_UNAVAILABLE;
 -(nullable instancetype)initByReferencingFile:(NSString*)fileName NS_UNAVAILABLE;
 -(instancetype)initByReferencingURL:(NSURL*)url NS_UNAVAILABLE;

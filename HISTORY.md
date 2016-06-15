@@ -1,5 +1,34 @@
 # Version History
 
+### 80.0.0 - 2016-06-14
+
+* Updated to Xcode 8 Beta 1
+ * Some methods and properties, including initializers, are no longer nullable
+ * `gestureRecognizers` was added to `MAIControl` and its subclasses
+ * `backgroundColor` was added to `MAIDatePicker`, `MAIScrollView`, `MAITableView`, `MAITableViewRowAction`, and `MAIWindow`
+ * `view` was added to `MAIViewController` and `MAISplitViewController`
+ * `dataSource` was added to `MAITableView`
+ * `firstAnchor` and `secondAnchor` were added to `MAILayoutConstraint`
+ * `hasAmbiguousLayout` was added to `MAILayoutGuide`
+ * `NS_SWIFT_UNAVAILABLE` was added to `MAILayoutAttributeBaseline` and `MAILayoutFormatAlignAllBaseline`
+ * `layoutManager`, `textStorage` and `linkTextAttributes` were added to `MAITextView`
+ * `+colorWithDisplayP3Red:green:blue:alpha:` was added to `MAIColor`
+ * `-application:userAcceptedCloudKitSharing:` was added to `MAIApplicationDelegate`
+ * `sectionHeadersPinToVisibleBounds` and `sectionFootersPinToVisibleBounds` were added to `MAICollectionViewFlowLayout`
+ * `indexPath` was added to `MAICollectionViewLayoutAttributes`
+ * `indexPathBeforeUpdate` and `indexPathAfterUpdate` were added to `MAICollectionViewUpdateItem`
+ * `calendar` was added to `MAIDatePicker`
+ * `familyName` was added to `MAIFont`
+ * `postscriptName` was added to `MAIFontDescriptor`
+ * `action` was added to `MAIMenuItem`
+ * `-initWithCoder:` was added to `MAIPrintInfo`
+ * `title` was added to `MAITableViewRowAction`
+ * Additional `__kindof` annotations
+ * Some properties and methods are marked `__TVOS_PROHIBITED`
+  * There are no common properties or methods between iOS and macOS marked `__WATCHOS_PROHIBITED`
+ * `NS_NOESCAPE` was added to some block parameters
+
+
 ### 71.0.0 - 2015-09-13
 
 * Updated to Xcode 7 Beta 1, which added many `__kindof` annotations

@@ -159,6 +159,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(BOOL)application:(id<MAIApplicationProtocol>)application willContinueUserActivityWithType:(NSString*)userActivityType;
 -(void)application:(id<MAIApplicationProtocol>)application didFailToContinueUserActivityWithType:(NSString*)userActivityType error:(NSError*)error;
 -(void)application:(id<MAIApplicationProtocol>)application didUpdateUserActivity:(NSUserActivity*)userActivity;
+-(void)application:(id<MAIApplicationProtocol>)application userAcceptedCloudKitShareWithMetadata:(CKShareMetadata*)cloudKitShareMetadata;
 
 
 

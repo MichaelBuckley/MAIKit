@@ -15,15 +15,16 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol MAIPrintInfoProtocol
+-(nullable instancetype)initWithCoder:(NSCoder*)aDecoder;
 
 #if TARGET_OS_IPHONE
--(nullable instancetype)initWithCoder:(NSCoder*)aDecoder NS_UNAVAILABLE;
 +(id<MAIPrintInfoProtocol>)printInfo NS_UNAVAILABLE;
 +(id<MAIPrintInfoProtocol>)printInfoWithDictionary:(nullable NSDictionary*)dictionary NS_UNAVAILABLE;
 #else
 +(void)setSharedPrintInfo:(id<MAIPrintInfoProtocol>)printInfo NS_UNAVAILABLE;
 +(id<MAIPrintInfoProtocol>)sharedPrintInfo NS_UNAVAILABLE;
 -(instancetype)initWithDictionary:(NSDictionary<NSString*, id>*)attributes NS_UNAVAILABLE;
+-(instancetype)init NS_UNAVAILABLE;
 +(nullable id<MAIPrinterProtocol>)defaultPrinter NS_UNAVAILABLE;
 #endif
 

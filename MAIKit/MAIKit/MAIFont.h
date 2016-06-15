@@ -21,9 +21,10 @@ NS_ASSUME_NONNULL_BEGIN
 +(id<MAIFontProtocol>)systemFontOfSize:(CGFloat)fontSize weight:(CGFloat)weight;
 +(id<MAIFontProtocol>)monospacedDigitSystemFontOfSize:(CGFloat)fontSize weight:(CGFloat)weight;
 +(id<MAIFontProtocol>)fontWithDescriptor:(id<MAIFontDescriptorProtocol>)descriptor size:(CGFloat)pointSize;
-+(CGFloat)labelFontSize;
-+(CGFloat)smallSystemFontSize;
-+(CGFloat)systemFontSize;
++(CGFloat)labelFontSize __TVOS_PROHIBITED;
++(CGFloat)smallSystemFontSize __TVOS_PROHIBITED;
++(CGFloat)systemFontSize __TVOS_PROHIBITED;
+@property(readonly, getter=familyName) NSString* familyName;
 @property(readonly, getter=fontName) NSString* fontName;
 @property(readonly, getter=pointSize) CGFloat pointSize;
 @property(readonly, getter=ascender) CGFloat ascender;
@@ -35,6 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #if TARGET_OS_IPHONE
 +(id<MAIFontProtocol>)preferredFontForTextStyle:(NSString*)style NS_UNAVAILABLE;
++(id<MAIFontProtocol>)preferredFontForTextStyle:(NSString*)style compatibleWithTraitCollection:(nullable UITraitCollection*)traitCollection NS_UNAVAILABLE;
 +(id<MAIFontProtocol>)italicSystemFontOfSize:(CGFloat)fontSize NS_UNAVAILABLE;
 +(CGFloat)buttonFontSize NS_UNAVAILABLE;
 #else
@@ -42,8 +44,8 @@ NS_ASSUME_NONNULL_BEGIN
 +(nullable id<MAIFontProtocol>)fontWithDescriptor:(id<MAIFontDescriptorProtocol>)fontDescriptor textTransform:(nullable NSAffineTransform*)textTransform NS_UNAVAILABLE;
 +(nullable id<MAIFontProtocol>)userFontOfSize:(CGFloat)fontSize NS_UNAVAILABLE;
 +(nullable id<MAIFontProtocol>)userFixedPitchFontOfSize:(CGFloat)fontSize NS_UNAVAILABLE;
-+(void)setUserFont:(nullable id<MAIFontProtocol>)aFont NS_UNAVAILABLE;
-+(void)setUserFixedPitchFont:(nullable id<MAIFontProtocol>)aFont NS_UNAVAILABLE;
++(void)setUserFont:(nullable id<MAIFontProtocol>)font NS_UNAVAILABLE;
++(void)setUserFixedPitchFont:(nullable id<MAIFontProtocol>)font NS_UNAVAILABLE;
 +(id<MAIFontProtocol>)labelFontOfSize:(CGFloat)fontSize NS_UNAVAILABLE;
 +(id<MAIFontProtocol>)titleBarFontOfSize:(CGFloat)fontSize NS_UNAVAILABLE;
 +(id<MAIFontProtocol>)menuFontOfSize:(CGFloat)fontSize NS_UNAVAILABLE;

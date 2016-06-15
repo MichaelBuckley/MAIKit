@@ -47,6 +47,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(setter=setMinimumLineSpacing:, getter=minimumLineSpacing) CGFloat minimumLineSpacing;
 @property(setter=setMinimumInteritemSpacing:, getter=minimumInteritemSpacing) CGFloat minimumInteritemSpacing;
 @property(setter=setScrollDirection:, getter=scrollDirection) MAICollectionViewScrollDirection scrollDirection;
+@property(setter=setSectionHeadersPinToVisibleBounds:, getter=sectionHeadersPinToVisibleBounds) BOOL sectionHeadersPinToVisibleBounds;
+@property(setter=setSectionFootersPinToVisibleBounds:, getter=sectionFootersPinToVisibleBounds) BOOL sectionFootersPinToVisibleBounds;
 @property(readonly, nullable, getter=collectionView) id<MAICollectionViewProtocol> collectionView;
 
 #if TARGET_OS_IPHONE

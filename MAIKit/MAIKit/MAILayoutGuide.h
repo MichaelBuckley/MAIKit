@@ -27,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(readonly, getter=heightAnchor) id<MAILayoutDimensionProtocol> heightAnchor;
 @property(readonly, getter=centerXAnchor) id<MAILayoutXAxisAnchorProtocol> centerXAnchor;
 @property(readonly, getter=centerYAnchor) id<MAILayoutYAxisAnchorProtocol> centerYAnchor;
+@property(readonly, getter=hasAmbiguousLayout) BOOL hasAmbiguousLayout;
 
 #if TARGET_OS_IPHONE
 #else

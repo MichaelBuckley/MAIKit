@@ -15,6 +15,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol MAITableViewRowActionProtocol
+@property(setter=setTitle:, getter=title) NSString* title;
+@property(setter=setBackgroundColor:, getter=backgroundColor) id<MAIColorProtocol> backgroundColor;
 
 #if TARGET_OS_IPHONE
 #else

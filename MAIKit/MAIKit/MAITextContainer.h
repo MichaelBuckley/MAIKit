@@ -15,7 +15,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol MAITextContainerProtocol
--(nullable instancetype)initWithCoder:(NSCoder*)coder;
+-(instancetype)initWithCoder:(NSCoder*)coder;
 -(void)replaceLayoutManager:(id<MAILayoutManagerProtocol>)newLayoutManager;
 -(CGRect)lineFragmentRectForProposedRect:(CGRect)proposedRect atIndex:(NSUInteger)characterIndex writingDirection:(MAIWritingDirection)baseWritingDirection remainingRect:(nullable CGRect*)remainingRect;
 @property(nullable, setter=setLayoutManager:, getter=layoutManager) id<MAILayoutManagerProtocol> layoutManager;
